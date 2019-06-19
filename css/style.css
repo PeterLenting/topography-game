@@ -129,6 +129,15 @@ footer#social .sociallinks a{
     
 }
 
+/*New card slowly appears*/
+.fade-in{
+  animation: fade-in 1s ease;
+  visibility: visible;
+}
+
+@keyframes fade-in{0%{opacity:0} 100%{opacity:1}
+}
+
 /*FLIP CARD*/
 
 /* The flip card container - set the width and height to whatever you want. We have added the border property to demonstrate that the flip itself goes out of the box on hover (remove perspective if you don't want the 3D effect */
@@ -204,3 +213,4 @@ footer#social .sociallinks a{
     width: 68%;
     }
 }
+
