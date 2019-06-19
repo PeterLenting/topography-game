@@ -1,11 +1,16 @@
 //https://gist.github.com/stephenscaff/8266351  
 //Add your images
-    var images = ['cyclist-1.png', 'cyclist-2.png', 'cyclist-3.png', 'cyclist-4.png', 'cyclist-5.png', 'cyclist-6.png', 'cyclist-7.png', 'cyclist-8.png'];
+    
     
 //Build the img, then do a bit of maths to randomize load and append to a div.
-    $('<img class="fade-in" src="images/' + images[Math.floor(Math.random() * images.length)] + '">').appendTo('#banner-load');
-    
+   //$('<img class="fade-in" src="images/' + imagesArray[Math.floor(Math.random() * imagesArray.length)] + '">').appendTo('#banner-load');
+var imagesArray = ['cyclist-1.png', 'cyclist-2.png', 'cyclist-3.png', 'cyclist-4.png', 'cyclist-5.png', 'cyclist-6.png', 'cyclist-7.png', 'cyclist-8.png'];
+var shownImages = []
 
+function displayImage(){
+var num = Math.floor(Math.random() * (imagesArray.length));
+document.canvas.src = imagesArray[num];
+}
 
 [
 	{
