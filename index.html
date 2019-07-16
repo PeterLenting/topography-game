@@ -30,25 +30,19 @@
             <h1>Pro Cycling Trumps Game</h1>
         </div>
     </header>
-    <section id="main">
+ <section id="main">
         <div class="container-fluid">
             <article class="main-col">
                 <h2>Who is this cyclist?</h2>
-                <div class="flip-card center">
-                    <div class="flip-card-inner">
-                        <div class="flip-card-front">
-                            <!--<img src="images/cyclist-1-empty.png" alt="Who is this cyclist?">-->
-                        </div>
-                        <div class="flip-card-back">
-                            <!--<img src="images/cyclist-1.png" alt="Who is this cyclist?">-->
-                        </div>
-                    </div>
-                    <img class="fade-in" name="canvas" src="images/'">
+                <div class="flip-card center" >
+                    <img src="images\start-vraagteken.png" id="newImage" alt="Who is this cyclist?">
+                    
                 </div>
 
-                <input type="text" placeholder="Type riders name..."><br />
-                <button type="submit" onclick="displayImage()" class="button_1">I'm sure that's him</button>
-                <button type="submit" class="button_1">Please, give me a hint</button>
+                <button type="submit" id="buttonStart" class="button_2">Start the game!</button>
+                <input type="text" id="textField" placeholder="Type riders name..." class="hidden"><br />
+                <button type="submit" id="buttonNewImage" class="button_1 hidden" onclick="displayImage()">I'm sure that's him</button>
+                <button type="submit" id="buttonHint" class="button_1 hidden">Please, give me a hint</button>
             </article>
 
             <aside id="sidebar">

@@ -1,0 +1,55 @@
+[
+	{
+		subjectTitle: "Cycling",
+		data: [
+			{
+				answer: "Jacques Anquetil",
+				question: "images/cyclist-1-empty.png"
+			},
+			{
+				answer: "Lance Armstrong",
+				question: "images/cyclist-2-empty.png"
+			},
+			{
+				answer: "Gino Bartali",
+				question: "images/cyclist-3-empty.png"
+			},
+			{
+				answer: "Fausto Coppi",
+				question: "images/cyclist-4-empty.png"
+			},
+				{
+				answer: "Miguel Indurain",
+				question: "images/cyclist-5-empty.png"
+			},
+			{
+				answer: "Bernard Hinault",
+				question: "images/cyclist-6-empty.png"
+			},
+			{
+				answer: "Louison Bobet",
+				question: "images/cyclist-7-empty.png"
+			},
+			{
+				answer: "Felice Gimondi",
+				question: "images/cyclist-8-empty.png"
+			},
+				{
+				answer: "Eddy Merckx",
+				question: "images/cyclist-9-empty.png"
+			},
+			{
+				answer: "Sean Kelly",
+				question: "images/cyclist-10-empty.png"
+			},
+			{
+				answer: "Alfredo Binda",
+				question: "images/cyclist-11-empty.png"
+			},
+			{
+				answer: "Rik van Steenbergen",
+				question: "images/cyclist-12-empty.png"
+			}
+		]
+	}
+];
