@@ -35,12 +35,13 @@
             <article class="main-col">
                 <h2>Who is this cyclist?</h2>
                 <div class="flip-card center" >
-                    <img src="images\start-vraagteken.png" id="newImage" alt="Who is this cyclist?">
+                    <img src="images/start-vraagteken.png" id="newImage" alt="Who is this cyclist?">
                     
                 </div>
 
-                <button type="submit" id="buttonStart" class="button_2">Start the game!</button>
-                <input type="text" id="textField" placeholder="Type riders name..." class="hidden"><br />
+                <button type="submit" id="buttonStart" class="button_2" onclick="displayImage()">Start the game!</button>
+                <button type="submit" id="buttonNewImage2" class="button_2">Answer</button>
+                <input type="text" id="textField" placeholder="Type riders name..." class="hidden"><br/>
                 <button type="submit" id="buttonNewImage" class="button_1 hidden" onclick="displayImage()">I'm sure that's him</button>
                 <button type="submit" id="buttonHint" class="button_1 hidden">Please, give me a hint</button>
             </article>
