@@ -80,6 +80,28 @@ section#main .container-fluid input[type="text"]{
     margin-bottom: 10px;
 }
 
+/*SCORBORD*/
+#scorebord {
+    text-align: center;     
+}
+
+/*After giving an answer
+#wrongAnswer {
+    color: red;
+    text-align: center; 
+    font-weight: bold;
+    border-radius: 25px;
+    font-size: 150%;
+}
+
+#rightAnswer {
+    color: green;
+    text-align: center; 
+    font-weight: bold;
+    border-radius: 25px;
+    font-size: 150%;
+}*/
+
 /*BUTTONS*/
 
 .button_1 {
@@ -146,6 +168,8 @@ footer#social .sociallinks a{
 
 /*FLIP CARD*/
 
+
+
 /* The flip card container - set the width and height to whatever you want. We have added the border property to demonstrate that the flip itself goes out of the box on hover (remove perspective if you don't want the 3D effect */
 .flip-card {
   
@@ -158,16 +182,15 @@ footer#social .sociallinks a{
   /* This container is needed to position the front and back side */
   .flip-card-inner {
     position: relative;
-   
-    text-align: center;
+   text-align: center;
     transition: transform 0.8s;
     transform-style: preserve-3d;
   }
   
-  /* Do an horizontal flip when you move the mouse over the flip box container */
+  /* Do an horizontal flip when you move the mouse over the flip box container
   .flip-card:hover .flip-card-inner {
     transform: rotateY(180deg);
-  }
+  }*/
   
   /* Position the front and back side */
   .flip-card-front, .flip-card-back {

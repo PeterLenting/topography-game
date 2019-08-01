@@ -35,15 +35,23 @@
             <article class="main-col">
                 <h2>Who is this cyclist?</h2>
                 <div class="flip-card center" >
-                    <img src="images/start-vraagteken.png" id="newImage" alt="Who is this cyclist?">
-                    
+                    <div class="flip-card-inner">
+                    <div class="flip-card-front"><img src="images/start-vraagteken.png" id="newImage" alt="Who is this cyclist?"></div>
+                    <div class="flip-card-back"><img src="images/start-vraagteken.png" id="newImage" alt="Who is this cyclist?"></div>
+                    </div>
                 </div>
-
+                
                 <button type="submit" id="buttonStart" class="button_2" onclick="displayImage()">Start the game!</button>
-                <button type="submit" id="buttonNewImage2" class="button_2">Answer</button>
+                <p id="comment" class="hidden"></p>
+                <button type="submit" id="buttonNext" class="button_2 hidden" onclick="displayImage()">Next Challenge</button>
+                <p>Round: <span id="round"></span></p>
                 <input type="text" id="textField" placeholder="Type riders name..." class="hidden"><br/>
-                <button type="submit" id="buttonNewImage" class="button_1 hidden" onclick="displayImage()">I'm sure that's him</button>
+                <button type="submit" id="buttonNewImage" class="button_1 hidden">I'm sure that's him</button>
                 <button type="submit" id="buttonHint" class="button_1 hidden">Please, give me a hint</button>
+                <button type="submit" id="buttonAnotherTry" class="button_1 hidden">Give me another try</button>
+                <button type="submit" id="buttonGiveUp" class="button_1 hidden">Please, give me the answer</button>
+                <br>
+                <input type="text" id="scorebord" class="hidden" value="0">
             </article>
 
             <aside id="sidebar">
