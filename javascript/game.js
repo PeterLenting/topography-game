@@ -67,12 +67,15 @@ function displayImage(){
 $(".flip-card-inner").flip({ 
     trigger: "manual",
     speed: 800
-});});
+});
            $("#buttonHint").click(function(){
             $("#newImage").each(function() {
                   var nSrc= $(this).attr('src').replace("-empty.png", "-flag.png");
-                  $(this).attr('src', nSrc);
-              });
+                  setTimeout(function() {
+                      $(this).attr('src', nSrc);
+                    })   
+                }, 400);
+              
             $("#newImageBack").each(function() {
                 var nSrc= $(this).attr('src').replace("-empty.png", "-flag.png");
                 $(this).attr('src', nSrc);
@@ -80,7 +83,7 @@ $(".flip-card-inner").flip({
               $("#buttonHint").hide();  
               $("#newImage").addClass("gotHint");
               $(".flip-card-inner").flip(true);
-                          });  
+                          });  });
                         
                                                                 
                           
