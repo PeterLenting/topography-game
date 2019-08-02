@@ -64,7 +64,7 @@ section#main .container-fluid{
 }
 
 
-section#main .container-fluid input[type="text"]{
+#textField{
     padding: 4px;
     height: 30px;
     width: 270px;
@@ -82,7 +82,9 @@ section#main .container-fluid input[type="text"]{
 
 /*SCORBORD*/
 #scorebord {
-    text-align: center;     
+    color: green;
+    text-align: center; 
+    
 }
 
 /*After giving an answer
@@ -180,18 +182,12 @@ footer#social .sociallinks a{
   }
   
   /* This container is needed to position the front and back side */
-  .flip-card-inner {
+  .flip {
     position: relative;
    text-align: center;
-    transition: transform 0.8s;
-    transform-style: preserve-3d;
+
   }
-  
-  /* Do an horizontal flip when you move the mouse over the flip box container
-  .flip-card:hover .flip-card-inner {
-    transform: rotateY(180deg);
-  }*/
-  
+   
   /* Position the front and back side */
   .flip-card-front, .flip-card-back {
     position: absolute;
