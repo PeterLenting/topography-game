@@ -68,25 +68,34 @@ $(".flip-card-inner").flip({
     trigger: "manual",
     speed: 800
 });
-           $("#buttonHint").click(function(){
-            $("#newImage").each(function() {
-                  var nSrc= $(this).attr('src').replace("-empty.png", "-flag.png");
-                  setTimeout(function() {
-                      $(this).attr('src', nSrc);
-                    })   
-                }, 400);
-              
-            $("#newImageBack").each(function() {
-                var nSrc= $(this).attr('src').replace("-empty.png", "-flag.png");
-                $(this).attr('src', nSrc);
-            });
+ 
+
+$("#buttonHint").click(function(){
+varnSrcHint = $("#newImage").attr('src').replace("-empty.png", "-flag.png");   
+              $("#newImageBack").attr('src').replace("-empty.png", "-flag.png"); 
               $("#buttonHint").hide();  
-              $("#newImage").addClass("gotHint");
-              $(".flip-card-inner").flip(true);
-                          });  });
-                        
-                                                                
-                          
+              $("#newImage").addClass("gotHint");           
+              if ($("#newImage").css("z-index") > "0")
+              {
+                  $(".flip-card-inner").flip(true);
+                  setTimeout(function () {
+                      $("#newImage").attr('src', varnSrcHint);
+                      $("#newImageBack").attr('src', varnSrcHint);    
+                  }, 400);
+              } else {
+                  $(".flip-card-inner").flip(false);
+                  setTimeout(function () {
+                      $("#newImage").attr('src', varnSrcHint);
+                      $("#newImageBack").attr('src', varnSrcHint);    
+                  }, 400);
+              
+                    }});  });
+                                                            
+
+                    
+
+
+
 /*Next Button*/
 $("#buttonNext").click(function(){
                           $("#buttonNext").hide();
@@ -97,7 +106,7 @@ $("#buttonNext").click(function(){
                           $("#newImage").removeClass("gotHint gotRightAnswer gotWrongAnswer")
                           });
 
-/*THIS IS HOW THE SCORBORD WORKS */
+/*THIS IS HOW THE SCOREBORD WORKS */
 function myScore() {
     var $score = $("#scorebord");
     $("#comment").show().text("Yes, that's him");
@@ -114,7 +123,25 @@ $score.val( parseInt($score.val()) + 2 );
 else   
 {$score.val( parseInt($score.val()) + 3 );
 }
-       }      
+       }  
+/*THIS IS HOW FLIP ON RIGHT ANSWER WORKS */
+function rightAnswer(){
+    var nSrc = $("#newImage").attr('src').replace("-empty", "").replace("-flag", "");
+               $("#newImageBack").attr('src').replace("-empty", "").replace("-flag", "");   
+    if ($("#newImage").hasClass("gotHint"))
+       {
+           $(".flip-card-inner").flip(false);
+           setTimeout(function () {
+               $("#newImage").attr('src', nSrc);
+               $("#newImageBack").attr('src', nSrc);    
+           }, 400);
+       } else {
+           $(".flip-card-inner").flip(true);
+           setTimeout(function () {
+               $("#newImage").attr('src', nSrc);
+               $("#newImageBack").attr('src', nSrc);    
+           }, 400);
+       }}       
 
        /*Check Answer*/
 $("#buttonNewImage").click(function(){
@@ -124,108 +151,97 @@ $("#buttonNewImage").click(function(){
     $("#textField").hide();
     var answer = $("#textField").val(); 
     var nSrc = $("#newImage").attr('src').replace("-empty", "").replace("-flag", "");
-                $("#newImageBack").attr('src').replace("-empty", "").replace("-flag", "");
+               $("#newImageBack").attr('src').replace("-empty", "").replace("-flag", "");
                 if 
                 ($("#newImage").attr('src') == "images/cyclist-1-empty.png" && answer.toUpperCase() == "JACQUES ANQUETIL" || $("#newImage").attr('src') == "images/cyclist-1-flag.png" && answer.toUpperCase() == "JACQUES ANQUETIL")
                 {
-                $("#newImage").attr('src', nSrc);
-                $("#newImageBack").attr('src', nSrc);
+                rightAnswer();    
                 myScore();
                  } 
                 else if 
                 ($("#newImage").attr('src') == "images/cyclist-2-empty.png" && answer.toUpperCase() == "LANCE ARMSTRONG" || $("#newImage").attr('src') == "images/cyclist-2-flag.png" && answer.toUpperCase() == "LANCE ARMSTRONG")
                 {
-                $("#newImage").attr('src', nSrc);
-                $("#newImageBack").attr('src', nSrc);
+                rightAnswer();
                 myScore();
                 }
                 else if 
                 ($("#newImage").attr('src') == "images/cyclist-3-empty.png" && answer.toUpperCase() == "GINO BARTALI" || $("#newImage").attr('src') == "images/cyclist-3-flag.png" && answer.toUpperCase() == "GINO BARTALI")
                 {
-                $("#newImage").attr('src', nSrc);
-                $("#newImageBack").attr('src', nSrc);
+                rightAnswer();
                 myScore();
                 }
                 else if 
                 ($("#newImage").attr('src') == "images/cyclist-4-empty.png" && answer.toUpperCase() == "FAUSTO COPPI" || $("#newImage").attr('src') == "images/cyclist-4-flag.png" && answer.toUpperCase() == "FAUSTO COPPI")
                 {
-                $("#newImage").attr('src', nSrc);
-                $("#newImageBack").attr('src', nSrc);
+                rightAnswer();
                 myScore();
                 }
                 else if 
                 ($("#newImage").attr('src') == "images/cyclist-5-empty.png" && answer.toUpperCase() == "MIGUEL INDURAIN" || $("#newImage").attr('src') == "images/cyclist-5-flag.png" && answer.toUpperCase() == "MIGUEL INDURAIN")
                 {
-                $("#newImage").attr('src', nSrc);
-                $("#newImageBack").attr('src', nSrc);
+                rightAnswer();
                 myScore();
                 }
                 else if 
                 ($("#newImage").attr('src') == "images/cyclist-6-empty.png" && answer.toUpperCase() == "BERNARD HINAULT" || $("#newImage").attr('src') == "images/cyclist-6-flag.png" && answer.toUpperCase() == "BERNARD HINAULT")
                 {
-                $("#newImage").attr('src', nSrc);
-                $("#newImageBack").attr('src', nSrc);
+                rightAnswer();
                 myScore();
                 }
                 else if 
                 ($("#newImage").attr('src') == "images/cyclist-7-empty.png" && answer.toUpperCase() == "LOUISON BOBET" || $("#newImage").attr('src') == "images/cyclist-7-flag.png" && answer.toUpperCase() == "LOUISON BOBET")
                 {
-                $("#newImage").attr('src', nSrc);
-                $("#newImageBack").attr('src', nSrc);
+                rightAnswer();
                 myScore();
                 }
                 else if 
                 ($("#newImage").attr('src') == "images/cyclist-8-empty.png" && answer.toUpperCase() == "FELICE GIMONDI" || $("#newImage").attr('src') == "images/cyclist-8-flag.png" && answer.toUpperCase() == "FELICE GIMONDI")
                 {
-                $("#newImage").attr('src', nSrc);
-                $("#newImageBack").attr('src', nSrc);
+                rightAnswer();
                 myScore();
                 }
                 else if 
                 ($("#newImage").attr('src') == "images/cyclist-9-empty.png" && answer.toUpperCase() == "EDDY MERCKX" || $("#newImage").attr('src') == "images/cyclist-9-flag.png" && answer.toUpperCase() == "EDDY MERCKX")
                 {
-                $("#newImage").attr('src', nSrc);
-                $("#newImageBack").attr('src', nSrc);
+                rightAnswer();
                 myScore();
                 }
                 else if 
                 ($("#newImage").attr('src') == "images/cyclist-10-empty.png" && answer.toUpperCase() == "SEAN KELLY" || $("#newImage").attr('src') == "images/cyclist-10-flag.png" && answer.toUpperCase() == "SEAN KELLY")
                 {
-                $("#newImage").attr('src', nSrc);
-                $("#newImageBack").attr('src', nSrc);
+                rightAnswer();
                 myScore();
                 }
                 else if 
                 ($("#newImage").attr('src') == "images/cyclist-11-empty.png" && answer.toUpperCase() == "ALFREDO BINDA" || $("#newImage").attr('src') == "images/cyclist-11-flag.png" && answer.toUpperCase() == "ALFREDO BINDA")
                 {
-                $("#newImage").attr('src', nSrc);
-                $("#newImageBack").attr('src', nSrc);
+                rightAnswer();
                 myScore();
                 }
                 else if 
                 ($("#newImage").attr('src') == "images/cyclist-12-empty.png" && answer.toUpperCase() == "RIK VAN STEENBERGEN" || $("#newImage").attr('src') == "images/cyclist-12-flag.png" && answer.toUpperCase() == "RIK VAN STEENBERGEN")
                 {
-                $("#newImage").attr('src', nSrc);
-                $("#newImageBack").attr('src', nSrc);
+                rightAnswer();
                 myScore();
                 }
                 else if 
                 ($("#newImage").attr('src') == "images/cyclist-13-empty.png" && answer.toUpperCase() == "OSCAR FREIRE" || $("#newImage").attr('src') == "images/cyclist-13-flag.png" && answer.toUpperCase() == "OSCAR FREIRE")
                 {
-                $("#newImage").attr('src', nSrc);
-                $("#newImageBack").attr('src', nSrc);
+                rightAnswer();
                 myScore();
                 }
                 else if 
                 ($("#newImage").attr('src') == "images/cyclist-14-empty.png" && answer.toUpperCase() == "LAURENT JALABERT" || $("#newImage").attr('src') == "images/cyclist-14-flag.png" && answer.toUpperCase() == "LAURENT JALABERT")
                 {
-                $("#newImage").attr('src', nSrc);
-                $("#newImageBack").attr('src', nSrc);
+                rightAnswer();
+                myScore();
                 }       
                 else{
+                     
                     if
                     ($("#newImage").hasClass("gotWrongAnswer")){
                     $("#newImage").attr('src', nSrc);
+                    $("#newImageBack").attr('src', nSrc);
                     $("#buttonNext").show();
                     $("#comment").show().text("Sorry, no score");
                     }
@@ -246,7 +262,7 @@ $("#buttonAnotherTry").click(function(){
     $("#buttonGiveUp").hide();
     $("#buttonNewImage").show();
     $("#textField").show();
-    if 
+                if 
                 ($("#newImage").attr('src').endsWith("empty.png"))
                 {
                 $("#buttonHint").show();
@@ -255,14 +271,11 @@ $("#buttonAnotherTry").click(function(){
                 ($("#newImage").attr('src').endsWith("flag.png"))
                 {
                 $("#buttonHint").hide();
-                }
+                }     
 });
 
 $("#buttonGiveUp").click(function(){
-    $("#newImage").each(function() {
-        var nSrc= $(this).attr('src').replace("-empty.png", ".png").replace("-flag.png", ".png") ;
-        $(this).attr('src', nSrc);
-    });
+    rightAnswer()
     $("#comment").show().text("Sorry, no score");
     $("#buttonAnotherTry").hide();
     $("#buttonGiveUp").hide();
