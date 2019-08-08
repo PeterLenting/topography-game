@@ -1,8 +1,8 @@
 jQuery(document).ready();
 /*COUNTING THE ROUNDS */
-var roundnrs = 0; 
+var roundnr = $("#round"); 
+
 function myRound() {
-    var roundnr = $("#round");
 {
     roundnr.val( parseInt(roundnr.val()) + 1 );
     }}
@@ -10,14 +10,14 @@ function myRound() {
 
 let images = ['images/cyclist-1-empty.png', 'images/cyclist-2-empty.png', 'images/cyclist-3-empty.png', 'images/cyclist-4-empty.png', 'images/cyclist-5-empty.png', 'images/cyclist-6-empty.png', 'images/cyclist-7-empty.png', 'images/cyclist-8-empty.png', 'images/cyclist-9-empty.png', 'images/cyclist-10-empty.png', 'images/cyclist-11-empty.png', 'images/cyclist-12-empty.png', 'images/cyclist-13-empty.png', 'images/cyclist-14-empty.png', 'images/cyclist-15-empty.png'];
 
-var usedImages = {};
+var usedImages = [];
 var usedImagesCount = 0;
 
 /*Run through images-array and show random image until 10 (out of 15) are shown. */
 
 function displayImage(){
-
-    var num = Math.floor(Math.random() *11);
+    
+    var num = Math.floor(Math.random() *3);
     if (!usedImages[num]){
         document.getElementById("newImage").src = images[num];
         document.getElementById("newImageBack").src= images[num];
@@ -25,9 +25,9 @@ function displayImage(){
         usedImagesCount++;
         if (usedImagesCount === images.length){
             usedImagesCount = 0;
-            usedImages = {};
+            usedImages = [];
         }
-        if (roundnr.val > 10){
+        if (roundnr > 2){
             $('#comment').text("Game Over");
             $('#flip-card-inner').addClass("hidden");
         }
@@ -41,12 +41,12 @@ $(function(){
     $("#buttonStart").click(function(){
         let images = ['images/cyclist-1-empty.png', 'images/cyclist-2-empty.png', 'images/cyclist-3-empty.png', 'images/cyclist-4-empty.png', 'images/cyclist-5-empty.png', 'images/cyclist-6-empty.png', 'images/cyclist-7-empty.png', 'images/cyclist-8-empty.png', 'images/cyclist-9-empty.png', 'images/cyclist-10-empty.png', 'images/cyclist-11-empty.png', 'images/cyclist-12-empty.png', 'images/cyclist-13-empty.png', 'images/cyclist-14-empty.png', 'images/cyclist-15-empty.png'];
 
-var usedImages = {};
+var usedImages = [];
 var usedImagesCount = 0;
 
 function displayImage(){
 
-    var num = Math.floor(Math.random() *11);
+    var num = Math.floor(Math.random() *3);
     if (!usedImages[num]){
         document.getElementById("newImage").src = images[num];
         document.getElementById("newImageBack").src= images[num];
@@ -54,7 +54,7 @@ function displayImage(){
         usedImagesCount++;
         if (usedImagesCount === images.length){
             usedImagesCount = 0;
-            usedImages = {};
+            usedImages = [];
         }
     } else {
         displayImage();
@@ -83,7 +83,7 @@ $(".flip-card-inner").flip({
  
 
 $("#buttonHint").click(function(){
-varnSrcHint = $("#newImage").attr('src').replace("-empty.png", "-flag.png");   
+let nSrcHint = $("#newImage").attr('src').replace("-empty.png", "-flag.png");   
               $("#newImageBack").attr('src').replace("-empty.png", "-flag.png"); 
               $("#buttonHint").addClass("hidden");  
               $("#newImage").addClass("gotHint");           
@@ -91,14 +91,14 @@ varnSrcHint = $("#newImage").attr('src').replace("-empty.png", "-flag.png");
               {
                   $(".flip-card-inner").flip(true);
                   setTimeout(function () {
-                      $("#newImage").attr('src', varnSrcHint);
-                      $("#newImageBack").attr('src', varnSrcHint);    
+                      $("#newImage").attr('src', nSrcHint);
+                      $("#newImageBack").attr('src', nSrcHint);    
                   }, 300);
               } else {
                   $(".flip-card-inner").flip(false);
                   setTimeout(function () {
-                      $("#newImage").attr('src', varnSrcHint);
-                      $("#newImageBack").attr('src', varnSrcHint);    
+                      $("#newImage").attr('src', nSrcHint);
+                      $("#newImageBack").attr('src', nSrcHint);    
                   }, 300);
               
                     }});  });
