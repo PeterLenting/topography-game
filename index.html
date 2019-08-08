@@ -32,28 +32,47 @@
     </header>
  <section id="main">
         <div class="container-fluid">
-            <article class="main-col">
-                <h2>Who is this cyclist?</h2>
+                <div class="row">
+                        <div class="col-xl-8">
+                    <article class="main-col">
+                    
+                <h2 id="headerQuestion">Who is this cyclist?</h2>
                 <div class="flip-card center" >
                     <div class="flip-card-inner">
                     <div class="front test"><img src="images/start-vraagteken.png" id="newImage" alt="Who is this cyclist?"></div>
                     <div class="back test"><img src="images/start-vraagteken.png" id="newImageBack" alt="Who is this cyclist?"></div>
                     </div>
                 </div>
-                
-                <button type="submit" id="buttonStart" class="button_2" onclick="displayImage()">Start the game!</button>
-                <p id="comment" class="hidden"></p>
-                <button type="submit" id="buttonNext" class="button_2 hidden" onclick="displayImage()">Next Challenge</button>
-                <p>Round: <span id="round"></span></p>
-                <input type="text" id="textField" placeholder="Type riders name..." class="hidden"><br/>
-                <button type="submit" id="buttonNewImage" class="button_1 hidden">I'm sure that's him</button>
-                <button type="submit" id="buttonHint" class="button_1 hidden">Please, give me a hint</button>
-                <button type="submit" id="buttonAnotherTry" class="button_1 hidden">Give me another try</button>
-                <button type="submit" id="buttonGiveUp" class="button_1 hidden">Please, give me the answer</button>
-                <br>
-                <input type="text" id="scorebord" class="hidden" value="0">
-            </article>
+                <div class="row" id="startScreen">
+                    <div class="col-12"><button type="submit" id="buttonHowToPlayTheGame" class="button_1" onClick="explainGame()">How to play?</button>
+                                        <button type="submit" id="buttonStart" class="button_1" onclick="displayImage()">Let's play!</button></div>
+                </div>
+                <div class="row">
+                    <div class="col-12"><p id="comment" class="hidden"></p></div>
+                </div>
+                <div class="row">
+                    <div class="col-12"><button type="submit" id="buttonNext" class="button_2 hidden" onclick="displayImage()">Next Challenge</button></div>
+                    </div>
+                <div class="row">
+                    <div class="col-12"><input type="text" id="textField" placeholder="Type riders name..." class="hidden"></div>
+                </div>    
+                <div class="row">
+                    <div class="col-12"><button type="submit" id="buttonNewImage" class="button_1 hidden">Submit</button>
+                                        <button type="submit" id="buttonHint" class="button_1 hidden">Give me a hint</button></div>
 
+                </div>
+                <div class="row">
+                    <div class="col-6"><button type="submit" id="buttonAnotherTry" class="button_1 hidden">Another try</button></div>
+                    <div class="col-6"><button type="submit" id="buttonGiveUp" class="button_1 hidden">I give up</button></div>
+                </div>
+                <div class="row">
+                    <div class="col-6"><span class="hidden" id="count">ROUND:<br> <input type="text"  id="round" value="1"></span></div>
+                    <div class="col-6"><span class="hidden" id="scorebordSp">SCORE:<br> <input type="text"  id="scorebord" class="hidden" value="0"></span></div>
+                </div>
+            </article>
+                        </div>
+
+                <div class="col-xl-4">
             <aside id="sidebar">
                 <h2>About the game</h2>
                 <ul>
@@ -66,12 +85,18 @@
                     <li>Check the jersey, the qualities, the races won and the hair of the rider</li>
                     <li>Do you know who it is?</li>
                     <li>Type his name in the textfield and hit submit</li>
+                    <li>If you're right, you get 3 points</li>
                     <li>Not sure who he is? Ask for a hint</li>
-                    <li>You get three tries for each round</li>
+                    <li>A hint will cost you 1 point, just like a wrong answer does</li>
+                    <li>If you're down to 0 points, the right answer will be shown</li>
+                    <li>Each game consists of 10 riders</li>
                     <li>Enjoy!</li>
                 </ul>
+                <button type="submit" id="buttonGoBackUp" class="button_2" onclick="goBackUp()">Back to the game</button>
             </aside>
+                </div>
         </div>
+    </div>
     </section>
     <footer id="social">
         <div class="sociallinks">

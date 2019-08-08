@@ -1,3 +1,12 @@
+.blur {
+    -webkit-filter: blur(5px);
+    filter: blur(5px);
+  }
+
+.hidden {
+    display: none!important;
+}  
+
 body{
     font-family: Arial, Helvetica, sans-serif;
     line-height: 1.5;
@@ -11,18 +20,17 @@ header{
     text-align: center;
     min-height: 60px;
     text-transform: uppercase;
-    padding-top: 1px;
+    padding-top: 10px;
     padding-bottom: 1px;
-    padding-left: 15px;
-    padding-right: 15px;
+    
     border-radius: 25px;
-    margin-bottom: 10px;
+    margin: 15px;
+    border: 3px solid #FEE801;
 }
 
-header .container-fluid {
-    font-size: 190%;
+h1 {
+    font-size: 2.4rem;
 }
-
 /*SIDEBAR*/
 
 aside{
@@ -55,7 +63,7 @@ section#main {
 }
 
 section#main .container-fluid img{
-    width: 280px;
+    width: 250px;
     border-radius: 25px;
 }
 
@@ -63,11 +71,15 @@ section#main .container-fluid{
    text-align: center;
 }
 
+#comment {
+    font-size: 1.5rem;
+    text-shadow: 1px 1px 6px #fff;
+}
 
 #textField{
     padding: 4px;
     height: 30px;
-    width: 270px;
+    /*width: 270px;*/
     border-radius: 25px;
     font-weight: bold;
 }
@@ -78,31 +90,29 @@ section#main .container-fluid{
     border: 3px solid #000080;
     border-radius: 25px;
     margin-bottom: 10px;
+    padding-bottom: 5px;
 }
 
 /*SCORBORD*/
 #scorebord {
     color: green;
-    text-align: center; 
-    
-}
-
-/*After giving an answer
-#wrongAnswer {
-    color: red;
-    text-align: center; 
+    text-align: center;
+    width: 60px; 
+    font-family: "Courier New";
     font-weight: bold;
     border-radius: 25px;
-    font-size: 150%;
+    box-shadow: 3px 3px black;
 }
 
-#rightAnswer {
+#round {
     color: green;
-    text-align: center; 
+    text-align: center;
+    width: 60px; 
+    font-family: "Courier New";
     font-weight: bold;
     border-radius: 25px;
-    font-size: 150%;
-}*/
+    box-shadow: 3px 3px black;
+}
 
 /*BUTTONS*/
 
@@ -111,8 +121,8 @@ section#main .container-fluid{
     border: 0;
     padding-left: 10px;
     padding-right: 10px;
-    margin-top: 10px;
-    margin-bottom: 10px;
+    margin-top: 5px;
+    margin-bottom: 5px;
     background: #000080;
     color: #FEE801;
     border-radius: 25px;
@@ -122,12 +132,10 @@ section#main .container-fluid{
 
 .button_2 {
     height: 30px;
-    width:270px;
     border: 0;
     padding-left: 10px;
     padding-right: 10px;
-    margin-top: 10px;
-    margin-bottom: 10px;
+    margin: 5px;
     background: #000080;
     color: #FEE801;
     border-radius: 25px;
@@ -135,9 +143,24 @@ section#main .container-fluid{
     box-shadow: 3px 3px black;
 }
 
-.hidden {
-    display: none;
+
+#buttonHint {
+    color: #FEE801;
+    background: #52985C;
+    margin-left: 10px;
+    margin-right: 10px;
 }
+
+#buttonNewImage {
+    margin-left: 8px;
+    margin-right: 0;
+}
+
+#startScreen {
+    text-align: center;
+    margin: 0;
+}
+
 
 /*FOOTER*/
 
@@ -159,6 +182,8 @@ footer#social .sociallinks a{
     
 }
 
+
+
 /*New card slowly appears*/
 .fade-in{
   animation: fade-in 1s ease;
@@ -168,50 +193,11 @@ footer#social .sociallinks a{
 @keyframes fade-in{0%{opacity:0} 100%{opacity:1}
 }
 
-/*FLIP CARD*/
-
-
-
-/* The flip card container - set the width and height to whatever you want. We have added the border property to demonstrate that the flip itself goes out of the box on hover (remove perspective if you don't want the 3D effect 
-.flip-card {
-  
-    background-color: transparent;
-    width: 280px;
-    height: 450px;
-    perspective: 1000px; /* Remove this if you don't want the 3D effect 
-  }
-  
-  /* This container is needed to position the front and back side 
-  .flip {
-    position: relative;
-   text-align: center;
-
-  }
-   
-  /* Position the front and back side 
-  .flip-card-front, .flip-card-back {
-    position: absolute;
-    
-    backface-visibility: hidden;
-  }
-  
-  /* Style the front side (fallback if image is missing) 
-  .flip-card-front {
-    background-color: transparent;
-    color: black;
-  }
-  
-  /* Style the back side 
-  .flip-card-back {
-    background-color: transparent;
-    color: white;
-    transform: rotateY(180deg);
-  }
-  */
   .center {
     display: block;
     margin-left: auto;
     margin-right: auto;
+    margin-bottom: 10px;
     }
   
   /*MEDIA QUERIES*/
@@ -226,16 +212,35 @@ footer#social .sociallinks a{
  @media(min-width: 1024px){ 
     aside{
     float: left;
-    width: 28%;
+    width: 100%;
     padding-right: 20px;
-    min-height: 585px;
+    min-height: 570px;
     }
  }
  
  @media(min-width: 1024px){ 
     .main-col{
     float: right;
-    width: 68%;
+    width: 100%;
     }
 }
 
+@media(min-width: 1024px){ 
+    #buttonHowToPlayTheGame {
+    display: none;
+}}
+
+@media(min-width: 1024px){ 
+    #buttonGoBackUp {
+    display: none;
+}}
+
+@media(min-width: 1024px){ 
+section#main .container-fluid img{
+    width: 300px;
+}}    
+
+@media(min-width: 1024px){
+ header {
+ display: block !important;
+}}   
