@@ -213,12 +213,12 @@ $("#buttonNewImage").click(function() {
                         $("#comment").removeClass("hidden").text("Sorry, no score");
                         $("#newImage").removeClass('blur');
                         $("#newImageBack").removeClass('blur');
-                        } else {
-                            $("#comment").removeClass("hidden").text("Nope, that's not him");
-                            $("#buttonAnotherTry").removeClass("hidden");
-                            $("#buttonGiveUp").removeClass("hidden"); 
-                            $("#buttonNext").addClass("hidden");
-                            $("#newImage").addClass("gotWrongAnswer");   
+                    } else {
+                        $("#comment").removeClass("hidden").text("Nope, that's not him");
+                        $("#buttonAnotherTry").removeClass("hidden");
+                        $("#buttonGiveUp").removeClass("hidden"); 
+                        $("#buttonNext").addClass("hidden");
+                        $("#newImage").addClass("gotWrongAnswer");   
                         }
                 }
 });
@@ -233,11 +233,11 @@ $("#buttonAnotherTry").click(function() {
     $("#buttonGiveUp").addClass("hidden");
     $("#buttonNewImage").removeClass("hidden");
     $("#textField").removeClass("hidden");
-        if ($("#newImage").attr('src').endsWith("empty.png")) {
-            $("#buttonHint").removeClass("hidden");
-            } else if ($("#newImage").attr('src').endsWith("flag.png")) {
-                $("#buttonHint").addClass("hidden");
-            }     
+    if ($("#newImage").attr('src').endsWith("empty.png")) {
+        $("#buttonHint").removeClass("hidden");
+    } else if ($("#newImage").attr('src').endsWith("flag.png")) {
+            $("#buttonHint").addClass("hidden");
+        }     
 });
 
 /*The player gives up*/
