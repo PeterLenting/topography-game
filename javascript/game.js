@@ -41,6 +41,7 @@ function displayImage() {
     }
 } 
 
+/*Hit the start-button and show the first random image from the images-array*/
 $(function(){
 
     $("#buttonStart").click(function() {
@@ -64,7 +65,6 @@ $(function(){
         $("#buttonHint").removeClass("hidden");
         $("#buttonNewImage").removeClass("hidden");
         $("#textField").removeClass("hidden");
-        $("#scorebord").removeClass("hidden");
         $("#scorebordSp").removeClass("hidden");
         $("#count").removeClass("hidden");
         $("#round").removeClass("hidden");
@@ -110,7 +110,7 @@ $("#buttonNext").click(function() {
         $("#buttonNewImage").removeClass("hidden");
         $("#textField").removeClass("hidden").val("");
         $("#newImage").removeClass("gotHint gotRightAnswer gotWrongAnswer");
-        myRound();  
+        myRound()  
 });
 
 /*THIS IS HOW THE SCOREBORD WORKS */
@@ -119,25 +119,26 @@ function myScore() {
     var $score = $("#scorebord");
     $("#comment").removeClass("hidden").text("Yes, that's him!");
         if ($("#newImage").hasClass("gotHint") &&  $("#newImage").hasClass("gotWrongAnswer")) {
-            $score.val( parseInt($score.val()) + 1 );
-    } else if ($("#newImage").hasClass("gotHint") || $("#newImage").hasClass("gotWrongAnswer")) {
-               $score.val( parseInt($score.val()) + 2 );
-    } else {
-               $score.val( parseInt($score.val()) + 3 );
+            $score.val( parseInt($score.val()) + 1 ); 
+    }   else if ($("#newImage").hasClass("gotHint") || $("#newImage").hasClass("gotWrongAnswer")) {
+            $score.val( parseInt($score.val()) + 2 ); 
+    }   else {
+            $score.val( parseInt($score.val()) + 3 );
     }
 }  
 
 /*THIS IS HOW FLIP ON RIGHT ANSWER WORKS */
 function rightAnswer() {
+    
     var nSrc = $("#newImage").attr('src').replace("-empty", "").replace("-flag", "");
                $("#newImageBack").attr('src').replace("-empty", "").replace("-flag", "");   
-    if ($("#newImage").hasClass("gotHint"))       {
-        $(".flip-card-inner").flip(false);
-           setTimeout(function () {
+        if ($("#newImage").hasClass("gotHint")) {
+            $(".flip-card-inner").flip(false);
+            setTimeout(function () {
                $("#newImage").attr('src', nSrc);
                $("#newImageBack").attr('src', nSrc);    
-           }, 250);
-       } else {
+            }, 250);
+    }   else {
            $(".flip-card-inner").flip(true);
            setTimeout(function () {
                $("#newImage").attr('src', nSrc);
@@ -220,6 +221,7 @@ $("#buttonNewImage").click(function() {
 });
 
 /*After Wrong Answer */
+/*The player wants another try*/
 $("#buttonAnotherTry").click(function() {
     $("#newImage").removeClass('blur');
     $("#newImageBack").removeClass('blur');
@@ -235,6 +237,7 @@ $("#buttonAnotherTry").click(function() {
             }     
 });
 
+/*The player gives up*/
 $("#buttonGiveUp").click(function() {
     rightAnswer();
     $("#newImage").removeClass('blur');
@@ -245,9 +248,10 @@ $("#buttonGiveUp").click(function() {
     $("#buttonNext").removeClass("hidden");
 });
 
+/*For Mobile only: Jump down the page for an explanation of the rules and back up again to start the game */
 function explainGame() {
     window.location.href = '#sidebar';
   }
-  function goBackUp() {
+function goBackUp() {
     window.location.href = '#headerQuestion'; 
   }
