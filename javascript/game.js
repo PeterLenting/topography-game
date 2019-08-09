@@ -120,12 +120,12 @@ function myScore() {
     
     var $score = $("#scorebord");
     $("#comment").removeClass("hidden").text("Yes, that's him!");
-        if ($("#newImage").hasClass("gotHint") &&  $("#newImage").hasClass("gotWrongAnswer")) {
-            $score.val( parseInt($score.val()) + 1 ); 
-    }   else if ($("#newImage").hasClass("gotHint") || $("#newImage").hasClass("gotWrongAnswer")) {
-            $score.val( parseInt($score.val()) + 2 ); 
-    }   else {
-            $score.val( parseInt($score.val()) + 3 );
+    if ($("#newImage").hasClass("gotHint") &&  $("#newImage").hasClass("gotWrongAnswer")) {
+        $score.val( parseInt($score.val()) + 1 ); 
+    } else if ($("#newImage").hasClass("gotHint") || $("#newImage").hasClass("gotWrongAnswer")) {
+        $score.val( parseInt($score.val()) + 2 ); 
+    } else {
+        $score.val( parseInt($score.val()) + 3 );
     }
 }  
 
@@ -133,20 +133,21 @@ function myScore() {
 function rightAnswer() {
     
     var nSrc = $("#newImage").attr('src').replace("-empty", "").replace("-flag", "");
-               $("#newImageBack").attr('src').replace("-empty", "").replace("-flag", "");   
-        if ($("#newImage").hasClass("gotHint")) {
-            $(".flip-card-inner").flip(false);
-            setTimeout(function () {
-               $("#newImage").attr('src', nSrc);
-               $("#newImageBack").attr('src', nSrc);    
-            }, 250);
-    }   else {
-           $(".flip-card-inner").flip(true);
-           setTimeout(function () {
-               $("#newImage").attr('src', nSrc);
-               $("#newImageBack").attr('src', nSrc);    
-           }, 250);
-       }}       
+    $("#newImageBack").attr('src').replace("-empty", "").replace("-flag", "");   
+    if ($("#newImage").hasClass("gotHint")) {
+        $(".flip-card-inner").flip(false);
+        setTimeout(function () {
+            $("#newImage").attr('src', nSrc);
+            $("#newImageBack").attr('src', nSrc);    
+        }, 250);
+    } else {
+        $(".flip-card-inner").flip(true);
+        setTimeout(function () {
+            $("#newImage").attr('src', nSrc);
+            $("#newImageBack").attr('src', nSrc);    
+        }, 250);
+    }
+}       
 
 /*Check Answer*/
 $("#buttonNewImage").click(function() {
