@@ -1,20 +1,20 @@
 .blur {
     -webkit-filter: blur(5px);
     filter: blur(5px);
-  }
+}
 
 .hidden {
     display: none!important;
-}  
+}
 
-body{
+body {
     font-family: Arial, Helvetica, sans-serif;
     line-height: 1.5;
     padding: 0;
     background: #f2f2f2;
 }
 
-header{
+header {
     background: #000080;
     color: #FEE801;
     text-align: center;
@@ -22,7 +22,7 @@ header{
     text-transform: uppercase;
     padding-top: 10px;
     padding-bottom: 1px;
-    
+
     border-radius: 25px;
     margin: 15px;
     border: 3px solid #FEE801;
@@ -31,9 +31,10 @@ header{
 h1 {
     font-size: 2.4rem;
 }
+
 /*SIDEBAR*/
 
-aside{
+aside {
     background: #FEE801;
     color: #000080;
     border: 3px solid #000080;
@@ -41,10 +42,11 @@ aside{
     margin-bottom: 10px;
 }
 
-aside h2{
+aside h2 {
     text-align: center;
 }
-aside p{
+
+aside p {
     margin: 10px;
 }
 
@@ -56,19 +58,19 @@ aside ul {
 
 section#main {
     width: 100%;
-    }
-    
+}
+
 .container-fluid {
     margin-bottom: 10px;
 }
 
-section#main .container-fluid img{
+section#main .container-fluid img {
     width: 250px;
     border-radius: 25px;
 }
 
-section#main .container-fluid{
-   text-align: center;
+section#main .container-fluid {
+    text-align: center;
 }
 
 #comment {
@@ -76,7 +78,7 @@ section#main .container-fluid{
     text-shadow: 1px 1px 6px #fff;
 }
 
-#textField{
+#textField {
     padding: 4px;
     height: 30px;
     /*width: 270px;*/
@@ -94,10 +96,11 @@ section#main .container-fluid{
 }
 
 /*SCORBORD*/
+
 #scorebord {
     color: green;
     text-align: center;
-    width: 60px; 
+    width: 60px;
     font-family: "Courier New";
     font-weight: bold;
     border-radius: 25px;
@@ -107,7 +110,7 @@ section#main .container-fluid{
 #round {
     color: green;
     text-align: center;
-    width: 60px; 
+    width: 60px;
     font-family: "Courier New";
     font-weight: bold;
     border-radius: 25px;
@@ -172,75 +175,86 @@ footer#social {
     padding-bottom: 10px;
     border-radius: 25px;
     margin-top: 10px;
-    clear:both;
+    clear: both;
 }
 
-footer#social .sociallinks a{
+footer#social .sociallinks a {
     color: #FEE801;
     padding-left: 25px;
     padding-right: 25px;
-    
+
 }
 
 
 
 /*New card slowly appears*/
-.fade-in{
-  animation: fade-in 1s ease;
-  visibility: visible;
+
+.fade-in {
+    animation: fade-in 1s ease;
+    visibility: visible;
 }
 
-@keyframes fade-in{0%{opacity:0} 100%{opacity:1}
+@keyframes fade-in {
+    0% {
+        opacity: 0
+    }
+    100% {
+        opacity: 1
+    }
 }
 
-  .center {
+.center {
     display: block;
     margin-left: auto;
     margin-right: auto;
     margin-bottom: 10px;
-    }
-  
-  /*MEDIA QUERIES*/
-  
- @media(min-width: 1670px){
-    body{
-    margin-left: 200px;
-    margin-right: 200px;
-     }
- }     
- 
- @media(min-width: 1024px){ 
-    aside{
-    float: left;
-    width: 100%;
-    padding-right: 20px;
-    min-height: 570px;
-    }
- }
- 
- @media(min-width: 1024px){ 
-    .main-col{
-    float: right;
-    width: 100%;
+}
+
+/*MEDIA QUERIES*/
+
+@media(min-width: 1670px) {
+    body {
+        margin-left: 200px;
+        margin-right: 200px;
     }
 }
 
-@media(min-width: 1024px){ 
+@media(min-width: 1024px) {
+    aside {
+        float: left;
+        width: 100%;
+        padding-right: 20px;
+        min-height: 570px;
+    }
+}
+
+@media(min-width: 1024px) {
+    .main-col {
+        float: right;
+        width: 100%;
+    }
+}
+
+@media(min-width: 1024px) {
     #buttonHowToPlayTheGame {
-    display: none;
-}}
+        display: none;
+    }
+}
 
-@media(min-width: 1024px){ 
+@media(min-width: 1024px) {
     #buttonGoBackUp {
-    display: none;
-}}
+        display: none;
+    }
+}
 
-@media(min-width: 1024px){ 
-section#main .container-fluid img{
-    width: 300px;
-}}    
+@media(min-width: 1024px) {
+    section#main .container-fluid img {
+        width: 300px;
+    }
+}
 
-@media(min-width: 1024px){
- header {
- display: block !important;
-}}   
+@media(min-width: 1024px) {
+    header {
+        display: block !important;
+    }
+}
