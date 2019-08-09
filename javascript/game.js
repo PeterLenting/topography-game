@@ -3,7 +3,6 @@ jQuery(document).ready();
 var roundnr = $("#round"); 
 
 function myRound() {
-
     roundnr.val( parseInt(roundnr.val()) + 1 );
     };
 
@@ -41,26 +40,28 @@ function displayImage() {
     }
 } 
 
+
 /*Hit the start-button and show the first random image from the images-array*/
 $(function(){
 
     $("#buttonStart").click(function() {
+        
         function displayImage(){
 
-    var num = Math.floor(Math.random() *15);
-    if (!usedImages[num]){
-        document.getElementById("newImage").src = images[num];
-        document.getElementById("newImageBack").src= images[num];
-        usedImages[num] = true;
-        usedImagesCount++;
-        if (usedImagesCount === images.length){
-            usedImagesCount = 0;
-            usedImages = [];
+            var num = Math.floor(Math.random() *15);
+            if (!usedImages[num]){
+                document.getElementById("newImage").src = images[num];
+                document.getElementById("newImageBack").src= images[num];
+                usedImages[num] = true;
+                usedImagesCount++;
+                if (usedImagesCount === images.length){
+                    usedImagesCount = 0;
+                    usedImages = [];
+                }
+            } else {
+                displayImage();
         }
-    } else {
-        displayImage();
-    }
-} 
+    } 
         $("#buttonStart").addClass("hidden");
         $("#buttonHint").removeClass("hidden");
         $("#buttonNewImage").removeClass("hidden");
@@ -70,7 +71,8 @@ $(function(){
         $("#round").removeClass("hidden");
         $("header").addClass("hidden");
         $("#buttonHowToPlayTheGame").addClass("hidden");
-    });});
+    });
+});
 
 /*Hint Button*/
 
