@@ -34,7 +34,7 @@
     <div class="container-fluid">
         <div class="row">
             <div class="col-xl-8">
-                <article class="main-col">
+                <div class="main-col">
                     
 <h2 id="headerQuestion">Who is this cyclist?</h2>
 <div class="flip-card center" >
@@ -50,7 +50,7 @@
 <div class="row" id="startScreen">
     <div class="col-12">
         <button type="submit" id="buttonHowToPlayTheGame" class="button_1" onClick="explainGame()">How to play?</button>
-        <button type="submit" id="buttonStart" class="button_1" onclick="displayImage()">Let's play!</button>
+        <button type="submit" id="buttonStart" class="button_1">Let's play!</button>
     </div>
 </div>
 <div class="row">
@@ -60,7 +60,7 @@
 </div>
 <div class="row">
     <div class="col-12">
-        <button type="submit" id="buttonNext" class="button_2 hidden" onclick="displayImage()">Next Challenge</button>
+        <button type="submit" id="buttonNext" class="button_2 hidden">Next Challenge</button>
     </div>
 </div>
 <div class="row">
@@ -82,15 +82,23 @@
 </div>
 <div class="row">
     <div class="col-6">
-        <span class="hidden" id="count">ROUND:<br> <input type="text"  id="round" value="1">
+        <span class="hidden" id="count">ROUND:<br> 
+            <input type="text" id="round" value="1">
         </span>
+        <span id="yourScore" class="hidden">Your score is: </span>
     </div>
     <div class="col-6">
-        <span class="hidden" id="scorebordSp">SCORE:<br> <input type="text"  id="scorebord" value="0">
+        <span class="hidden" id="scoreboardSp">SCORE:<br> 
+            <input type="text" id="scoreboard" class="scoreboardClass" value="0">
         </span>
     </div>
 </div>
-</article>
+<div class="row">
+    <div class="col-12">
+        <button type="submit" id="buttonReset" class="button_2 hidden">Play again!</button>
+    </div>
+</div>
+</div>
 </div>
 
 <div class="col-xl-4">
@@ -101,7 +109,7 @@
                 <li>The lower part of the card contains the score of the rider on six important qualities on a scale from 0-100. Next to his head are the big prices he won.</li>
                 <li>The pink jersey for the Giro, the yellow one for the Tour, the red one for La Vuelta and the Roman pillar for the Monuments.</li>
             </ul>
-            <h2>How to play it</h2>
+        <h2>How to play it</h2>
             <ul>
                 <li>Check the jersey, the qualities, the races won and the hair of the rider</li>
                 <li>Do you know who it is?</li>
@@ -123,20 +131,16 @@
 <footer id="social">
     <div class="sociallinks">
         <a href="https://www.facebook.com/procyclingtrumps/" target="_blank">
-            <i class="fab fa-facebook-square fa-2x padding-fa">
-            </i>
+            <i class="fab fa-facebook-square fa-2x padding-fa"></i>
         </a>
         <a href="https://www.instagram.com/procyclingtrumps/?hl=nl" target="_blank">
-            <i class="fab fa-instagram fa-2x padding-fa">
-            </i>
+            <i class="fab fa-instagram fa-2x padding-fa"></i>
         </a>
         <a href="https://www.youtube.com/channel/UCVlQI6Wqd6WR0lxUJx8pOcw" target="_blank">
-            <i class="fab fa-youtube-square fa-2x padding-fa">
-            </i>
+            <i class="fab fa-youtube-square fa-2x padding-fa"></i>
         </a>
         <a href="https://twitter.com/procycletrumps" target="_blank">
-            <i class="fab fa-twitter-square fa-2x padding-fa">
-            </i>
+            <i class="fab fa-twitter-square fa-2x padding-fa"></i>
         </a>
     </div>
 </footer>

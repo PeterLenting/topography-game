@@ -1,11 +1,49 @@
 jQuery(document).ready();
+
 /*COUNTING THE ROUNDS */
 var roundnr = $("#round"); 
 
+
 function myRound() {
-    roundnr.val( parseInt(roundnr.val()) + 1 );
+    roundnr.val( parseInt(roundnr.val()) +1 );
+    roundnrVal += 1;
     };
 
+/*IF ROUNDS COUNTED IS BIGGER THAN 10, STOP displayImage() */
+
+/*Next Button*/
+$("#buttonNext").click(function() {
+    myRoundCounter();
+    myRound();  
+    
+});
+
+
+var numberOfRounds = 10;
+var roundnrVal = 2;
+
+function myRoundCounter() { 
+    console.log (roundnrVal,numberOfRounds)
+    $("#buttonNext").addClass("hidden");
+    if (roundnrVal > numberOfRounds) {
+        $("#comment").text("Game Over").css("font-size", "2.5rem");
+        $("#buttonReset").removeClass("hidden");
+        $("#textField").val("");
+        $("#count").addClass("hidden");
+        $(".flip-card-inner").addClass("hidden");
+        $("#headerQuestion").addClass("hidden");
+        $("#scoreboard").addClass("endScore").removeClass("scoreboardClass");
+        $("#yourScore").removeClass("hidden");
+        $("#scoreboardSp").css("color", "#FEE801");
+        } else {
+        $("#comment").addClass("hidden");
+        $("#buttonHint").removeClass("hidden");
+        $("#buttonNewImage").removeClass("hidden");
+        $("#textField").removeClass("hidden").val("");
+        $("#newImage").removeClass("gotHint gotRightAnswer gotWrongAnswer");
+        displayImage();
+    }   
+}
 
 var images = ['images/cyclist-1-empty.png', 'images/cyclist-2-empty.png', 'images/cyclist-3-empty.png', 
               'images/cyclist-4-empty.png', 'images/cyclist-5-empty.png', 'images/cyclist-6-empty.png', 
@@ -19,8 +57,6 @@ var usedImagesCount = 0;
 /*Run through images-array and show random image until 10 (out of 15) are shown. */
 
 function displayImage() {
-    var NumberOfRounds = 3;
-    var roundnrVal = parseInt(roundnr.val());
     var num = Math.floor(Math.random() *15);
     if (!usedImages[num]) {
         document.getElementById("newImage").src = images[num];
@@ -31,26 +67,21 @@ function displayImage() {
             usedImagesCount = 0;
             usedImages = [];
         }
-        if (roundnrVal > NumberOfRounds) {
-            $('#comment').text("Game Over");
-            $('#flip-card-inner').addClass("hidden");
-        }
     } else {
         displayImage();
     }
 } 
 
-
 /*Hit the start-button and show the first random image from the images-array*/
 $(function(){
 
     $("#buttonStart").click(function() {
-        displayImage()
+        displayImage();
         $("#buttonStart").addClass("hidden");
         $("#buttonHint").removeClass("hidden");
         $("#buttonNewImage").removeClass("hidden");
         $("#textField").removeClass("hidden");
-        $("#scorebordSp").removeClass("hidden");
+        $("#scoreboardSp").removeClass("hidden");
         $("#count").removeClass("hidden");
         $("#round").removeClass("hidden");
         $("header").addClass("hidden");
@@ -68,41 +99,32 @@ $(function() {
  
     $("#buttonHint").click(function() {
         let nSrcHint = $("#newImage").attr('src').replace("-empty.png", "-flag.png");   
-        $("#newImageBack").attr('src').replace("-empty.png", "-flag.png"); 
+        let nSrcBHint = $("#newImageBack").attr('src').replace("-empty.png", "-flag.png"); 
         $("#buttonHint").addClass("hidden");  
         $("#newImage").addClass("gotHint");           
         if ($("#newImage").css("z-index") > "0") {
-            $(".flip-card-inner").flip(true);
+            $(".flip-card-inner").flip('toggle');
             setTimeout(function () {
-                $("#newImageBack").attr('src', nSrcHint);    
+                $("#newImageBack").attr('src', nSrcBHint);    
                 $("#newImage").attr('src', nSrcHint);
                 }, 300);
         } else {
-            $(".flip-card-inner").flip(false);
+            $(".flip-card-inner").flip('toggle');
             setTimeout(function () {
                 $("#newImage").attr('src', nSrcHint);
-                $("#newImageBack").attr('src', nSrcHint);         
+                $("#newImageBack").attr('src', nSrcBHint);         
                 }, 300);
         }
     });  
 });
                                                                           
 
-/*Next Button*/
-$("#buttonNext").click(function() {
-        $("#buttonNext").addClass("hidden");
-        $("#comment").addClass("hidden");
-        $("#buttonHint").removeClass("hidden");
-        $("#buttonNewImage").removeClass("hidden");
-        $("#textField").removeClass("hidden").val("");
-        $("#newImage").removeClass("gotHint gotRightAnswer gotWrongAnswer");
-        myRound()  
-});
 
-/*THIS IS HOW THE SCOREBORD WORKS */
+
+/*THIS IS HOW THE SCOREBOARD WORKS */
 function myScore() {
     
-    var $score = $("#scorebord");
+    var $score = $("#scoreboard");
     $("#comment").removeClass("hidden").text("Yes, that's him!");
     if ($("#newImage").hasClass("gotHint") &&  $("#newImage").hasClass("gotWrongAnswer")) {
         $score.val( parseInt($score.val()) + 1 ); 
@@ -113,23 +135,23 @@ function myScore() {
     }
 }  
 
-/*THIS IS HOW FLIP ON RIGHT ANSWER WORKS */
+/*THIS IS HOW FLIP ON RIGHT ANSWER WORKS*/
 function rightAnswer() {
     
     var nSrc = $("#newImage").attr('src').replace("-empty", "").replace("-flag", "");
     $("#newImageBack").attr('src').replace("-empty", "").replace("-flag", "");   
     if ($("#newImage").hasClass("gotHint")) {
-        $(".flip-card-inner").flip(false);
+        $(".flip-card-inner").flip('toggle');
         setTimeout(function () {
             $("#newImage").attr('src', nSrc);
             $("#newImageBack").attr('src', nSrc);    
-        }, 250);
+        }, 300);
     } else {
-        $(".flip-card-inner").flip(true);
+        $(".flip-card-inner").flip('toggle');
         setTimeout(function () {
             $("#newImage").attr('src', nSrc);
             $("#newImageBack").attr('src', nSrc);    
-        }, 250);
+        }, 300);
     }
 }       
 
@@ -234,6 +256,13 @@ $("#buttonGiveUp").click(function() {
     $("#buttonGiveUp").addClass("hidden");
     $("#buttonNext").removeClass("hidden");
 });
+
+/*Reset the game after finishing it */
+$(function(){
+
+    $("#buttonReset").click(function() {
+        window.location.reload();
+    });});
 
 /*For Mobile only: Jump down the page for an explanation of the rules and back up again to start the game */
 function explainGame() {
