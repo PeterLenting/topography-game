@@ -14,6 +14,7 @@
     <!-- Style Sheets -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.1/css/all.css" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Permanent+Marker|Roboto&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css" type="text/css">
     
     <!-- Favicon File -->
@@ -37,7 +38,7 @@
                 <div class="main-col">
                     
 <h2 id="headerQuestion">Who is this cyclist?</h2>
-<div class="flip-card center" >
+<div class="flip-card" >
     <div class="flip-card-inner">
         <div class="front test">
             <img src="images/start-vraagteken.png" id="newImage" alt="Who is this cyclist?">
@@ -55,13 +56,13 @@
 </div>
 <div class="row">
     <div class="col-12">
-        <p id="comment" class="hidden"></p>
+        <p id="comment" class="hidden" type="text"></p>
     </div>
 </div>
 <div class="row">
     <div class="col-12">
-        <button type="submit" id="buttonNext" class="button_2 hidden">Next Challenge</button>
-    </div>
+        <button type="submit" id="buttonNext" class="button_1 hidden">Next Challenge</button>
+</div>
 </div>
 <div class="row">
     <div class="col-12">
@@ -70,7 +71,7 @@
 </div>    
 <div class="row">
     <div class="col-12">
-        <button type="submit" id="buttonNewImage" class="button_1 hidden">Submit</button>
+        <button type="submit" id="buttonNextImage" class="button_1 hidden">Submit</button>
         <button type="submit" id="buttonHint" class="button_1 hidden">Give me a hint</button>
     </div>
 </div>
@@ -85,7 +86,7 @@
         <span class="hidden" id="count">ROUND:<br> 
             <input type="text" id="round" value="1">
         </span>
-        <span id="yourScore" class="hidden">Your score is: </span>
+        <span id="yourScore" class="hidden">Your score: </span>
     </div>
     <div class="col-6">
         <span class="hidden" id="scoreboardSp">SCORE:<br> 
@@ -95,7 +96,12 @@
 </div>
 <div class="row">
     <div class="col-12">
-        <button type="submit" id="buttonReset" class="button_2 hidden">Play again!</button>
+     <p id="scoreComment" class="hidden" type="text"></p>
+    </div>
+</div>
+<div class="row">
+    <div class="col-12">
+        <button type="submit" id="buttonReset" class="button_1 hidden">Play again!</button>
     </div>
 </div>
 </div>
@@ -121,7 +127,7 @@
                 <li>Each game consists of 10 riders</li>
                 <li>Enjoy!</li>
             </ul>
-        <button type="submit" id="buttonGoBackUp" class="button_2" onclick="goBackUp()">Back to the game</button>
+        <button type="submit" id="buttonGoBackUp" class="button_1" onclick="goBackUp()">Back to the game</button>
     </aside>
 </div>
 </div>

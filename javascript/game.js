@@ -1,8 +1,9 @@
 jQuery(document).ready();
 
+var score = $("#scoreboard");
+
 /*COUNTING THE ROUNDS */
 var roundnr = $("#round"); 
-
 
 function myRound() {
     roundnr.val( parseInt(roundnr.val()) +1 );
@@ -11,34 +12,26 @@ function myRound() {
 
 /*IF ROUNDS COUNTED IS BIGGER THAN 10, STOP displayImage() */
 
-/*Next Button*/
-$("#buttonNext").click(function() {
-    myRoundCounter();
-    myRound();  
-    
-});
-
-
 var numberOfRounds = 10;
 var roundnrVal = 2;
 
 function myRoundCounter() { 
-    console.log (roundnrVal,numberOfRounds)
     $("#buttonNext").addClass("hidden");
     if (roundnrVal > numberOfRounds) {
-        $("#comment").text("Game Over").css("font-size", "2.5rem");
+        commentOnScore();
+        $("#comment").addClass("hidden");
         $("#buttonReset").removeClass("hidden");
         $("#textField").val("");
         $("#count").addClass("hidden");
         $(".flip-card-inner").addClass("hidden");
         $("#headerQuestion").addClass("hidden");
-        $("#scoreboard").addClass("endScore").removeClass("scoreboardClass");
+        $("#scoreboard").addClass("endScoreClass").removeClass("scoreboardClass");
         $("#yourScore").removeClass("hidden");
         $("#scoreboardSp").css("color", "#FEE801");
         } else {
         $("#comment").addClass("hidden");
         $("#buttonHint").removeClass("hidden");
-        $("#buttonNewImage").removeClass("hidden");
+        $("#buttonNextImage").removeClass("hidden");
         $("#textField").removeClass("hidden").val("");
         $("#newImage").removeClass("gotHint gotRightAnswer gotWrongAnswer");
         displayImage();
@@ -72,94 +65,106 @@ function displayImage() {
     }
 } 
 
-/*Hit the start-button and show the first random image from the images-array*/
-$(function(){
+/*Next Button*/
+$("#buttonNext").click(function() {
+    myRoundCounter();
+    myRound();    
+});
 
-    $("#buttonStart").click(function() {
+/*Show the first random image from the images-array*/
+function functionStartGame(){
+    var headerScreenSize = window.matchMedia("(max-width: 700px)");
         displayImage();
         $("#buttonStart").addClass("hidden");
         $("#buttonHint").removeClass("hidden");
-        $("#buttonNewImage").removeClass("hidden");
+        $("#buttonNextImage").removeClass("hidden");
         $("#textField").removeClass("hidden");
         $("#scoreboardSp").removeClass("hidden");
         $("#count").removeClass("hidden");
         $("#round").removeClass("hidden");
-        $("header").addClass("hidden");
         $("#buttonHowToPlayTheGame").addClass("hidden");
-    });
+        if (headerScreenSize.matches) { 
+            $("header").addClass("hidden");
+          } else {
+}
+};
+
+/*Clicking the Start Button*/
+$("#buttonStart").click(function() {
+    functionStartGame();        
 });
 
-/*Hint Button*/
-
+/*Flip-function is used to make the image flip when click on #buttonHint and when the right answer is given*/
 $(function() {
-    
     $(".flip-card-inner").flip({ 
         trigger: "manual", speed: 600
     });
+});
  
-    $("#buttonHint").click(function() {
-        let nSrcHint = $("#newImage").attr('src').replace("-empty.png", "-flag.png");   
-        let nSrcBHint = $("#newImageBack").attr('src').replace("-empty.png", "-flag.png"); 
-        $("#buttonHint").addClass("hidden");  
-        $("#newImage").addClass("gotHint");           
-        if ($("#newImage").css("z-index") > "0") {
-            $(".flip-card-inner").flip('toggle');
-            setTimeout(function () {
-                $("#newImageBack").attr('src', nSrcBHint);    
-                $("#newImage").attr('src', nSrcHint);
-                }, 300);
-        } else {
-            $(".flip-card-inner").flip('toggle');
-            setTimeout(function () {
-                $("#newImage").attr('src', nSrcHint);
-                $("#newImageBack").attr('src', nSrcBHint);         
-                }, 300);
-        }
-    });  
+/*functionGiveHint*/
+function functionGiveHint() {
+    let nSrcHint = $("#newImage").attr('src').replace("-empty.png", "-flag.png");   
+    let nSrcBHint = $("#newImageBack").attr('src').replace("-empty.png", "-flag.png"); 
+    $("#buttonHint").addClass("hidden");  
+    $("#newImage").addClass("gotHint");          
+    $(".flip-card-inner").flip('toggle');
+        setTimeout(function () {   
+            $("#newImage").attr('src', nSrcHint);
+            $("#newImageBack").attr('src', nSrcBHint);
+        }, 225);
+} 
+
+/* Clicking the Hint Button*/
+$("#buttonHint").click(function() {
+    functionGiveHint();
 });
                                                                           
-
-
-
 /*THIS IS HOW THE SCOREBOARD WORKS */
 function myScore() {
-    
-    var $score = $("#scoreboard");
     $("#comment").removeClass("hidden").text("Yes, that's him!");
     if ($("#newImage").hasClass("gotHint") &&  $("#newImage").hasClass("gotWrongAnswer")) {
-        $score.val( parseInt($score.val()) + 1 ); 
+        score.val( parseInt(score.val()) + 1 ); 
     } else if ($("#newImage").hasClass("gotHint") || $("#newImage").hasClass("gotWrongAnswer")) {
-        $score.val( parseInt($score.val()) + 2 ); 
+        score.val( parseInt(score.val()) + 2 ); 
     } else {
-        $score.val( parseInt($score.val()) + 3 );
+        score.val( parseInt(score.val()) + 3 );
     }
 }  
+/*THE COMMENTS AFTER THE FINAL SCORE */
+function commentOnScore() {    
+    if (score.val() < 10) {
+        $("#scoreComment").removeClass("hidden").text("Maybe you should try again?");
+    } else if (score.val() < 15) { 
+        $("#scoreComment").removeClass("hidden").text("Not too bad!");
+    } else if (score.val() < 20) { 
+        $("#scoreComment").removeClass("hidden").text("You're getting there!");
+    } else if (score.val() < 25) { 
+        $("#scoreComment").removeClass("hidden").text("Nice job!");
+    } else if (score.val() < 29) { 
+        $("#scoreComment").removeClass("hidden").text("Wow, that's impressive!");
+    } else if (score.val() == 30) { 
+        $("#scoreComment").removeClass("hidden").text("You're a true champion!");
+    } else {
+        $("#scoreComment").removeClass("hidden").text("Something went wrong...");
+    }
+}
 
 /*THIS IS HOW FLIP ON RIGHT ANSWER WORKS*/
 function rightAnswer() {
     
-    var nSrc = $("#newImage").attr('src').replace("-empty", "").replace("-flag", "");
-    $("#newImageBack").attr('src').replace("-empty", "").replace("-flag", "");   
-    if ($("#newImage").hasClass("gotHint")) {
+    var nSrc = $("#newImage").attr('src').replace("-empty", "").replace("-flag", "");  
         $(".flip-card-inner").flip('toggle');
         setTimeout(function () {
             $("#newImage").attr('src', nSrc);
             $("#newImageBack").attr('src', nSrc);    
-        }, 300);
-    } else {
-        $(".flip-card-inner").flip('toggle');
-        setTimeout(function () {
-            $("#newImage").attr('src', nSrc);
-            $("#newImageBack").attr('src', nSrc);    
-        }, 300);
-    }
-}       
-
-/*Check Answer*/
-$("#buttonNewImage").click(function() {
+        }, 225);
+    }        
+ 
+/*CHECK ANSWER*/
+ function runGame() {
     $("#buttonNext").removeClass("hidden");
     $("#buttonHint").addClass("hidden");
-    $("#buttonNewImage").addClass("hidden");
+    $("#buttonNextImage").addClass("hidden");
     $("#textField").addClass("hidden");
     var answer = $("#textField").val(); 
     var nSrc = $("#newImage").attr('src').replace("-empty", "").replace("-flag", "");
@@ -227,7 +232,17 @@ $("#buttonNewImage").click(function() {
                         $("#newImage").addClass("gotWrongAnswer");   
                     }
                 }
+            }
+
+$("#buttonNextImage").click(function() {
+    runGame();
 });
+
+$( "#textField" ).keypress(function( event ) {
+    if ( event.which == 13 ) {
+       runGame();
+    }
+  }); 
 
 /*After Wrong Answer */
 /*The player wants another try*/
@@ -237,7 +252,7 @@ $("#buttonAnotherTry").click(function() {
     $("#comment").addClass("hidden");
     $("#buttonAnotherTry").addClass("hidden");
     $("#buttonGiveUp").addClass("hidden");
-    $("#buttonNewImage").removeClass("hidden");
+    $("#buttonNextImage").removeClass("hidden");
     $("#textField").removeClass("hidden");
     if ($("#newImage").attr('src').endsWith("empty.png")) {
         $("#buttonHint").removeClass("hidden");

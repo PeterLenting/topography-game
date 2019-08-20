@@ -1,8 +1,13 @@
+html {
+    height: 100%;
+}
+
 body{
     font-family: Arial, Helvetica, sans-serif;
     line-height: 1.5;
     padding: 0;
     background: #f2f2f2;
+    min-height: 100%;
 }
 
 header{
@@ -19,11 +24,12 @@ header{
 }
 
 h1 {
-    font-size: 2.4rem;
+    font-size: 2.0rem;
 }
 
 h2 {
     margin-top: 8px;
+    text-align: center;
 }
 
 /*When an answer is wrong, blur the image*/
@@ -35,31 +41,10 @@ h2 {
 .hidden {
     display: none!important;
 } 
-/*SIDEBAR*/
-
-aside{
-    background: #FEE801;
-    color: #000080;
-    border: 3px solid #000080;
-    border-radius: 25px;
-    margin-bottom: 10px;
-    height: 100%;
-    }
-
-aside h2{
-    text-align: center;
-}
-aside p{
-    margin: 10px;
-}
-
-aside ul {
-    text-align: left;
-}
 
 /*MAIN*/
 
-section#main {
+#main {
     width: 100%;
     }
     
@@ -68,6 +53,7 @@ section#main {
     text-align: center;
 }
 
+/*Sets the standard width of the image shown*/
 section#main .container-fluid img{
     width: 250px;
     border-radius: 25px;
@@ -83,82 +69,108 @@ section#main .container-fluid img{
     height: 100%;
 }
 
+/*Styling the field in which the player types in the answer*/
+#textField{
+    padding: 4px;
+    height: 30px;
+    border-radius: 25px;
+    font-weight: bold;
+}
+
+/*Styling the comment on the answer of the player*/
 #comment {
     font-size: 1.5rem;
     text-shadow: 1px 1px 6px #fff;
 }
 
-#textField{
-    padding: 4px;
-    height: 30px;
-    /*width: 270px;*/
-    border-radius: 25px;
-    font-weight: bold;
-}
-
-#startScreen {
-    text-align: center;
-    margin: 0;
-}
-
-.center {
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
+.flip-card {
     margin-bottom: 10px;
     }
 
+/*SIDEBAR*/
+
+aside{
+    background: #FEE801;
+    color: #000080;
+    border: 3px solid #000080;
+    border-radius: 25px;
+    margin-bottom: 10px;
+    height: 100%;
+    }
+
+aside p{
+    margin: 10px;
+}
+
+aside ul {
+    text-align: left;
+}
+
 /*SCORBOARD*/
-.scoreboardClass {
-    color: green;
-    text-align: center;
-    width: 60px; 
-    font-family: "Courier New";
-    font-weight: bold;
-    border-radius: 25px;
-    box-shadow: 3px 3px black;
-}
 
-.endScore {
-    color: green;
-    text-align: center;
-    width: 200px;
-    height: 200px; 
-    font-size: 7rem;
-    font-family: "Courier New";
-    font-weight: bold;
-    border-radius: 25px;
-    box-shadow: 3px 3px black;
-}
-
-#yourScore {
-    float: right;
-    vertical-align: middle;
-    height: 200px;
-    line-height: 235px;
-    font-size: 3rem;
-}
-
-/*ROUNDCOUNTER*/
-#round {
-    color: green;
-    text-align: center;
-    width: 60px; 
-    font-family: "Courier New";
-    font-weight: bold;
-    border-radius: 25px;
-    box-shadow: 3px 3px black;
-}
-#count {
-    float: right;
-}
-
+/*Styling the way the scoreboard is shown during the game*/
 #scoreboardSp {
     float: left;
 }
 
+.scoreboardClass {
+    color: #FD5F00;
+    text-align: center;
+    width: 60px; 
+    font-family: "Courier New";
+    font-weight: bold;
+    border-radius: 25px;
+    box-shadow: 3px 3px black;
+}
+
+/*Styling the way the final score is shown on the endscreen*/
+#yourScore {
+    float: right;
+    vertical-align: middle;
+    height: 200px;
+    line-height: 180px;
+    font-size: 1.7rem;
+}
+
+.endScoreClass {
+    color: #FD5F00;
+    text-align: center;
+    width: 125px;
+    height: 125px; 
+    font-size: 6rem;
+    font-family: "Courier New";
+    font-weight: bold;
+    border-radius: 25px;
+    box-shadow: 3px 3px black;
+}
+
+/*Styling the comment on the final score on the endscreen*/
+#scoreComment {
+    font-family: 'Permanent Marker', cursive;
+    font-size: 3rem;
+    color: #FD5F00;
+    text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+}
+
+/*ROUNDCOUNTER*/
+/*Styling the counter of the rounds during the game*/
+#count {
+    float: right;
+}
+
+#round {
+    color: #FD5F00;
+    text-align: center;
+    width: 60px; 
+    font-family: "Courier New";
+    font-weight: bold;
+    border-radius: 25px;
+    box-shadow: 3px 3px black;
+}
+
 /*BUTTONS*/
 
+/*All button are styled using this class*/
 .button_1 {
     height: 30px;
     border: 0;
@@ -173,38 +185,29 @@ section#main .container-fluid img{
     box-shadow: 3px 3px black;
 }
 
-.button_2 {
-    height: 30px;
-    border: 0;
-    padding-left: 10px;
-    padding-right: 10px;
-    margin: 5px;
-    background: #000080;
-    color: #FEE801;
-    border-radius: 25px;
-    font-weight: bold;
-    box-shadow: 3px 3px black;
-}
-
+/*Styling the button that makes it possible to ask for a hint*/
 #buttonHint {
     color: #FEE801;
-    background: #52985C;
+    background: #FD5F00;
     margin-left: 10px;
     margin-right: 10px;
 }
 
-#buttonNewImage {
+/*Styling the button that makes the player continue in the game*/
+#buttonNextImage {
     margin-left: 8px;
-    margin-right: 0;
 }
 
+/*Styling the button to restart the game*/
 #buttonReset {
     margin-top: 20px;
+    width: 300px;
 }
 
 /*FOOTER*/
 
-footer#social {
+/*Styling the footer*/
+#social {
     background: #000080;
     color: #FEE801;
     text-align: center;
@@ -213,17 +216,20 @@ footer#social {
     border-radius: 25px;
     margin-top: 10px;
     clear:both;
+    margin: 15px;
     border: 3px solid #FEE801;
 }
 
-footer#social .sociallinks a{
+/*Styling the links/symbols in the footer*/
+.sociallinks a{
     color: #FEE801;
     padding-left: 25px;
     padding-right: 25px;  
 }
   
   /*MEDIA QUERIES*/
-  
+
+/*Prevents the gamescreen from becoming too wide*/  
  @media(min-width: 1670px){
     body{
     margin-left: 200px;
@@ -247,6 +253,8 @@ footer#social .sociallinks a{
     }
 }
 
+/*Prevents the button that links to the explanation of the game from showing on bigger screens, 
+because the explanation is next to the gamescreen on bigger screens.*/
 @media(min-width: 1024px){ 
     #buttonHowToPlayTheGame {
     display: none;
@@ -257,13 +265,14 @@ footer#social .sociallinks a{
     display: none;
 }}
 
+/*Shows a bigger image on bigger screens*/
+
 @media(min-width: 1024px){ 
 section#main .container-fluid img{
     width: 300px;
 }}    
 
 @media(min-width: 1024px){
- header {
- display: block !important;
-}}   
-
+h1 {
+    font-size: 3rem;
+}}
