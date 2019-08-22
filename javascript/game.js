@@ -8,7 +8,7 @@ var roundnr = $("#round");
 function myRound() {
     roundnr.val( parseInt(roundnr.val()) +1 );
     roundnrVal += 1;
-    };
+    }
 
 /*IF ROUNDS COUNTED IS BIGGER THAN 10, STOP displayImage() */
 
@@ -87,7 +87,7 @@ function functionStartGame(){
             $("header").addClass("hidden");
           } else {
 }
-};
+}
 
 /*Clicking the Start Button*/
 $("#buttonStart").click(function() {
@@ -103,15 +103,15 @@ $(function() {
  
 /*functionGiveHint*/
 function functionGiveHint() {
-    let nSrcHint = $("#newImage").attr('src').replace("-empty.png", "-flag.png");   
-    let nSrcBHint = $("#newImageBack").attr('src').replace("-empty.png", "-flag.png"); 
+    var nSrcHint = $("#newImage").attr('src').replace("-empty.png", "-flag.png");   
+    var nSrcBHint = $("#newImageBack").attr('src').replace("-empty.png", "-flag.png"); 
     $("#buttonHint").addClass("hidden");  
     $("#newImage").addClass("gotHint");          
     $(".flip-card-inner").flip('toggle');
         setTimeout(function () {   
             $("#newImage").attr('src', nSrcHint);
             $("#newImageBack").attr('src', nSrcBHint);
-        }, 225);
+        }, 200);
 } 
 
 /* Clicking the Hint Button*/
@@ -157,7 +157,7 @@ function rightAnswer() {
         setTimeout(function () {
             $("#newImage").attr('src', nSrc);
             $("#newImageBack").attr('src', nSrc);    
-        }, 225);
+        }, 200);
     }        
  
 /*CHECK ANSWER*/
@@ -169,49 +169,49 @@ function rightAnswer() {
     var answer = $("#textField").val(); 
     var nSrc = $("#newImage").attr('src').replace("-empty", "").replace("-flag", "");
                $("#newImageBack").attr('src').replace("-empty", "").replace("-flag", "");
-                if ($("#newImage").attr('src').indexOf("-1-") && answer.toUpperCase() == "JACQUES ANQUETIL" || $("#newImage").attr('src').indexOf("-1-") && answer.toUpperCase() == "JACQUES ANQUETIL") {
+                if ($("#newImage").attr('src').indexOf("-1-") > -1 && answer.toUpperCase() == "JACQUES ANQUETIL") {
                     rightAnswer();    
                     myScore();
-                } else if ($("#newImage").attr('src').indexOf("-2-") && answer.toUpperCase() == "LANCE ARMSTRONG" || $("#newImage").attr('src').indexOf("-2-") && answer.toUpperCase() == "LANCE ARMSTRONG") {
+                } else if ($("#newImage").attr('src').indexOf("-2-") > -1 && answer.toUpperCase() == "LANCE ARMSTRONG") {
                     rightAnswer();
                     myScore();
-                } else if ($("#newImage").attr('src').indexOf("-3-") && answer.toUpperCase() == "GINO BARTALI" || $("#newImage").attr('src').indexOf("-3-") && answer.toUpperCase() == "GINO BARTALI") {
+                } else if ($("#newImage").attr('src').indexOf("-3-") > -1 && answer.toUpperCase() == "GINO BARTALI") {
                     rightAnswer();
                     myScore();
-                } else if ($("#newImage").attr('src').indexOf("-4-") && answer.toUpperCase() == "FAUSTO COPPI" || $("#newImage").attr('src').indexOf("-4-") && answer.toUpperCase() == "FAUSTO COPPI") {
+                } else if ($("#newImage").attr('src').indexOf("-4-") > -1 && answer.toUpperCase() == "FAUSTO COPPI") {
                     rightAnswer();
                     myScore();
-                } else if ($("#newImage").attr('src').indexOf("-5-") && answer.toUpperCase() == "MIGUEL INDURAIN" || $("#newImage").attr('src').indexOf("-5-") && answer.toUpperCase() == "MIGUEL INDURAIN") {
+                } else if ($("#newImage").attr('src').indexOf("-5-") > -1 && answer.toUpperCase() == "MIGUEL INDURAIN") {
                     rightAnswer();
                     myScore();
-                } else if ($("#newImage").attr('src').indexOf("-6-") && answer.toUpperCase() == "BERNARD HINAULT" || $("#newImage").attr('src').indexOf("-6-") && answer.toUpperCase() == "BERNARD HINAULT") {
+                } else if ($("#newImage").attr('src').indexOf("-6-") > -1 && answer.toUpperCase() == "BERNARD HINAULT") {
                     rightAnswer();
                     myScore();
-                } else if ($("#newImage").attr('src').indexOf("-7-") && answer.toUpperCase() == "LOUISON BOBET" || $("#newImage").attr('src').indexOf("-7-") && answer.toUpperCase() == "LOUISON BOBET") {
+                } else if ($("#newImage").attr('src').indexOf("-7-") > -1 && answer.toUpperCase() == "LOUISON BOBET") {
                     rightAnswer();
                     myScore();
-                } else if ($("#newImage").attr('src').indexOf("-8-") && answer.toUpperCase() == "JOOP ZOETEMELK" || $("#newImage").attr('src').indexOf("-8-") && answer.toUpperCase() == "JOOP ZOETEMELK") {
+                } else if ($("#newImage").attr('src').indexOf("-8-") > -1 && answer.toUpperCase() == "JOOP ZOETEMELK") {
                     rightAnswer();
                     myScore();
-                } else if ($("#newImage").attr('src').indexOf("-9-") && answer.toUpperCase() == "EDDY MERCKX" || $("#newImage").attr('src').indexOf("-9-") && answer.toUpperCase() == "EDDY MERCKX") {
+                } else if ($("#newImage").attr('src').indexOf("-9-") > -1 && answer.toUpperCase() == "EDDY MERCKX") {
                     rightAnswer();
                     myScore();
-                } else if ($("#newImage").attr('src').indexOf("-10-") && answer.toUpperCase() == "SEAN KELLY" || $("#newImage").attr('src').indexOf("-10-") && answer.toUpperCase() == "SEAN KELLY") {
+                } else if ($("#newImage").attr('src').indexOf("-10-") > -1 && answer.toUpperCase() == "SEAN KELLY") {
                     rightAnswer();
                     myScore();
-                } else if ($("#newImage").attr('src').indexOf("-11-") && answer.toUpperCase() == "ALFREDO BINDA" || $("#newImage").attr('src').indexOf("-11-") && answer.toUpperCase() == "ALFREDO BINDA") {
+                } else if ($("#newImage").attr('src').indexOf("-11-") > -1 && answer.toUpperCase() == "ALFREDO BINDA") {
                     rightAnswer();
                     myScore();
-                } else if ($("#newImage").attr('src').indexOf("-12-") && answer.toUpperCase() == "RIK VAN STEENBERGEN" || $("#newImage").attr('src').indexOf("-12-") && answer.toUpperCase() == "RIK VAN STEENBERGEN") {
+                } else if ($("#newImage").attr('src').indexOf("-12-") > -1 && answer.toUpperCase() == "RIK VAN STEENBERGEN") {
                     rightAnswer();
                     myScore();
-                } else if ($("#newImage").attr('src').indexOf("-13-") && answer.toUpperCase() == "OSCAR FREIRE" || $("#newImage").attr('src').indexOf("-13-") && answer.toUpperCase() == "OSCAR FREIRE") {
+                } else if ($("#newImage").attr('src').indexOf("-13-") > -1 && answer.toUpperCase() == "OSCAR FREIRE") {
                     rightAnswer();
                     myScore();
-                } else if ($("#newImage").attr('src').indexOf("-14-") && answer.toUpperCase() == "LAURENT JALABERT" || $("#newImage").attr('src').indexOf("-14-") && answer.toUpperCase() == "LAURENT JALABERT") {
+                } else if ($("#newImage").attr('src').indexOf("-14-") > -1 && answer.toUpperCase() == "LAURENT JALABERT") {
                     rightAnswer();
                     myScore();
-                } else if ($("#newImage").attr('src').indexOf("-15-") && answer.toUpperCase() == "MARCO PANTANI" || $("#newImage").attr('src').indexOf("-15-") && answer.toUpperCase() == "MARCO PANTANI") {
+                } else if ($("#newImage").attr('src').indexOf("-15-") > -1 && answer.toUpperCase() == "MARCO PANTANI") {
                     rightAnswer();
                     myScore();
                 } else {
@@ -238,6 +238,7 @@ $("#buttonNextImage").click(function() {
     runGame();
 });
 
+/*When the player is in the textfield, hitting 'Enter' on the key board will call runGame() */
 $( "#textField" ).keypress(function( event ) {
     if ( event.which == 13 ) {
        runGame();
@@ -283,6 +284,16 @@ $(function(){
 function explainGame() {
     window.location.href = '#sidebar';
   }
+
+$("#buttonHowToPlayTheGame").click(function() {
+    explainGame();
+});
+
+
 function goBackUp() {
     window.location.href = '#headerQuestion'; 
   }
+
+$("#buttonGoBackUp").click(function() {
+    goBackUp();
+});   
