@@ -1,5 +1,3 @@
-jQuery(document).ready();
-
 var score = $("#scoreboard");
 
 /*COUNTING THE ROUNDS */
@@ -19,19 +17,15 @@ function myRoundCounter() {
     $("#buttonNext").addClass("hidden");
     if (roundnrVal > numberOfRounds) {
         commentOnScore();
-        $("#comment").addClass("hidden");
+        $("#comment, #count, #headerQuestion, .flip-card-inner").addClass("hidden");
         $("#buttonReset").removeClass("hidden");
         $("#textField").val("");
-        $("#count").addClass("hidden");
-        $(".flip-card-inner").addClass("hidden");
-        $("#headerQuestion").addClass("hidden");
         $("#scoreboard").addClass("endScoreClass").removeClass("scoreboardClass");
         $("#yourScore").removeClass("hidden");
         $("#scoreboardSp").css("color", "#FEE801");
         } else {
         $("#comment").addClass("hidden");
-        $("#buttonHint").removeClass("hidden");
-        $("#buttonNextImage").removeClass("hidden");
+        $("#buttonHint, #buttonSubmit").removeClass("hidden");
         $("#textField").removeClass("hidden").val("");
         $("#newImage").removeClass("gotHint gotRightAnswer gotWrongAnswer");
         displayImage();
@@ -75,14 +69,8 @@ $("#buttonNext").click(function() {
 function functionStartGame(){
     var headerScreenSize = window.matchMedia("(max-width: 700px)");
         displayImage();
-        $("#buttonStart").addClass("hidden");
-        $("#buttonHint").removeClass("hidden");
-        $("#buttonNextImage").removeClass("hidden");
-        $("#textField").removeClass("hidden");
-        $("#scoreboardSp").removeClass("hidden");
-        $("#count").removeClass("hidden");
-        $("#round").removeClass("hidden");
-        $("#buttonHowToPlayTheGame").addClass("hidden");
+        $("#buttonStart, #buttonHowToPlayTheGame").addClass("hidden");
+        $("#buttonHint, #buttonSubmit, #textField, #scoreboardSp, #count, #round").removeClass("hidden");
         if (headerScreenSize.matches) { 
             $("header").addClass("hidden");
           } else {
@@ -131,28 +119,29 @@ function myScore() {
     }
 }  
 /*THE COMMENTS AFTER THE FINAL SCORE */
-function commentOnScore() {    
+function commentOnScore() {   
+    $("#scoreComment").removeClass("hidden") 
     if (score.val() < 10) {
-        $("#scoreComment").removeClass("hidden").text("Maybe you should try again?");
+        $("#scoreComment").text("Maybe you should try again?");
     } else if (score.val() < 15) { 
-        $("#scoreComment").removeClass("hidden").text("Not too bad!");
+        $("#scoreComment").text("Not too bad!");
     } else if (score.val() < 20) { 
-        $("#scoreComment").removeClass("hidden").text("You're getting there!");
+        $("#scoreComment").text("You're getting there!");
     } else if (score.val() < 25) { 
-        $("#scoreComment").removeClass("hidden").text("Nice job!");
+        $("#scoreComment").text("Nice job!");
     } else if (score.val() < 29) { 
-        $("#scoreComment").removeClass("hidden").text("Wow, that's impressive!");
+        $("#scoreComment").text("Wow, that's impressive!");
     } else if (score.val() == 30) { 
-        $("#scoreComment").removeClass("hidden").text("You're a true champion!");
+        $("#scoreComment").text("You're a true champion!");
     } else {
-        $("#scoreComment").removeClass("hidden").text("Something went wrong...");
+        $("#scoreComment").text("Something went wrong...");
     }
 }
 
 /*THIS IS HOW FLIP ON RIGHT ANSWER WORKS*/
 function rightAnswer() {
     
-    var nSrc = $("#newImage").attr('src').replace("-empty", "").replace("-flag", "");  
+    var nSrc = $("#newImage, #newImageBack").attr('src').replace("-empty", "").replace("-flag", "");  
         $(".flip-card-inner").flip('toggle');
         setTimeout(function () {
             $("#newImage").attr('src', nSrc);
@@ -163,12 +152,9 @@ function rightAnswer() {
 /*CHECK ANSWER*/
  function runGame() {
     $("#buttonNext").removeClass("hidden");
-    $("#buttonHint").addClass("hidden");
-    $("#buttonNextImage").addClass("hidden");
-    $("#textField").addClass("hidden");
+    $("#buttonHint, #buttonSubmit, #textField").addClass("hidden");
     var answer = $("#textField").val(); 
-    var nSrc = $("#newImage").attr('src').replace("-empty", "").replace("-flag", "");
-               $("#newImageBack").attr('src').replace("-empty", "").replace("-flag", "");
+    var nSrc = $("#newImage, #newImageBack").attr('src').replace("-empty", "").replace("-flag", "");
                 if ($("#newImage").attr('src').indexOf("-1-") > -1 && answer.toUpperCase() == "JACQUES ANQUETIL") {
                     rightAnswer();    
                     myScore();
@@ -218,23 +204,20 @@ function rightAnswer() {
                     $("#newImage").addClass('blur');
                     $("#newImageBack").addClass('blur');  
                     if ($("#newImage").hasClass("gotWrongAnswer")){
-                        $("#newImage").attr('src', nSrc);
-                        $("#newImageBack").attr('src', nSrc);
+                        $("#newImage, #newImageBack").attr('src', nSrc);
                         $("#buttonNext").removeClass("hidden");
                         $("#comment").removeClass("hidden").text("Sorry, no score");
-                        $("#newImage").removeClass('blur');
-                        $("#newImageBack").removeClass('blur');
+                        $("#newImage, #newImageBack").removeClass('blur');
                     } else {
                         $("#comment").removeClass("hidden").text("Nope, that's not him");
-                        $("#buttonAnotherTry").removeClass("hidden");
-                        $("#buttonGiveUp").removeClass("hidden"); 
+                        $("#buttonAnotherTry, #buttonGiveUp").removeClass("hidden");
                         $("#buttonNext").addClass("hidden");
                         $("#newImage").addClass("gotWrongAnswer");   
                     }
                 }
             }
 
-$("#buttonNextImage").click(function() {
+$("#buttonSubmit").click(function() {
     runGame();
 });
 
@@ -248,13 +231,9 @@ $( "#textField" ).keypress(function( event ) {
 /*After Wrong Answer */
 /*The player wants another try*/
 $("#buttonAnotherTry").click(function() {
-    $("#newImage").removeClass('blur');
-    $("#newImageBack").removeClass('blur');
-    $("#comment").addClass("hidden");
-    $("#buttonAnotherTry").addClass("hidden");
-    $("#buttonGiveUp").addClass("hidden");
-    $("#buttonNextImage").removeClass("hidden");
-    $("#textField").removeClass("hidden");
+    $("#newImage, #newImageBack").removeClass('blur');
+    $("#comment, #buttonAnotherTry, #buttonGiveUp").addClass("hidden");
+    $("#buttonSubmit, #textField").removeClass("hidden");
     if ($("#newImage").attr('src').endsWith("empty.png")) {
         $("#buttonHint").removeClass("hidden");
     } else if ($("#newImage").attr('src').endsWith("flag.png")) {
@@ -265,11 +244,9 @@ $("#buttonAnotherTry").click(function() {
 /*The player gives up*/
 $("#buttonGiveUp").click(function() {
     rightAnswer();
-    $("#newImage").removeClass('blur');
-    $("#newImageBack").removeClass('blur');
+    $("#newImage, #newImageBack").removeClass('blur');
     $("#comment").removeClass("hidden").text("Sorry, no score");
-    $("#buttonAnotherTry").addClass("hidden");
-    $("#buttonGiveUp").addClass("hidden");
+    $("#buttonAnotherTry, #buttonGiveUp").addClass("hidden");
     $("#buttonNext").removeClass("hidden");
 });
 
@@ -288,7 +265,6 @@ function explainGame() {
 $("#buttonHowToPlayTheGame").click(function() {
     explainGame();
 });
-
 
 function goBackUp() {
     window.location.href = '#headerQuestion'; 
