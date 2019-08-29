@@ -10,30 +10,30 @@ The design of the game is also very suited for learning a language; the player t
 - [View the Github Repository here](https://peterlenting.github.io/second-milestone-project/index.html)
 
 ## Contents table
-1. UX
-   - What is it?
-   - Who is the target audience
-   - Mock-ups
-   - User stories
-2. Features
-   - Existing features
-   - Features left to implement
-3. Technologies used
-4. Testing
-   - Resonsive testing
-   - Manual testing
-   - Improvements after testing
-   - Browsers
-   - Automated testing 
-5. Deployment
-   - How to view the deployed version of this project
-   - How to run this project locally
-6. Credits
-   - Content
-   - Media
-   - Code
-   - Acknowledgements
-7. Disclaimer    
+1. [UX](https://github.com/PeterLenting/second-milestone-project#ux)
+   - [What is it?](https://github.com/PeterLenting/second-milestone-project#what-is-it)
+   - [Who is the target audience](https://github.com/PeterLenting/second-milestone-project#who-is-the-target-audience)
+   - [Mock-ups](https://github.com/PeterLenting/second-milestone-project#mock-ups)
+   - [User stories](https://github.com/PeterLenting/second-milestone-project#user-stories)
+2. [Features]()
+   - [Existing features](https://github.com/PeterLenting/second-milestone-project#existing-features)
+   - [Features left to implement](https://github.com/PeterLenting/second-milestone-project#features-left-to-implement)
+3. [Technologies used](https://github.com/PeterLenting/second-milestone-project#technologies-used)
+4. [Testing](https://github.com/PeterLenting/second-milestone-project#testing)
+   - [Resonsive testing](https://github.com/PeterLenting/second-milestone-project#responsive-testing)
+   - [Manual testing](https://github.com/PeterLenting/second-milestone-project#manual-testing)
+   - [Improvements after testing](https://github.com/PeterLenting/second-milestone-project#improvements-after-testing)
+   - [Browsers](https://github.com/PeterLenting/second-milestone-project#browsers)
+   - [Automated testing](https://github.com/PeterLenting/second-milestone-project#automated-testing)
+5. [Deployment](https://github.com/PeterLenting/second-milestone-project#deployment)
+   - [How to view the deployed version of this project](https://github.com/PeterLenting/second-milestone-project#how-to-view-the-deployed-version-of-this-project)
+   - [How to run this project locally](https://github.com/PeterLenting/second-milestone-project#how-to-run-this-project-locally)
+6. [Credits](https://github.com/PeterLenting/second-milestone-project#credits)
+   - [Content](https://github.com/PeterLenting/second-milestone-project#content)
+   - [Media](https://github.com/PeterLenting/second-milestone-project#media)
+   - [Code](https://github.com/PeterLenting/second-milestone-project#code)
+   - [Acknowledgements](https://github.com/PeterLenting/second-milestone-project#acknowledgements)
+7. [Disclaimer](https://github.com/PeterLenting/second-milestone-project#disclaimer)
 
 ## UX
 
@@ -64,20 +64,34 @@ As a player, I want:
 
 ### Existing features
 **Who is this cyclist?** – The question this game is all about. What is the name of the rider shown in the image?
+
 **How to play?**  – Allows the user to find out more **About the game** and 
 how to play it. On mobile by clicking a button that will guide the user to the rules of the game. On desktop the information is shown on the right of the screen.
+
 **Let's play** – Allows the user to start playing the game by clicking on the button that says 'Let's Play'. The first of 10 images will be shown.
+
 **Image** –  Every image shows a professional (ex-)cyclist with a recognisable haircut and the shirt in which he was most successful. The lower part of the card contains the score of the rider on six important qualities on a scale from 0-100. Next to his head are the big prices he won. The pink jersey for the Giro, the yellow one for the Tour, the red one for La Vuelta and the Roman pillar for the Monuments. The name of the cyclist and his nationality normally stand in the gray area at the top of the card, but are erased for the purpose of the game.
+
 **Textfield** – Allows the user to give an answer by typing in the name of the rider.
+
 **Submit** – Allows the user to send in his answer and have It checked. If the answer is correct, the image flips and the name and nationality of the rider are shown in the image. Beneath the image the message 'Yes, that's him!' is shown. If the answer is wrong, the image is blurred and the user gets the option to **Give Up** or to **Try Again**. After two wrong answers the message 'Sorry, no score' shows and no points are added to the **Score**.
+
 **Give me a hint** – Allows the user to get a little help in finding the right answer by clicking the button that says 'Give me a Hint'. The image flips and the flag of the nation the rider comes from appears. 
+
 **Try again** – Allows the user to try again after giving a first wrong answer. The image *unblurs*.  
+
 **Give up** – Allows the user to give up by clicking the button that says 'Give Up'. The image flips and the right answer is shown, together with the message: 'Sorry, no score'.
+
 **Next challenge** – Allows the user to go to the next image by clicking on the button that says  Next Challenge'. After 10 rounds the button leads the user to his final score.
+
 **Round** – Allows the user to see in which of the 10 rounds he is at any moment during the game by looking in the input-field beneath 'ROUND'.
+
 **Score** – Allows the user to see his score at any moment during the game by looking in the input-field field beneath 'SCORE'. On every round: if the first answer is right, three points will be added. A hint and a wrong answer cost one of those three points. After two wrong answers no points will be added.
+
 **Your Score** – Allows the user to see his final score by looking in the input-field next to 'Your Score' on the endpage.'
+
 **Score comment** – Allows the user to see a comment on his score. This varies from 'Maybe you should try again?' to 'You're a true champion'.
+
 **Play again** – Allows the user to play the game again by clicking on the button that says 'Play Again.
 
 ### Features left to implement
@@ -99,14 +113,23 @@ To make the mobile experience more impressive an app should be built for the gam
 
 ## Technologies used
 •	HTML, CSS, and JavaScript.
+
 •	IDE: [Cloud9](https://aws.amazon.com/cloud9/?hp=tile&so-exp=below) but was forced to switch to [Visual Code Studio](https://code.visualstudio.com/) since the Cloud9 service of Amazon is impossible to work with.
+
 •	[Bootstrap](https://getbootstrap.com/) for the grid system of the page.
+
 •	[Google Fonts](https://fonts.google.com/) for the fonts.
+
 •	[Font Awesome](https://fontawesome.com/) for the icons in the footer of the website.
+
 •	[JQuery](https://jquery.com/) to simplify the JavaScript.
+
 •	Paint to edit the images used.
-•	Google Chrome developer tools
-•	Bash / Ubuntu to commit my project and to push it to Github
+
+•	Google Chrome developer tools.
+
+•	Bash / Ubuntu to commit my project and to push it to Github.
+
 •	[Github](https://github.com/) for version control and for users to view the deployed version of the website.
 
 ## Testing
@@ -115,64 +138,104 @@ To make the mobile experience more impressive an app should be built for the gam
 The responsiveness of the page was tested at all times during the development of the game. Locally as well as on GITHUB pages using Chrome developer tools. 
 
 ### Manual testing
+
 I played the game myself and had other people playing it as well during the development. This is a reliable way of discovering whether everything works as it should. 
+
 **How to play?**
+
 Click the 'How to play?'-button
 See whether you're being scrolled down to 'About the Game'
+
 **Back to the game**
+
 Click the 'Back to the game'-button
 See whether you're being scrolled up to 'Who is this Cyclist?'.
+
 **Let's play**
+
 Click the 'Let's Play'-button
-See whether the game starts: first image is shown without name and flag. Beneath the image the input-field, submit-button, hint-button, 'Round' and 'Score' are shown. 
+See whether the game starts: first image is shown without name and flag. 
+Beneath the image the input-field, submit-button, hint-button, 'Round' and 'Score' are shown. 
+
 **Right answer**
+
 Give the right answer
 Click the 'Submit'-button
-See whether the image flips and the name of the rider and the flag of his nation is shown. The message 'Yes, that's him!' should appear, and under that the 'Next Challenge'-button should be shown. 'Score' should be raised by three.
+See whether the image flips and the name of the rider and the flag of his nation is shown. 
+The message 'Yes, that's him!' should appear, and under that the 'Next Challenge'-button should be shown. 
+'Score' should be raised by three.
+
 **Wrong answer (Wrong Rider)**
+
 Type in the name of another rider in the game
 Click the 'Submit'-button
 See whether image blurs and the 'Nope, that's not him'-message, the 'Try Again'-button and the 'Give Up'-button appear.
+
 **Try Again**
+
 Click the 'Try Again'-button
-See whether the image unblurs and the input-field, 'Submit'-button, 'Hint'-button, 'Round' and 'Score' are shown.
-Type in the name of another rider in the game. 
-Click the 'Submit'-button.
-See whether the name of the rider and the flag of his nation is shown, together with the 'Sorry, no score'-message and the 'Next Challenge'-button. And see that there is 0 added to 'Score'.
+See whether the image unblurs and the input-field, 'Submit'-button, 'Hint'-button, 'Round' and 'Score' are shown
+Type in the name of another rider in the game 
+Click the 'Submit'-button
+See whether the name of the rider and the flag of his nation is shown, together with the 'Sorry, no score'-message and the 'Next Challenge'-button 
+And see that there is 0 added to 'Score'.
+
 **Give Up**
+
 See whether the image flips and the name of the rider and the flag of his nation is shown, together with the 'Sorry, no score'-message and the 'Next Challenge'-button. And see that there is 0 added to 'Score'.
+
 **Wrong answer (Random Letters)**
+
 Type in some random letters (not the name of another rider in the game).
 Click the 'Submit'-button.
 See whether image blurs and the 'Nope, that's not him'-message, the 'Try Again'-button and the 'Give Up'-button appear.
+
 **Try Again**
+
 Click the 'Try Again'-button.
 See whether the image unblurs and the input-field, 'Submit'-button, 'Hint'-button, 'Round' and 'Score' are shown.
 Type in the name of another rider in the game. 
 Click the 'Submit'-button.
-See whether the name of the rider and the flag of his nation is shown, together with the 'Sorry, no score'-message and the 'Next Challenge'-button. And see that there is 0 added to 'Score'.
+See whether the name of the rider and the flag of his nation is shown, together with the 'Sorry, no score'-message and the 'Next Challenge'-button. 
+And see that there is 0 added to 'Score'.
+
 **Give Up**
-See whether the image flips and the name of the rider and the flag of his nation is shown, together with the 'Sorry, no score'-message and the 'Next Challenge'-button. And see that there is 0 added to 'Score'.
+
+See whether the image flips and the name of the rider and the flag of his nation is shown, together with the 'Sorry, no score'-message and the 'Next Challenge'-button. 
+And see that there is 0 added to 'Score'.
+
 **Get hint**
+
 Click the 'Give me a Hint'-button
 See whether the image flips and the flag of the riders home country is shown and the 'Hint'-button is hidden.
 Type in the name of another rider in the game.
 Click the 'Submit'-button.
 See whether image blurs and the 'Nope, that's not him'-message, the 'Try Again'-button and the 'Give Up'-button appear. 
+
 **Try Again**
+
 Click the 'Try Again'-button
 See whether the image unblurs and the input-field, 'Submit'-button, 'Round' and 'Score' are shown.
 Type in the name of another rider in the game 
 Click the 'Submit'-button
-See whether the name of the rider and the flag of his nation is shown, together with the 'Sorry, no score'-message and the 'Next Challenge'-button. And see that there is 0 added to 'Score'.
+See whether the name of the rider and the flag of his nation is shown, together with the 'Sorry, no score'-message and the 'Next Challenge'-button. 
+And see that there is 0 added to 'Score'.
+
 **Next Challenge**
+
 Check whether the input-field, 'Submit'-button, 'Hint'-button, 'Round' and 'Score' are shown.
-Check whether a new image is shown without the name and the nation of the rider. The rider should not have been displayed before. Every rider in the game (10 in total) should only be shown once.
+Check whether a new image is shown without the name and the nation of the rider. 
+The rider should not have been displayed before. Every rider in the game (10 in total) should only be shown once.
+
 **Scorebord**
+
 Give a good answer and see whether three points are added to 'Score'. 
-Ask for a hint, then give the right answer and see whether three points are added to 'Score'.
+Ask for a hint, then give the right answer and see whether two points are added to 'Score'.
+
 **Play again**
-Game should start again. Startscreen should be shown and every image can be shown again if the player clicks the 'Let's Play!'-button.
+
+Game should start again. 
+Startscreen should be shown and every image can be shown again if the player clicks the 'Let's Play!'-button.
 
 ### Improvements after testing
 A bug that came up in the end after I had made some adjustments to the rungame()-function was that the names of all the riders in the game were seen as correct on all images. This of course was not the way the game is intended. I fixed this by making indexOf() a Boolean by adding '> -1'. 
