@@ -7,7 +7,6 @@ body{
     line-height: 1.5;
     padding: 0;
     background: #f2f2f2;
-    min-height: 100%;
 }
 
 header{
@@ -32,31 +31,9 @@ h2 {
     text-align: center;
 }
 
-/*When an answer is wrong, blur the image*/
-.blur {
-    -webkit-filter: blur(5px);
-    filter: blur(5px);
-  }
-/*Used to hide the buttuns that are not needed at that point*/
-.hidden {
-    display: none!important;
-} 
-
-/*MAIN*/
-
-#main {
-    width: 100%;
-    }
-    
 .container-fluid {
     margin-bottom: 10px;
     text-align: center;
-}
-
-/*Sets the standard width of the image shown*/
-section#main .container-fluid img{
-    width: 250px;
-    border-radius: 25px;
 }
 
 .main-col {
@@ -68,6 +45,28 @@ section#main .container-fluid img{
     padding-bottom: 5px;
     height: 100%;
 }
+
+#main {
+    width: 100%;
+    }
+
+/*IMAGES*/
+/*Put some margin underneath the image*/
+.flip-card {
+    margin-bottom: 10px;
+    }
+
+/*Sets the standard width of the image shown*/
+section#main .container-fluid img{
+    width: 250px;
+    border-radius: 25px;
+}
+
+/*When an answer is wrong, blur the image*/
+.blur {
+    -webkit-filter: blur(5px);
+    filter: blur(5px);
+  }
 
 /*Styling the field in which the player types in the answer*/
 #textField{
@@ -82,10 +81,6 @@ section#main .container-fluid img{
     font-size: 1.5rem;
     text-shadow: 1px 1px 6px #fff;
 }
-
-.flip-card {
-    margin-bottom: 10px;
-    }
 
 /*SIDEBAR*/
 
@@ -106,7 +101,7 @@ aside ul {
     text-align: left;
 }
 
-/*SCORBOARD*/
+/*SCOREBOARD*/
 
 /*Styling the way the scoreboard is shown during the game*/
 #scoreboardSp {
@@ -204,6 +199,11 @@ aside ul {
     width: 300px;
 }
 
+/*Used to hide the buttuns that are not needed at that point*/
+.hidden {
+    display: none!important;
+} 
+
 /*FOOTER*/
 
 /*Styling the footer*/
@@ -227,7 +227,7 @@ aside ul {
     padding-right: 25px;  
 }
   
-  /*MEDIA QUERIES*/
+/*MEDIA QUERIES*/
 
 /*Prevents the gamescreen from becoming too wide*/  
  @media(min-width: 1670px){
@@ -256,7 +256,7 @@ aside ul {
 /*Prevents the button that links to the explanation of the game from showing on bigger screens, 
 because the explanation is next to the gamescreen on bigger screens.*/
 @media(min-width: 1024px){ 
-    #buttonHowToPlayTheGame {
+    #buttonHowToPlay {
     display: none;
 }}
 
@@ -270,9 +270,21 @@ because the explanation is next to the gamescreen on bigger screens.*/
 @media(min-width: 1024px){ 
 section#main .container-fluid img{
     width: 300px;
+
 }}    
 
 @media(min-width: 1024px){
 h1 {
     font-size: 3rem;
+}}
+
+@media(min-width: 1024px){
+.flip-card {
+    margin-bottom: 25px;
+    margin-top: 15px;
+}}
+
+@media(min-width: 1024px){
+#textField {
+    margin-bottom: 10px;  
 }}

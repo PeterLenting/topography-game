@@ -6,18 +6,52 @@ This application is a simple, interactive and fun game to test someone's knowled
 This specific version of the game uses images from Pro Cycling Trumps (PCT). PCT is a British concept which basically contains of simple but fitting drawings of pro cyclists on playing cards. Naturally other images can be used as well. 
 The design of the game is also very suited for learning a language; the player than has to type in the name of the object the image shows in the language he or she is learning.
 
+- [View the game here](https://github.com/PeterLenting/second-milestone-project)
+- [View the Github Repository here](https://peterlenting.github.io/second-milestone-project/index.html)
+
+## Contents table
+1. UX
+   - What is it?
+   - Who is the target audience
+   - Mock-ups
+   - User stories
+2. Features
+   - Existing features
+   - Features left to implement
+3. Technologies used
+4. Testing
+   - Resonsive testing
+   - Manual testing
+   - Improvements after testing
+   - Browsers
+   - Automated testing 
+5. Deployment
+   - How to view the deployed version of this project
+   - How to run this project locally
+6. Credits
+   - Content
+   - Media
+   - Code
+   - Acknowledgements
+7. Disclaimer    
+
 ## UX
 
-### What have we made?
+### What is it?
 A clean, fast and well-arranged application, which gives the visitor a fun experience, an opportunity to upgrade their knowledge and to be interactive with, in this case, PCT. 
-
 A single page application with a mobile first design. The game should be really simple and easy to play, but also fun and interactive.
 
 ### Who is the target audience? 
 Anybody who likes to test their knowledge on any subject in a fun way is a member of the target audience.
 In this specific case the target audience is the international pro cycling fan. People who know a little more about the pro peloton and like to test their knowledge. Maybe they are costumers of Pro Cycling Trumps. It doesn't really matter whether they are familiar with the concept yet, the game will make their involvement grow.
-[LINK TO WIREFRAME](https://).
-User Stories
+
+### Mock-ups
+[Mock-up of the mobile version of the game](https://github.com/PeterLenting/second-milestone-project/blob/master/images/Mock-ups/Mobile%20mock-up%20anonymus%20rider.JPG?raw=true).
+[Mock-up of the desktop version of the game](https://github.com/PeterLenting/second-milestone-project/blob/master/images/Mock-ups/Desktop%20mock-up%20name%20and%20flag.jpg?raw=true)
+
+As you can see there are some small diferences between the mock-up and actual game. On desktop I moved the aside to the right of the game, because it makes more sence to keep the actual game on the prominent left side. Besides that small images are made to the lay-out.
+
+### User stories
 As a player, I want:
 1.	The ability to easily find and understand the controls for the game, so I can operate them easily.
 2.	To have the feeling either I got conformation of my knowledge or have really learned something.
@@ -25,14 +59,10 @@ As a player, I want:
 4.	To enjoy myself.
 5.	To get recognition for my score, so I feel good or get stimulated to try again.
 6.	To get no errors while playing the game, so I can really get into the game.
-In particular, as part of this section we recommend that you provide a list of User Stories, with the following general structure:
-•	As a user type, I want to perform an action, so that I can achieve a goal.
-
 
 ## Features
-In this section, you should go over the different parts of your project, and describe each in a sentence or so.
 
-### Existing Features
+### Existing features
 **Who is this cyclist?** – The question this game is all about. What is the name of the rider shown in the image?
 **How to play?**  – Allows the user to find out more **About the game** and 
 how to play it. On mobile by clicking a button that will guide the user to the rules of the game. On desktop the information is shown on the right of the screen.
@@ -50,7 +80,7 @@ how to play it. On mobile by clicking a button that will guide the user to the r
 **Score comment** – Allows the user to see a comment on his score. This varies from 'Maybe you should try again?' to 'You're a true champion'.
 **Play again** – Allows the user to play the game again by clicking on the button that says 'Play Again.
 
-## Features Left to Implement
+### Features left to implement
 1.	Difficulty level 
 It would be nice to make the game for two or three levels of difficulty. This could be done by entering less well-known riders in the game. Allowing only one wrong answer, instead of two is also a possibility. As is a timelimit.
 
@@ -67,24 +97,24 @@ As said the images could be of any subject. From learning a language, to famous 
 5.	Build an app
 To make the mobile experience more impressive an app should be built for the game.
 
-**Technologies Used
+## Technologies used
 •	HTML, CSS, and JavaScript.
-•	IDE: Cloud9 but was forced to switch to Visual Code Studio since the Cloud9 service of Amazon is impossible to work with.
-•	Bootstrap for the grid system of the page.
-•	Google fonts for the fonts.
-•	Font Awesome for the icons in the footer of the website.
-•	JQuery to simplify the JavaScript.
+•	IDE: [Cloud9](https://aws.amazon.com/cloud9/?hp=tile&so-exp=below) but was forced to switch to [Visual Code Studio](https://code.visualstudio.com/) since the Cloud9 service of Amazon is impossible to work with.
+•	[Bootstrap](https://getbootstrap.com/) for the grid system of the page.
+•	[Google Fonts](https://fonts.google.com/) for the fonts.
+•	[Font Awesome](https://fontawesome.com/) for the icons in the footer of the website.
+•	[JQuery](https://jquery.com/) to simplify the JavaScript.
 •	Paint to edit the images used.
 •	Google Chrome developer tools
 •	Bash / Ubuntu to commit my project and to push it to Github
-•	Github for version control and for users to view the deployed version of the website.
+•	[Github](https://github.com/) for version control and for users to view the deployed version of the website.
 
 ## Testing
 
 ### Responsive testing
-The responsiveness of the page was tested at all times during the development of the game. Locally as well as on GITHUB pages using Chrome developer tools. A reoccurring issue was the footer not staying at the bottom of the page……
+The responsiveness of the page was tested at all times during the development of the game. Locally as well as on GITHUB pages using Chrome developer tools. 
 
-### Manual Testing
+### Manual testing
 I played the game myself and had other people playing it as well during the development. This is a reliable way of discovering whether everything works as it should. 
 **How to play?**
 Click the 'How to play?'-button
@@ -145,11 +175,12 @@ Ask for a hint, then give the right answer and see whether three points are adde
 Game should start again. Startscreen should be shown and every image can be shown again if the player clicks the 'Let's Play!'-button.
 
 ### Improvements after testing
-•   A bug that came up in the end after I had made some adjustments to the rungame()-function was that the names of all the riders in the game were seen as correct on all images. This of course was not the way the game is intended. I fixed this by making indexOf() a Boolean by adding '> -1'. 
-•   It was possible to adjust Round and Score manually. This of course was not the intention and is fixed by making the input 'readonly'.
-•   It turned out cyclist-14- empty.png was the same image as cyclist-14.png. This was of course changed, so cyclist-14- empty.png was indeed without the name and the nation of the cyclist.
-**Browsers**
-The game was tested in Chrome, Internet Explorer and Firefox. In Internet Explorer the blur-class doesn't work. As this is not an essential part of the game and IE is only used by 8% of the users https://www.w3counter.com/globalstats.php, I decided to leave it as it is.
+A bug that came up in the end after I had made some adjustments to the rungame()-function was that the names of all the riders in the game were seen as correct on all images. This of course was not the way the game is intended. I fixed this by making indexOf() a Boolean by adding '> -1'. 
+It was possible to adjust Round and Score manually. This of course was not the intention and is fixed by making the input 'readonly'.
+It turned out cyclist-14- empty.png was the same image as cyclist-14.png. This was of course changed, so cyclist-14- empty.png was indeed without the name and the nation of the cyclist.
+
+### Browsers
+The game was tested in Chrome, Internet Explorer and Firefox. In Internet Explorer the blur-class doesn't work. As this is not an essential part of the game and IE is only used by [8% of the users](https://www.w3counter.com/globalstats.php), I decided to leave it as it is.
 
 ### Automated Testing
 The following **validation services** were used to check the validity of the code:
@@ -157,14 +188,16 @@ The following **validation services** were used to check the validity of the cod
 •	W3C CSS validation was used to validate CSS.
 •	JSHint was used to validate JavaScript.
 
+Eventhough we only had one lesson, I really wanted to test my game using Jasmine. It turned out that one lesson wasn't nearly enough to make that possible and even the tutors of Code Institue weren't able to help me out. For this reasson I decided to ask some more people to play, and that way, test the game manually.
+
 ## Deployment
 The project was built using Cloud9 and Visual Studio Code. I committed the project and pushed it up to Github using Bash.
 During the development of the game, there were some issues with AWS / Cloud9. As one of the consequences it was required to push minor updates to github to make them visible for the Code Institute Tutors.  This of course is not realistic for a project in real live, but does mean that some of the commits in the repository are only done for the tutors and would not have been done if this was a 'real' project.
 
-### To view the deployed version of this project I needed to:
+### How to view the deployed version of this project
 Log in to Github
 1. Select PeterLenting/game from the list of repositories.
-2 .Select Settings from the navbar near the top of the page.
+2. Select Settings from the navbar near the top of the page.
 3. Scroll down to where it says 'Github Pages', go to the subtitle labelled 'Source', click it and  change the source to 'master branch'.
 4. The page is then automatically refreshed and ready for deployment. It can take up to 10 minutes for it to be viewable.
 5. Scroll back down to the GitHub Pages section to retrieve the link to the deployed website.
@@ -177,7 +210,7 @@ To clone this project from GitHub:
 4.	In your local IDE open Git Bash.
 5.	Change the current working directory to the location where you want the cloned directory to be made.
 6.	Type git clone, and then paste the URL you copied in Step 3.
-    git clone https://github.com/USERNAME/REPOSITORY
+git clone https://github.com/USERNAME/REPOSITORY
 7.	Press Enter. Your local clone will be created.
 
 ## Credits
