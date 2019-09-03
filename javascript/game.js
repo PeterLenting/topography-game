@@ -82,7 +82,7 @@ var headerScreenSize = window.matchMedia("(max-width: 700px)");
 
 function functionStartGame(){
     displayImage();
-    $("#buttonStart, #").addClass("hidden");
+    $("#buttonStart, #buttonHowToPlay").addClass("hidden");
     $("#buttonHint, #buttonSubmit, #textField, #scoreboardSp, #count, #round").removeClass("hidden");
     if (headerScreenSize.matches) { 
     $("header").addClass("hidden");
@@ -284,7 +284,7 @@ $("#buttonGiveUp").click(function() {
 });
 
 /*
-- commentOnScore() takes care of the comments on the score the user reached at the end of the game. The number of points scored, decide which message is shown.
+- commentOnScore() takes care of the comments on the score the user reached at the end of the game. The number of points scored, decide which message.
 */
 function commentOnScore() {   
     $("#scoreComment").removeClass("hidden"); 
@@ -321,7 +321,7 @@ function explainGame() {
     window.location.href = '#sidebar';
   }
 
-$("#buttonHowToPlayTheGame").click(function() {
+$("#buttonHowToPlay").click(function() {
     explainGame();
 });
 
