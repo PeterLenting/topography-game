@@ -268,13 +268,13 @@ because the explanation is next to the gamescreen on bigger screens.*/
 /*Shows a bigger image on bigger screens*/
 
 @media(min-width: 992px){ 
-section#main .container-fluid img{
+#main .container-fluid img{
     width: 300px;
 
 }}    
 
 @media(min-width: 1200px){ 
-    section#main .container-fluid img{
+#main .container-fluid img{
         width: 330px;
     
     }}  
@@ -293,7 +293,7 @@ section#main .container-fluid img{
 }}
 
 @media(min-width: 992px){
-h1 {
+.h1 {
     font-size: 3rem;
 }}
 
