@@ -82,7 +82,7 @@ var headerScreenSize = window.matchMedia("(max-width: 700px)");
 
 function functionStartGame(){
     displayImage();
-    $("#buttonStart, #buttonHowToPlay").addClass("hidden");
+    $("#buttonStart, #buttonHowToPlayTheGame").addClass("hidden");
     $("#buttonHint, #buttonSubmit, #textField, #scoreboardSp, #count, #round").removeClass("hidden");
     if (headerScreenSize.matches) { 
     $("header").addClass("hidden");
@@ -321,7 +321,7 @@ function explainGame() {
     window.location.href = '#sidebar';
   }
 
-$("#buttonHowToPlay").click(function() {
+$("#buttonHowToPlayTheGame").click(function() {
     explainGame();
 });
 

@@ -3,11 +3,13 @@
 ## Introduction
 This application is a simple, interactive and fun game to test someone's knowledge. The game basically consists of a image and a textfield. When typing in the right answer in the textfield, the image flips and the right answer is shown. There is also a possibility to ask for a hint.
 
+![Responsive game](https://github.com/PeterLenting/second-milestone-project/blob/master/images/Mock-ups/responsive-game.png?raw=true)
+
 This specific version of the game uses images from Pro Cycling Trumps (PCT). PCT is a British concept which basically contains of simple but fitting drawings of pro cyclists on playing cards. Naturally other images can be used as well. 
 The design of the game is also very suited for learning a language; the player than has to type in the name of the object the image shows in the language he or she is learning.
 
-- [View the game here](https://github.com/PeterLenting/second-milestone-project)
-- [View the Github Repository here](https://peterlenting.github.io/second-milestone-project/index.html)
+- [View the game here](https://peterlenting.github.io/second-milestone-project/index.html)
+- [View the Github Repository here](https://github.com/PeterLenting/second-milestone-project)
 
 ## Contents table
 1. [UX](https://github.com/PeterLenting/second-milestone-project#ux)
@@ -46,10 +48,10 @@ Anybody who likes to test their knowledge on any subject in a fun way is a membe
 In this specific case the target audience is the international pro cycling fan. People who know a little more about the pro peloton and like to test their knowledge. Maybe they are costumers of Pro Cycling Trumps. It doesn't really matter whether they are familiar with the concept yet, the game will make their involvement grow.
 
 ### Mock-ups
-[Mock-up of the mobile version of the game](https://github.com/PeterLenting/second-milestone-project/blob/master/images/Mock-ups/Mobile%20mock-up%20anonymus%20rider.JPG?raw=true).
-[Mock-up of the desktop version of the game](https://github.com/PeterLenting/second-milestone-project/blob/master/images/Mock-ups/Desktop%20mock-up%20name%20and%20flag.jpg?raw=true)
+[Mock-up of the mobile version of the game](https://github.com/PeterLenting/second-milestone-project/blob/master/images/Mock-ups/Mobile-mock-up-anonymus-rider.jpg?raw=true).
+[Mock-up of the desktop version of the game](https://github.com/PeterLenting/second-milestone-project/blob/master/images/Mock-ups/Desktop-mock-up-name-and-flag.jpg?raw=true)
 
-As you can see there are some small diferences between the mock-up and actual game. On desktop I moved the aside to the right of the game, because it makes more sence to keep the actual game on the prominent left side. Besides that small changes are made to the lay-out. The yellow colour is chosen because yellow is the most iconic colour in cycling. It is the colour of the leadersjersey in the Tour de France.
+As you can see there are some small diferences between the mock-up and actual game. On desktop I moved the aside to the right of the game, because it makes more sence to keep the actual game on the prominent left side. Besides that small changes are made to the lay-out. The yellow colour is chosen because yellow is the most iconic colour in cycling. It is the colour of the leadersjersey in the Tour de France. The darkblue and the orange contrast nicely and give the game a cheerfull look.
 
 ### User stories
 As a player, I want:
@@ -244,8 +246,11 @@ Startscreen should be shown and every image can be shown again if the player cli
 
 ### Improvements after testing
 •   Walking through the game the first time, I noticed it would be really easy to find the answer in Google Chrome developer tools or by rightclicking the image, if I had the name of the cyclist in the name of the image. So I decided to give every image a number instead.
+
 •   A bug that came up in the end after I had made some adjustments to the rungame()-function was that the names of all the cyclists in the game were seen as correct on all images. This of course was not the way the game is intended. I fixed this by making indexOf() a Boolean by adding '> -1'. 
+
 •   It was possible to adjust 'Round' and 'Score' manually. This of course was not the intention and is fixed by making the input 'readonly'.
+
 •   It turned out cyclist-14- empty.png was the same image as cyclist-14.png. This was of course changed, so cyclist-14-empty.png was indeed without the name and the nation of the cyclist.
 
 ### Browsers
@@ -253,8 +258,11 @@ The game was tested in Chrome, Internet Explorer and Firefox. In Internet Explor
 
 ### Automated Testing
 The following **validation services** were used to check the validity of the code:
+
 •	W3C Markup Validation Service was used to validate HTML.
+
 •	W3C CSS validation was used to validate CSS.
+
 •	JSHint was used to validate JavaScript.
 
 Eventhough we only had one lesson, I really wanted to test my game using Jasmine. It turned out that one lesson wasn't nearly enough to make that possible and even the tutors of Code Institue weren't able to help me out. For this reasson I decided to ask some more people to play, and that way, test the game manually.

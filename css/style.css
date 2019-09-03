@@ -69,7 +69,7 @@ section#main .container-fluid img{
   }
 
 /*Styling the field in which the player types in the answer*/
-#textField{
+#textField {
     padding: 4px;
     height: 30px;
     border-radius: 25px;
@@ -83,7 +83,7 @@ section#main .container-fluid img{
 }
 
 /*SIDEBAR*/
-
+/*The sidebar has the same yellow colour als the main-col and the same darkblue text.*/
 aside{
     background: #FEE801;
     color: #000080;
@@ -93,10 +93,7 @@ aside{
     height: 100%;
     }
 
-aside p{
-    margin: 10px;
-}
-
+/*Aligns the text in the unorderd list in the aside to the left.*/
 aside ul {
     text-align: left;
 }
@@ -229,25 +226,19 @@ aside ul {
   
 /*MEDIA QUERIES*/
 
-/*Prevents the gamescreen from becoming too wide*/  
- @media(min-width: 1500px){
-    body{
-    margin-left: 200px;
-    margin-right: 200px;
-     }
- }     
- 
+/*Puts aside on the right site of bigger screens, instead of below like on smaller screens*/ 
  @media(min-width: 992px){ 
-    aside{
+aside {
     float: right;
     width: 100%;
     padding-right: 20px;
     min-height: 570px;
     }
- }
- 
+}
+
+/*Keeps the main-col on the left on bigger screens*/
  @media(min-width: 992px){ 
-    .main-col{
+.main-col {
     float: left;
     width: 100%;
     }
@@ -256,54 +247,76 @@ aside ul {
 /*Prevents the button that links to the explanation of the game from showing on bigger screens, 
 because the explanation is next to the gamescreen on bigger screens.*/
 @media(min-width: 992px){ 
-    #buttonHowToPlayTheGame {
+#buttonHowToPlayTheGame {
     display: none;
 }}
 
+/*Prevents the button that links to the top of the game from showing on bigger screens, 
+because the explanation is next to the gamescreen on bigger screens.*/
 @media(min-width: 992px){ 
     #buttonGoBackUp {
-    display: none;
-}}
+        display: none;
+    }
+}
 
 /*Shows a bigger image on bigger screens*/
-
 @media(min-width: 992px){ 
-#main .container-fluid img{
+section#main .container-fluid img {
     width: 300px;
+    }
+}    
 
-}}    
-
+/*Shows a even bigger image on even bigger screens*/
 @media(min-width: 1200px){ 
-#main .container-fluid img{
-        width: 330px;
-    
-    }}  
+section#main .container-fluid img {
+    width: 330px;
+    }
+}  
 
+/*Shows a bigger 'Who is this Cyclist?' on bigger screens*/
 @media(min-width: 1200px){
 #headerQuestion {
     font-size: 2.5rem;
-}}
+    }
+}
 
+/*Shows bigger buttons on bigger screens*/
 @media(min-width: 1200px){
 .button_1 {
     font-size: 1.2rem;
     height: 40px;
     padding-left: 20px;
     padding-right: 20px;
-}}
+    }
+}
 
+/*Makes the text in the header (Pro Cycling Trumps Game) bigger on bigger screens*/
 @media(min-width: 992px){
 .h1 {
     font-size: 3rem;
-}}
+    }
+}
 
+/*Gives some more margin around the image on bigger screens*/
 @media(min-width: 992px){
 .flip-card {
     margin-bottom: 25px;
     margin-top: 15px;
-}}
+    }
+}
 
 @media(min-width: 992px){
 #textField {
     margin-bottom: 10px;  
-}}
+    height: 40px;
+    font-size: 1.2rem;
+    }
+}
+
+/*Prevents the gamescreen from becoming too wide*/  
+ @media(min-width: 1500px){
+body {
+    margin-left: 200px;
+    margin-right: 200px;
+    }
+}  
