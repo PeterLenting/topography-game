@@ -110,10 +110,13 @@ In the current game the images are of the biggest icons of pro cyclings history.
 As said the images could be of any subject. From learning a language, to famous movi-posters, to ex-presidents, to car-models. Anything is possible.
 
 4.	Share and invite buttons
- By making it possible for players to share their score with their friends through social media and invite them to play the game, the involvement and the fun will grow even more.
+By making it possible for players to share their score with their friends through social media and invite them to play the game, the involvement and the fun will grow even more.
 
 5.	Build an app
 To make the mobile experience more impressive an app should be built for the game.
+
+6. Sound and movement
+To make the game more fun, it would be nice to have some soundeffects and moving features. When a right answer is given the user gets an applaus for example. And when the user gets a new highscore, a cyclist pops a bottle of champagne. I choose not to do that for now, to keep the game really about the game and the testing of knowledge.
 
 ## Technologies used
 •	HTML, CSS, and JavaScript.
