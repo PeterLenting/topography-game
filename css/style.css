@@ -62,7 +62,7 @@ section#main .container-fluid img{
     border-radius: 25px;
 }
 
-/*When an answer is wrong, blur the image*/
+/*When an answer is wrong, blur the image to show the user something is 'wrong'*/
 .blur {
     -webkit-filter: blur(5px);
     filter: blur(5px);
@@ -83,7 +83,8 @@ section#main .container-fluid img{
 }
 
 /*SIDEBAR*/
-/*The sidebar has the same yellow colour als the main-col and the same darkblue text.*/
+/*The sidebar has the same yellow colour als the main-col and the same darkblue text. 
+This ensures the feeling of everything fitting together.*/
 aside{
     background: #FEE801;
     color: #000080;
@@ -93,14 +94,15 @@ aside{
     height: 100%;
     }
 
-/*Aligns the text in the unorderd list in the aside to the left.*/
+/*Aligns the text in the unorderd list in the aside to the left to make it look clean.*/
 aside ul {
     text-align: left;
 }
 
 /*SCORBOARD*/
 
-/*Styling the way the scoreboard is shown during the game*/
+/*Styling the way the scoreboard is shown during the game. 
+It looks a bit like an actuel scoreboard, which is applicable since it is a game with sports as a subject.*/
 #scoreboardSp {
     float: left;
 }
@@ -115,7 +117,8 @@ aside ul {
     box-shadow: 3px 3px black;
 }
 
-/*Styling the way the final score is shown on the endscreen*/
+/*Styling the way the final score is shown on the endscreen. 
+It looks a bit like an actuel scoreboard, which is applicable since it is a game with sports as a subject.*/
 #yourScore {
     float: right;
     vertical-align: middle;
@@ -136,7 +139,8 @@ aside ul {
     box-shadow: 3px 3px black;
 }
 
-/*Styling the comment on the final score on the endscreen*/
+/*Styling the comment on the final score on the endscreen. 
+It looks a bit playfull, as it should in a game.*/
 #scoreComment {
     font-family: 'Permanent Marker', cursive;
     font-size: 3rem;
@@ -145,7 +149,8 @@ aside ul {
 }
 
 /*ROUNDCOUNTER*/
-/*Styling the counter of the rounds during the game*/
+/*Styling the counter of the rounds during the game. 
+It looks a bit like an actuel scoreboard, which is applicable since it is a game with sports as a subject.*/
 #count {
     float: right;
 }
@@ -162,7 +167,7 @@ aside ul {
 
 /*BUTTONS*/
 
-/*All button are styled using this class*/
+/*All button are styled using this class. The yellow and blue colours make them fit right in.*/
 .button_1 {
     height: 30px;
     border: 0;
@@ -177,7 +182,8 @@ aside ul {
     box-shadow: 3px 3px black;
 }
 
-/*Styling the button that makes it possible to ask for a hint*/
+/*Styling the button that makes it possible to ask for a hint. 
+The orange color fits well in and makes the buttons stand out from the other buttons.*/
 #buttonHint {
     color: #FEE801;
     background: #FD5F00;
@@ -203,7 +209,7 @@ aside ul {
 
 /*FOOTER*/
 
-/*Styling the footer*/
+/*Styling the footer, again using the darkblue and yellow to make everything fit in.*/
 #social {
     background: #000080;
     color: #FEE801;
@@ -226,7 +232,7 @@ aside ul {
   
 /*MEDIA QUERIES*/
 
-/*Puts aside on the right site of bigger screens, instead of below like on smaller screens*/ 
+/*Puts aside on the right side of bigger screens, instead of below like on smaller screens. This makes everything visible in one screen.*/ 
  @media(min-width: 992px){ 
 aside {
     float: right;
@@ -259,28 +265,28 @@ because the explanation is next to the gamescreen on bigger screens.*/
     }
 }
 
-/*Shows a bigger image on bigger screens*/
+/*Shows a bigger image on bigger screens, which fits the screen better.*/
 @media(min-width: 992px){ 
 section#main .container-fluid img {
     width: 300px;
     }
 }    
 
-/*Shows a even bigger image on even bigger screens*/
+/*Shows a even bigger image on even bigger screens, which fits the screen better.*/
 @media(min-width: 1200px){ 
 section#main .container-fluid img {
     width: 330px;
     }
 }  
 
-/*Shows a bigger 'Who is this Cyclist?' on bigger screens*/
+/*Shows a bigger 'Who is this Cyclist?' on bigger screens, which fits the screen better.*/
 @media(min-width: 1200px){
 #headerQuestion {
     font-size: 2.5rem;
     }
 }
 
-/*Shows bigger buttons on bigger screens*/
+/*Shows bigger buttons on bigger screens, which fits the screen better.*/
 @media(min-width: 1200px){
 .button_1 {
     font-size: 1.2rem;
@@ -290,14 +296,14 @@ section#main .container-fluid img {
     }
 }
 
-/*Makes the text in the header (Pro Cycling Trumps Game) bigger on bigger screens*/
+/*Makes the text in the header (Pro Cycling Trumps Game) bigger on bigger screens, which fits the screen better.*/
 @media(min-width: 992px){
 .h1 {
     font-size: 3rem;
     }
 }
 
-/*Gives some more margin around the image on bigger screens*/
+/*Gives some more margin around the image on bigger screens, which fits the screen better.*/
 @media(min-width: 992px){
 .flip-card {
     margin-bottom: 25px;
@@ -313,7 +319,7 @@ section#main .container-fluid img {
     }
 }
 
-/*Prevents the gamescreen from becoming too wide*/  
+/*Prevents the gamescreen from becoming too wide, because this looks better and is more pleasent to handle for the user.*/  
  @media(min-width: 1500px){
 body {
     margin-left: 200px;

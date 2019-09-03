@@ -3,12 +3,13 @@
 ## Introduction
 This application is a simple, interactive and fun game to test someone's knowledge. The game basically consists of a image and a textfield. When typing in the right answer in the textfield, the image flips and the right answer is shown. There is also a possibility to ask for a hint.
 
-![Responsive game](https://github.com/PeterLenting/second-milestone-project/blob/master/images/Mock-ups/responsive-game.png?raw=true)
+![Responsive game](https://raw.githubusercontent.com/PeterLenting/second-milestone-project/master/images/mock-ups/responsive-game.png)
 
 This specific version of the game uses images from Pro Cycling Trumps (PCT). PCT is a British concept which basically contains of simple but fitting drawings of pro cyclists on playing cards. Naturally other images can be used as well. 
 The design of the game is also very suited for learning a language; the player than has to type in the name of the object the image shows in the language he or she is learning.
 
 - [View the game here](https://peterlenting.github.io/second-milestone-project/index.html)
+
 - [View the Github Repository here](https://github.com/PeterLenting/second-milestone-project)
 
 ## Contents table
@@ -48,8 +49,8 @@ Anybody who likes to test their knowledge on any subject in a fun way is a membe
 In this specific case the target audience is the international pro cycling fan. People who know a little more about the pro peloton and like to test their knowledge. Maybe they are costumers of Pro Cycling Trumps. It doesn't really matter whether they are familiar with the concept yet, the game will make their involvement grow.
 
 ### Mock-ups
-[Mock-up of the mobile version of the game](https://github.com/PeterLenting/second-milestone-project/blob/master/images/Mock-ups/Mobile-mock-up-anonymus-rider.jpg?raw=true).
-[Mock-up of the desktop version of the game](https://github.com/PeterLenting/second-milestone-project/blob/master/images/Mock-ups/Desktop-mock-up-name-and-flag.jpg?raw=true)
+[Mock-up of the mobile version of the game](https://raw.githubusercontent.com/PeterLenting/second-milestone-project/master/images/mock-ups/mobile-mock-up-anonymus-rider.jpg).
+[Mock-up of the desktop version of the game](https://raw.githubusercontent.com/PeterLenting/second-milestone-project/master/images/mock-ups/desktop-mock-up-name-and-flag.jpg)
 
 As you can see there are some small diferences between the mock-up and actual game. On desktop I moved the aside to the right of the game, because it makes more sence to keep the actual game on the prominent left side. Besides that small changes are made to the lay-out. The yellow colour is chosen because yellow is the most iconic colour in cycling. It is the colour of the leadersjersey in the Tour de France. The darkblue and the orange contrast nicely and give the game a cheerfull look.
 
@@ -94,6 +95,8 @@ As a player, I want:
 **Score comment** – Allows the user to see a comment on his score. This varies from 'Maybe you should try again?' to 'You're a true champion'.
 
 **Play again** – Allows the user to play the game again by clicking on the button that says 'Play Again.
+
+**Footer** - Contains links to the social pages of Pro Cycling Trumps: Facebook, Instagram, Youtube and Twitter.
 
 ### Features left to implement
 1.	Difficulty level 

@@ -14,7 +14,8 @@
     <!-- Style Sheets -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.1/css/all.css" type="text/css">
-    <link href="https://fonts.googleapis.com/css?family=Permanent+Marker|Roboto&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Permanent+Marker&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css" type="text/css">
 
     <!-- Favicon File -->
@@ -36,8 +37,8 @@
             <div class="row">
                 <div class="col-xl-8">
                     <div class="main-col">
-
                         <h2 id="headerQuestion">Who is this Cyclist?</h2>
+<!-- The flip-card div makes the flipping card possible -->
                         <div class="flip-card">
                             <div class="flip-card-inner">
                                 <div class="front test">
@@ -48,57 +49,67 @@
                                 </div>
                             </div>
                         </div>
+<!-- The two buttons on the mobile startscreen. One with a link to the rules of the game and one to start the game  -->
                         <div class="row" id="startScreen">
                             <div class="col-12">
                                 <button type="submit" id="buttonHowToPlayTheGame" class="button_1">How to Play?</button>
                                 <button type="submit" id="buttonStart" class="button_1">Let's Play!</button>
                             </div>
                         </div>
+<!-- Shows the comment on the users answer -->
                         <div class="row">
                             <div class="col-12">
                                 <p id="comment" class="hidden"></p>
                             </div>
                         </div>
+<!-- Contains the button to go to the next challenge after a round is finished-->
                         <div class="row">
                             <div class="col-12">
                                 <button type="submit" id="buttonNext" class="button_1 hidden">Next Challenge</button>
                             </div>
                         </div>
+<!-- Contains the textField in which the users types the answer -->
                         <div class="row">
                             <div class="col-12">
                                 <input type="text" id="textField" placeholder="Type riders name..." class="hidden">
                             </div>
                         </div>
+<!-- Contains two buttons: the button to submit an answer and the button to get a hint -->
                         <div class="row">
                             <div class="col-12">
                                 <button type="submit" id="buttonSubmit" class="button_1 hidden">Submit</button>
                                 <button type="submit" id="buttonHint" class="button_1 hidden">Give me a Hint</button>
                             </div>
                         </div>
+<!-- Contains two buttons and shows after a wrong answer: the button to get another go and the button to give up -->
                         <div class="row">
                             <div class="col-12">
                                 <button type="submit" id="buttonTryAgain" class="button_1 hidden">Try Again</button>
                                 <button type="submit" id="buttonGiveUp" class="button_1 hidden">Give Up</button>
                             </div>
                         </div>
+<!-- Shows the round the user is in and the current score of the player. If the game is finished, yourScore shows the endscore -->
                         <div class="row">
                             <div class="col-6">
                                 <span class="hidden" id="count">ROUND:<br> 
-                <input type="text" id="round" value="1" readonly>
-            </span>
-                                <span id="yourScore" class="hidden">Your Score: </span>
+                                <input type="text" id="round" value="1" readonly>
+                                </span>
+                                <span id="yourScore" class="hidden">Your Score: 
+                                </span>
                             </div>
                             <div class="col-6">
                                 <span class="hidden" id="scoreboardSp">SCORE:<br> 
-                <input type="text" id="scoreboard" class="scoreboardClass" value="0" readonly>
-            </span>
+                                <input type="text" id="scoreboard" class="scoreboardClass" value="0" readonly>
+                                </span>
                             </div>
                         </div>
+<!-- Contains the comment on the endscore of the player -->
                         <div class="row">
                             <div class="col-12">
                                 <p id="scoreComment" class="hidden"></p>
                             </div>
                         </div>
+<!-- Contains the reset-button which is shown on the end of the game -->
                         <div class="row">
                             <div class="col-12">
                                 <button type="submit" id="buttonReset" class="button_1 hidden">Play Again!</button>
@@ -106,7 +117,7 @@
                         </div>
                     </div>
                 </div>
-
+<!-- The sidebar contains an explanation of the game -->
                 <div class="col-xl-4">
                     <aside id="sidebar">
                         <h2>About the Game</h2>
@@ -150,11 +161,10 @@
         </a>
         </div>
     </footer>
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-    <script src="https://cdn.rawgit.com/nnattawat/flip/master/dist/jquery.flip.min.js"></script>
-    <script src="javascript/game.js"></script>
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+<script src="https://cdn.rawgit.com/nnattawat/flip/master/dist/jquery.flip.min.js"></script>
+<script src="javascript/game.js"></script>
 </body>
-
 </html>
