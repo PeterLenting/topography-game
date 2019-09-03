@@ -223,7 +223,7 @@ The orange color fits well in and makes the buttons stand out from the other but
     border: 3px solid #FEE801;
 }
 
-/*Styling the links/symbols in the footer*/
+/*Styling the links and symbols in the footer*/
 .sociallinks a{
     color: #FEE801;
     padding-left: 25px;
@@ -320,7 +320,7 @@ section#main .container-fluid img {
 }
 
 /*Prevents the gamescreen from becoming too wide, because this looks better and is more pleasent to handle for the user.*/  
- @media(min-width: 1500px){
+ @media(min-width: 1600px){
 body {
     margin-left: 200px;
     margin-right: 200px;
