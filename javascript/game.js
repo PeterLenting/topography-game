@@ -284,7 +284,7 @@ $("#buttonGiveUp").click(function() {
 });
 
 /*
-- commentOnScore() takes care of the comments on the score the user reached at the end of the game.
+- commentOnScore() takes care of the comments on the score the user reached at the end of the game. The number of points scored, decide which message is shown.
 */
 function commentOnScore() {   
     $("#scoreComment").removeClass("hidden"); 

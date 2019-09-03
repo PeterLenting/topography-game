@@ -49,40 +49,39 @@ In this specific case the target audience is the international pro cycling fan. 
 [Mock-up of the mobile version of the game](https://github.com/PeterLenting/second-milestone-project/blob/master/images/Mock-ups/Mobile%20mock-up%20anonymus%20rider.JPG?raw=true).
 [Mock-up of the desktop version of the game](https://github.com/PeterLenting/second-milestone-project/blob/master/images/Mock-ups/Desktop%20mock-up%20name%20and%20flag.jpg?raw=true)
 
-As you can see there are some small diferences between the mock-up and actual game. On desktop I moved the aside to the right of the game, because it makes more sence to keep the actual game on the prominent left side. Besides that small images are made to the lay-out.
+As you can see there are some small diferences between the mock-up and actual game. On desktop I moved the aside to the right of the game, because it makes more sence to keep the actual game on the prominent left side. Besides that small changes are made to the lay-out. The yellow colour is chosen because yellow is the most iconic colour in cycling. It is the colour of the leadersjersey in the Tour de France.
 
 ### User stories
 As a player, I want:
-1.	The ability to easily find and understand the controls for the game, so I can operate them easily.
-2.	To have the feeling either I got conformation of my knowledge or have really learned something.
+1.	The ability to easily find and understand the controls of the game, so I can operate them easily.
+2.	To have the feeling I either got conformation of my great knowledge or have really learned something.
 3.	To get a feeling of real interaction while playing the game.
 4.	To enjoy myself.
 5.	To get recognition for my score, so I feel good or get stimulated to try again.
-6.	To get no errors while playing the game, so I can really get into the game.
+6.	To get no errors while playing the game, so I can really get into it.
 
 ## Features
 
 ### Existing features
-**Who is this cyclist?** – The question this game is all about. What is the name of the rider shown in the image?
+**Who is this cyclist?** – The question this game is all about. What is the name of the cyclist shown in the image?
 
-**How to play?**  – Allows the user to find out more **About the game** and 
-how to play it. On mobile by clicking a button that will guide the user to the rules of the game. On desktop the information is shown on the right of the screen.
+**How to play?**  – Allows the user to find out more **About the game** and how to play it. On mobile by clicking a button that will guide the user to the rules of the game. On desktop the information is shown on the right of the screen.
 
 **Let's play** – Allows the user to start playing the game by clicking on the button that says 'Let's Play'. The first of 10 images will be shown.
 
-**Image** –  Every image shows a professional (ex-)cyclist with a recognisable haircut and the shirt in which he was most successful. The lower part of the card contains the score of the rider on six important qualities on a scale from 0-100. Next to his head are the big prices he won. The pink jersey for the Giro, the yellow one for the Tour, the red one for La Vuelta and the Roman pillar for the Monuments. The name of the cyclist and his nationality normally stand in the gray area at the top of the card, but are erased for the purpose of the game.
+**Image** –  Every image shows a professional (ex-)cyclist with a recognisable haircut and the shirt in which he was most successful. The lower part of the card contains the score of the cyclist on six important qualities on a scale from 0-100. Next to his head are the big prices he won. The pink jersey for the Giro, the yellow one for the Tour, the red one for La Vuelta and the Roman pillar for the Monuments. The name of the cyclist and his nationality normally stand in the gray area at the top of the card, but are erased for the purpose of the game.
 
-**Textfield** – Allows the user to give an answer by typing in the name of the rider.
+**Textfield** – Allows the user to give an answer by typing in the name of the cyclist.
 
-**Submit** – Allows the user to send in his answer and have It checked. If the answer is correct, the image flips and the name and nationality of the rider are shown in the image. Beneath the image the message 'Yes, that's him!' is shown. If the answer is wrong, the image is blurred and the user gets the option to **Give Up** or to **Try Again**. After two wrong answers the message 'Sorry, no score' shows and no points are added to the **Score**.
+**Submit** – Allows the user to send in his answer and have it checked. If the answer is correct, the image flips and the name and nationality of the cyclist are shown in the image. Beneath the image the message 'Yes, that's him!' is shown. If the answer is wrong, the image is blurred and the user gets the option to **Give Up** or to **Try Again**. After two wrong answers the message 'Sorry, no score' shows and no points are added to the **Score**.
 
-**Give me a hint** – Allows the user to get a little help in finding the right answer by clicking the button that says 'Give me a Hint'. The image flips and the flag of the nation the rider comes from appears. 
+**Give me a hint** – Allows the user to get a little help in finding the right answer by clicking the button that says 'Give me a Hint'. The image flips and the flag of the nation the cyclist comes from appears. 
 
 **Try again** – Allows the user to try again after giving a first wrong answer. The image *unblurs*.  
 
 **Give up** – Allows the user to give up by clicking the button that says 'Give Up'. The image flips and the right answer is shown, together with the message: 'Sorry, no score'.
 
-**Next challenge** – Allows the user to go to the next image by clicking on the button that says  Next Challenge'. After 10 rounds the button leads the user to his final score.
+**Next challenge** – Allows the user to go to the next image by clicking on the button that says 'Next Challenge'. After 10 rounds the button leads the user to his final score.
 
 **Round** – Allows the user to see in which of the 10 rounds he is at any moment during the game by looking in the input-field beneath 'ROUND'.
 
@@ -96,13 +95,13 @@ how to play it. On mobile by clicking a button that will guide the user to the r
 
 ### Features left to implement
 1.	Difficulty level 
-It would be nice to make the game for two or three levels of difficulty. This could be done by entering less well-known riders in the game. Allowing only one wrong answer, instead of two is also a possibility. As is a timelimit.
+It would be nice to make the game for two or three levels of difficulty. This could be done by entering less well-known cyclists in the game. Allowing only one wrong answer, instead of two is also a possibility. As is a timelimit.
 
 2.	Timelimit
 By adding a timelimit, the game might get a bit more exciting. This could be done by giving more points for a fast answer, or only by giving the player just a certain amount of time to answer. 
 
 3.	Different subjects
-In the current game the images are of the biggest icons of pro cyclings history. In this line there could also be a version with current riders, male and female. Or of former Tour de France or Tour of Flanders winners. The possibilities are endless.
+In the current game the images are of the biggest icons of pro cyclings history. In this line there could also be a version with current cyclists, male and female. Or of former Tour de France or Tour of Flanders winners. The possibilities are endless.
 As said the images could be of any subject. From learning a language, to famous movi-posters, to ex-presidents, to car-models. Anything is possible.
 
 4.	Share and invite buttons
@@ -161,13 +160,13 @@ Beneath the image the input-field, submit-button, hint-button, 'Round' and 'Scor
 
 Give the right answer
 Click the 'Submit'-button
-See whether the image flips and the name of the rider and the flag of his nation is shown. 
+See whether the image flips and the name of the cyclist and the flag of his nation is shown. 
 The message 'Yes, that's him!' should appear, and under that the 'Next Challenge'-button should be shown. 
 'Score' should be raised by three.
 
-**Wrong answer (Wrong Rider)**
+**Wrong answer (1. Wrong cyclist)**
 
-Type in the name of another rider in the game
+Type in the name of another cyclist in the game
 Click the 'Submit'-button
 See whether image blurs and the 'Nope, that's not him'-message, the 'Try Again'-button and the 'Give Up'-button appear.
 
@@ -175,18 +174,18 @@ See whether image blurs and the 'Nope, that's not him'-message, the 'Try Again'-
 
 Click the 'Try Again'-button
 See whether the image unblurs and the input-field, 'Submit'-button, 'Hint'-button, 'Round' and 'Score' are shown
-Type in the name of another rider in the game 
+Type in the name of another cyclist in the game 
 Click the 'Submit'-button
-See whether the name of the rider and the flag of his nation is shown, together with the 'Sorry, no score'-message and the 'Next Challenge'-button 
+See whether the name of the cyclist and the flag of his nation is shown, together with the 'Sorry, no score'-message and the 'Next Challenge'-button 
 And see that there is 0 added to 'Score'.
 
 **Give Up**
 
-See whether the image flips and the name of the rider and the flag of his nation is shown, together with the 'Sorry, no score'-message and the 'Next Challenge'-button. And see that there is 0 added to 'Score'.
+See whether the image flips and the name of the cyclist and the flag of his nation is shown, together with the 'Sorry, no score'-message and the 'Next Challenge'-button. And see that there is 0 added to 'Score'.
 
-**Wrong answer (Random Letters)**
+**Wrong answer (2. Random Letters)**
 
-Type in some random letters (not the name of another rider in the game).
+Type in some random letters (not the name of another cyclist in the game).
 Click the 'Submit'-button.
 See whether image blurs and the 'Nope, that's not him'-message, the 'Try Again'-button and the 'Give Up'-button appear.
 
@@ -194,43 +193,49 @@ See whether image blurs and the 'Nope, that's not him'-message, the 'Try Again'-
 
 Click the 'Try Again'-button.
 See whether the image unblurs and the input-field, 'Submit'-button, 'Hint'-button, 'Round' and 'Score' are shown.
-Type in the name of another rider in the game. 
+Type in the name of another cyclist in the game. 
 Click the 'Submit'-button.
-See whether the name of the rider and the flag of his nation is shown, together with the 'Sorry, no score'-message and the 'Next Challenge'-button. 
+See whether the name of the cyclist and the flag of his nation is shown, together with the 'Sorry, no score'-message and the 'Next Challenge'-button. 
 And see that there is 0 added to 'Score'.
 
 **Give Up**
 
-See whether the image flips and the name of the rider and the flag of his nation is shown, together with the 'Sorry, no score'-message and the 'Next Challenge'-button. 
+See whether the image flips and the name of the cyclist and the flag of his nation is shown, together with the 'Sorry, no score'-message and the 'Next Challenge'-button. 
 And see that there is 0 added to 'Score'.
 
 **Get hint**
 
 Click the 'Give me a Hint'-button
-See whether the image flips and the flag of the riders home country is shown and the 'Hint'-button is hidden.
-Type in the name of another rider in the game.
+See whether the image flips and the flag of the cyclists home country is shown and the 'Hint'-button is hidden.
+Type in the name of another cyclist in the game.
 Click the 'Submit'-button.
 See whether image blurs and the 'Nope, that's not him'-message, the 'Try Again'-button and the 'Give Up'-button appear. 
 
 **Try Again**
 
 Click the 'Try Again'-button
-See whether the image unblurs and the input-field, 'Submit'-button, 'Round' and 'Score' are shown.
-Type in the name of another rider in the game 
+See whether the image *unblurs* and the input-field, 'Submit'-button, 'Round' and 'Score' are shown.
+Type in the name of another cyclist in the game 
 Click the 'Submit'-button
-See whether the name of the rider and the flag of his nation is shown, together with the 'Sorry, no score'-message and the 'Next Challenge'-button. 
+See whether the name of the cyclist and the flag of his nation is shown, together with the 'Sorry, no score'-message and the 'Next Challenge'-button. 
 And see that there is 0 added to 'Score'.
 
 **Next Challenge**
 
 Check whether the input-field, 'Submit'-button, 'Hint'-button, 'Round' and 'Score' are shown.
-Check whether a new image is shown without the name and the nation of the rider. 
-The rider should not have been displayed before. Every rider in the game (10 in total) should only be shown once.
+Check whether a new image is shown without the name and the nation of the cyclist. 
+The cyclist should not have been displayed before. Every cyclist in the game (10 in total) should only be shown once.
 
 **Scorebord**
 
 Give a good answer and see whether three points are added to 'Score'. 
 Ask for a hint, then give the right answer and see whether two points are added to 'Score'.
+Give a wrong answer, then give the right answer and see whether two points are added to 'Score'.
+Ask for a hint, give a wrong answer, then give a right answer and see whether one point is added to 'Score'.
+Give a wrong answer, ask for a hint, then give a right answer and see whether one point is added to 'Score'.
+Ask for a hint, give a wrong answer, give another wrong answer and see whether zero points are added to 'Score'.
+Give a wrong answer, ask for a hint, give another wrong answer and see whether zero points are added to 'Score'.
+Give a wrong answer, give another wrong answer and see whether zero points are added to 'Score'.
 
 **Play again**
 
@@ -238,9 +243,10 @@ Game should start again.
 Startscreen should be shown and every image can be shown again if the player clicks the 'Let's Play!'-button.
 
 ### Improvements after testing
-A bug that came up in the end after I had made some adjustments to the rungame()-function was that the names of all the riders in the game were seen as correct on all images. This of course was not the way the game is intended. I fixed this by making indexOf() a Boolean by adding '> -1'. 
-It was possible to adjust Round and Score manually. This of course was not the intention and is fixed by making the input 'readonly'.
-It turned out cyclist-14- empty.png was the same image as cyclist-14.png. This was of course changed, so cyclist-14- empty.png was indeed without the name and the nation of the cyclist.
+•   Walking through the game the first time, I noticed it would be really easy to find the answer in Google Chrome developer tools or by rightclicking the image, if I had the name of the cyclist in the name of the image. So I decided to give every image a number instead.
+•   A bug that came up in the end after I had made some adjustments to the rungame()-function was that the names of all the cyclists in the game were seen as correct on all images. This of course was not the way the game is intended. I fixed this by making indexOf() a Boolean by adding '> -1'. 
+•   It was possible to adjust 'Round' and 'Score' manually. This of course was not the intention and is fixed by making the input 'readonly'.
+•   It turned out cyclist-14- empty.png was the same image as cyclist-14.png. This was of course changed, so cyclist-14-empty.png was indeed without the name and the nation of the cyclist.
 
 ### Browsers
 The game was tested in Chrome, Internet Explorer and Firefox. In Internet Explorer the blur-class doesn't work. As this is not an essential part of the game and IE is only used by [8% of the users](https://www.w3counter.com/globalstats.php), I decided to leave it as it is.
@@ -255,7 +261,7 @@ Eventhough we only had one lesson, I really wanted to test my game using Jasmine
 
 ## Deployment
 The project was built using Cloud9 and Visual Studio Code. I committed the project and pushed it up to Github using Bash.
-During the development of the game, there were some issues with AWS / Cloud9. As one of the consequences it was required to push minor updates to github to make them visible for the Code Institute Tutors.  This of course is not realistic for a project in real live, but does mean that some of the commits in the repository are only done for the tutors and would not have been done if this was a 'real' project.
+During the development of the game, there were some issues with AWS / Cloud9. As one of the consequences it was required to push minor updates to github to make them visible for the Code Institute Tutors. This of course is not realistic for a project in real live, but does mean that some of the commits in the repository are only done for the tutors and would not have been done if this was a 'real' project.
 
 ### How to view the deployed version of this project
 Log in to Github
@@ -267,7 +273,7 @@ Log in to Github
 
 ### How to run this project locally
 To clone this project from GitHub:
-1.	Follow this link to the Game Repository https://github.com/PeterLenting/second-milestone-project
+1.	Follow this link to the [Game Repository](https://github.com/PeterLenting/second-milestone-project)
 2.	Under the repository name, click 'Clone or download'.
 3.	In the Clone with HTTPs section, copy the clone URL for the repository.
 4.	In your local IDE open Git Bash.

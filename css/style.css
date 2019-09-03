@@ -101,7 +101,7 @@ aside ul {
     text-align: left;
 }
 
-/*SCOREBOARD*/
+/*SCORBOARD*/
 
 /*Styling the way the scoreboard is shown during the game*/
 #scoreboardSp {
@@ -230,61 +230,80 @@ aside ul {
 /*MEDIA QUERIES*/
 
 /*Prevents the gamescreen from becoming too wide*/  
- @media(min-width: 1670px){
+ @media(min-width: 1500px){
     body{
     margin-left: 200px;
     margin-right: 200px;
      }
  }     
  
- @media(min-width: 1024px){ 
+ @media(min-width: 992px){ 
     aside{
-    float: left;
+    float: right;
     width: 100%;
     padding-right: 20px;
     min-height: 570px;
     }
  }
  
- @media(min-width: 1024px){ 
+ @media(min-width: 992px){ 
     .main-col{
-    float: right;
+    float: left;
     width: 100%;
     }
 }
 
 /*Prevents the button that links to the explanation of the game from showing on bigger screens, 
 because the explanation is next to the gamescreen on bigger screens.*/
-@media(min-width: 1024px){ 
-    #buttonHowToPlay {
+@media(min-width: 992px){ 
+    #buttonHowToPlayTheGame {
     display: none;
 }}
 
-@media(min-width: 1024px){ 
+@media(min-width: 992px){ 
     #buttonGoBackUp {
     display: none;
 }}
 
 /*Shows a bigger image on bigger screens*/
 
-@media(min-width: 1024px){ 
+@media(min-width: 992px){ 
 section#main .container-fluid img{
     width: 300px;
 
 }}    
 
-@media(min-width: 1024px){
+@media(min-width: 1200px){ 
+    section#main .container-fluid img{
+        width: 330px;
+    
+    }}  
+
+@media(min-width: 1200px){
+#headerQuestion {
+    font-size: 2.5rem;
+}}
+
+@media(min-width: 1200px){
+.button_1 {
+    font-size: 1.2rem;
+    height: 40px;
+    padding-left: 20px;
+    padding-right: 20px;
+}}
+
+@media(min-width: 992px){
 h1 {
     font-size: 3rem;
 }}
 
-@media(min-width: 1024px){
+@media(min-width: 992px){
 .flip-card {
     margin-bottom: 25px;
     margin-top: 15px;
 }}
 
-@media(min-width: 1024px){
+@media(min-width: 992px){
 #textField {
     margin-bottom: 10px;  
 }}

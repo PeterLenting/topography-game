@@ -14,8 +14,7 @@
     <!-- Style Sheets -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.1/css/all.css" type="text/css">
-    <link href="https://fonts.googleapis.com/css?family=Permanent+Marker&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Permanent+Marker|Roboto&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css" type="text/css">
     
     <!-- Favicon File -->
@@ -32,124 +31,125 @@
             <h1>Pro Cycling Trumps Game</h1>
         </div>
     </header>
-    <section id="main">
-        <div class="container-fluid">
-            <div class="row">
-                <div class="col-xl-8">
-                    <div class="main-col">                     
-                        <h2 id="headerQuestion">Who is this Cyclist?</h2>
-                        <div class="flip-card" >
-                            <div class="flip-card-inner">
-                                <div class="front">
-                                    <img src="images/start-vraagteken.png" id="newImage" alt="Who is this cyclist?">
-                                </div>
-                                <div class="back">
-                                    <img src="images/start-vraagteken.png" id="newImageBack" alt="Who is this cyclist?">
-                                </div>
-                            </div>
-                        </div>
-                        <div class="row" id="startScreen">
-                            <div class="col-12">
-                                <button type="submit" id="buttonHowToPlay" class="button_1">How to Play?</button>
-                                <button type="submit" id="buttonStart" class="button_1">Let's Play!</button>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-12">
-                                <p id="comment" class="hidden"></p>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-12">
-                                <button type="submit" id="buttonNext" class="button_1 hidden">Next Challenge</button>
-                        </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-12">
-                                <input type="text" id="textField" placeholder="Type riders name..." class="hidden">
-                            </div>
-                        </div>    
-                        <div class="row">
-                            <div class="col-12">
-                                <button type="submit" id="buttonSubmit" class="button_1 hidden">Submit</button>
-                                <button type="submit" id="buttonHint" class="button_1 hidden">Give me a Hint</button>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-12">
-                                <button type="submit" id="buttonTryAgain" class="button_1 hidden">Try Again</button>
-                                <button type="submit" id="buttonGiveUp" class="button_1 hidden">Give Up</button>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-6">
-                                <span class="hidden" id="count">ROUND:<br> 
-                                    <input type="text" id="round" value="1" readonly>
-                                </span>
-                                <span id="yourScore" class="hidden">Your Score: </span>
-                            </div>
-                            <div class="col-6">
-                                <span class="hidden" id="scoreboardSp">SCORE:<br> 
-                                    <input type="text" id="scoreboard" class="scoreboardClass" value="0" readonly>
-                                </span>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-12">
-                            <p id="scoreComment" class="hidden"></p>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-12">
-                                <button type="submit" id="buttonReset" class="button_1 hidden">Play Again!</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-            <div class="col-xl-4">
-                <aside id="sidebar">
-                    <h2>About the Game</h2>
-                        <ul>
-                            <li>Every card shows a professional (ex-)cyclist with a recognisable haircut and the shirt in which he was most succesful.</li>
-                            <li>The lower part of the card contains the score of the rider on six important qualities on a scale from 0-100. Next to his head are the big prices he won.</li>
-                            <li>The pink jersey for the Giro, the yellow one for the Tour, the red one for La Vuelta and the Roman pillar for the Monuments.</li>
-                        </ul>
-                    <h2>How to Play?</h2>
-                        <ul>
-                            <li>Check the jersey, the qualities, the races won and the hair of the rider</li>
-                            <li>Do you know who it is?</li>
-                            <li>Type his name in the textfield and hit submit</li>
-                            <li>If you're right, you get 3 points</li>
-                            <li>Not sure who he is? Ask for a hint</li>
-                            <li>A hint will cost you 1 point, just like a wrong answer does</li>
-                            <li>After two wrong answer, the right answer will be shown. So use the hint wisely</li>
-                            <li>Each game consists of 10 riders</li>
-                            <li>Enjoy!</li>
-                        </ul>
-                    <button type="submit" id="buttonGoBackUp" class="button_1">Back to the Game</button>
-                </aside>
-            </div>
+<section id="main">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-xl-8">
+                <div class="main-col">
+                    
+<h2 id="headerQuestion">Who is this Cyclist?</h2>
+<div class="flip-card" >
+    <div class="flip-card-inner">
+        <div class="front test">
+            <img src="images/start-vraagteken.png" id="newImage" alt="Who is this cyclist?">
+        </div>
+        <div class="back test">
+            <img src="images/start-vraagteken.png" id="newImageBack" alt="Who is this cyclist?">
         </div>
     </div>
-    </section>
+</div>
+<div class="row" id="startScreen">
+    <div class="col-12">
+        <button type="submit" id="buttonHowToPlayTheGame" class="button_1">How to Play?</button>
+        <button type="submit" id="buttonStart" class="button_1">Let's Play!</button>
+    </div>
+</div>
+<div class="row">
+    <div class="col-12">
+        <p id="comment" class="hidden"></p>
+    </div>
+</div>
+<div class="row">
+    <div class="col-12">
+        <button type="submit" id="buttonNext" class="button_1 hidden">Next Challenge</button>
+</div>
+</div>
+<div class="row">
+    <div class="col-12">
+        <input type="text" id="textField" placeholder="Type riders name..." class="hidden">
+    </div>
+</div>    
+<div class="row">
+    <div class="col-12">
+        <button type="submit" id="buttonSubmit" class="button_1 hidden">Submit</button>
+        <button type="submit" id="buttonHint" class="button_1 hidden">Give me a Hint</button>
+    </div>
+</div>
+<div class="row">
+    <div class="col-12">
+        <button type="submit" id="buttonAnotherTry" class="button_1 hidden">Try Again</button>
+        <button type="submit" id="buttonGiveUp" class="button_1 hidden">Give Up</button>
+    </div>
+</div>
+<div class="row">
+    <div class="col-6">
+        <span class="hidden" id="count">ROUND:<br> 
+            <input type="text" id="round" value="1" readonly>
+        </span>
+        <span id="yourScore" class="hidden">Your Score: </span>
+    </div>
+    <div class="col-6">
+        <span class="hidden" id="scoreboardSp">SCORE:<br> 
+            <input type="text" id="scoreboard" class="scoreboardClass" value="0" readonly>
+        </span>
+    </div>
+</div>
+<div class="row">
+    <div class="col-12">
+     <p id="scoreComment" class="hidden"></p>
+    </div>
+</div>
+<div class="row">
+    <div class="col-12">
+        <button type="submit" id="buttonReset" class="button_1 hidden">Play Again!</button>
+    </div>
+</div>
+</div>
+</div>
+
+<div class="col-xl-4">
+    <aside id="sidebar">
+        <h2>About the Game</h2>
+            <ul>
+                <li>Every card shows a professional (ex-)cyclist with a recognisable haircut and the shirt in which he was most succesful.</li>
+                <li>The lower part of the card contains the score of the rider on six important qualities on a scale from 0-100. Next to his head are the big prices he won.</li>
+                <li>The pink jersey for the Giro, the yellow one for the Tour, the red one for La Vuelta and the Roman pillar for the Monuments.</li>
+            </ul>
+        <h2>How to Play?</h2>
+            <ul>
+                <li>Check the jersey, the qualities, the races won and the hair of the rider</li>
+                <li>Do you know who it is?</li>
+                <li>Type his name in the textfield and hit submit</li>
+                <li>If you're right, you get 3 points</li>
+                <li>Not sure who he is? Ask for a hint</li>
+                <li>A hint will cost you 1 point, just like a wrong answer does</li>
+                <li>After two wrong answer, the right answer will be shown. So use the hint wisely</li>
+                <li>Each game consists of 10 riders</li>
+                <li>Enjoy!</li>
+            </ul>
+        <button type="submit" id="buttonGoBackUp" class="button_1">Back to the Game</button>
+    </aside>
+</div>
+</div>
+</div>
+</section>
     
-    <footer id="social">
-        <div class="sociallinks">
-            <a href="https://www.facebook.com/procyclingtrumps/" target="_blank">
-                <i class="fab fa-facebook-square fa-2x padding-fa"></i>
-            </a>
-            <a href="https://www.instagram.com/procyclingtrumps/?hl=nl" target="_blank">
-                <i class="fab fa-instagram fa-2x padding-fa"></i>
-            </a>
-            <a href="https://www.youtube.com/channel/UCVlQI6Wqd6WR0lxUJx8pOcw" target="_blank">
-                <i class="fab fa-youtube-square fa-2x padding-fa"></i>
-            </a>
-            <a href="https://twitter.com/procycletrumps" target="_blank">
-                <i class="fab fa-twitter-square fa-2x padding-fa"></i>
-            </a>
-        </div>
-    </footer>
+<footer id="social">
+    <div class="sociallinks">
+        <a href="https://www.facebook.com/procyclingtrumps/" target="_blank">
+            <i class="fab fa-facebook-square fa-2x padding-fa"></i>
+        </a>
+        <a href="https://www.instagram.com/procyclingtrumps/?hl=nl" target="_blank">
+            <i class="fab fa-instagram fa-2x padding-fa"></i>
+        </a>
+        <a href="https://www.youtube.com/channel/UCVlQI6Wqd6WR0lxUJx8pOcw" target="_blank">
+            <i class="fab fa-youtube-square fa-2x padding-fa"></i>
+        </a>
+        <a href="https://twitter.com/procycletrumps" target="_blank">
+            <i class="fab fa-twitter-square fa-2x padding-fa"></i>
+        </a>
+    </div>
+</footer>
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
