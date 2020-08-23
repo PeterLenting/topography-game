@@ -46,6 +46,10 @@ h2 {
     height: 100%;
 }
 
+#newImage, #newImageBack {
+    box-shadow: 5px 5px 5px rgba(0,0,0,.25);
+}
+
 #main {
     width: 100%;
     }
@@ -59,7 +63,7 @@ h2 {
 /*Sets the standard width of the image shown*/
 section#main .container-fluid img{
     width: 250px;
-    border-radius: 25px;
+    border-radius: 30px;
 }
 
 /*When an answer is wrong, blur the image to show the user something is 'wrong'*/
@@ -74,12 +78,19 @@ section#main .container-fluid img{
     height: 30px;
     border-radius: 25px;
     font-weight: bold;
+    border-color: black;
+    font-style: italic;
 }
 
 /*Styling the comment on the answer of the player*/
 #comment {
     font-size: 1.5rem;
     text-shadow: 1px 1px 6px #fff;
+}
+
+p {
+    font-size: 1.5rem;
+    margin-bottom: 0;
 }
 
 /*SIDEBAR*/
@@ -103,18 +114,53 @@ aside ul {
 
 /*Styling the way the scoreboard is shown during the game. 
 It looks a bit like an actuel scoreboard, which is applicable since it is a game with sports as a subject.*/
-#scoreboardSp {
-    float: left;
+#scoreboard {
+    color: #FD5F00;
+    text-align: center;
+    width: 60px;
+    font-weight: bold;
+    border-radius: 11px;
+    box-shadow: 5px 5px 5px grey;
+    border-color: black;
+    font-family: 'Orbitron', sans-serif;
+    font-size: 2.5rem;
+    background: black;
 }
 
-.scoreboardClass {
+#scoreboardSp {
+    /*float: left;*/
+    font-weight: bold;
+    font-size: 1.5rem;
+}
+
+#timeSp {
+    font-weight: bold;
+    font-size: 1.5rem; 
+}
+
+/*.scoreboardClass {
     color: #FD5F00;
     text-align: center;
     width: 60px; 
     font-family: "Courier New";
     font-weight: bold;
     border-radius: 25px;
-    box-shadow: 3px 3px black;
+    box-shadow: 5px 5px 5px grey;
+}*/
+
+#countdown_id {
+    color: #FD5F00;
+    text-align: center;
+    width: 120px;
+    font-weight: bold;
+    border-radius: 11px;
+    box-shadow: 5px 5px 5px grey;
+    border-color: black;
+    font-family: 'Orbitron', sans-serif;
+    font-size: 3.5rem;
+    background: black;
+    display: block;
+    margin: 0 auto;
 }
 
 /*Styling the way the final score is shown on the endscreen. 
@@ -152,20 +198,34 @@ It looks a bit playfull, as it should in a game.*/
 /*Styling the counter of the rounds during the game. 
 It looks a bit like an actuel scoreboard, which is applicable since it is a game with sports as a subject.*/
 #count {
-    float: right;
+    /*float: right;*/
+    font-weight: bold;
+    font-size: 1.5rem;
 }
 
 #round {
     color: #FD5F00;
     text-align: center;
-    width: 60px; 
-    font-family: "Courier New";
+    width: 60px;
     font-weight: bold;
-    border-radius: 25px;
-    box-shadow: 3px 3px black;
+    border-radius: 11px;
+    box-shadow: 5px 5px 5px grey;
+    border-color: black;
+    font-family: 'Orbitron', sans-serif;
+    font-size: 2.5rem;
+    background: black;
 }
 
 /*BUTTONS*/
+
+button:focus {
+    border: none;
+    outline: none;
+}
+
+input:focus {
+    outline: none;
+}
 
 /*All button are styled using this class. The yellow and blue colours make them fit right in.*/
 .button_1 {
@@ -179,7 +239,12 @@ It looks a bit like an actuel scoreboard, which is applicable since it is a game
     color: #FEE801;
     border-radius: 25px;
     font-weight: bold;
-    box-shadow: 3px 3px black;
+    /*box-shadow: 3px 3px black;*/
+}
+
+.button_1:hover {
+    background: #0000CD;
+    transition: all .4s ease;
 }
 
 /*Styling the button that makes it possible to ask for a hint. 
@@ -189,6 +254,11 @@ The orange color fits well in and makes the buttons stand out from the other but
     background: #FD5F00;
     margin-left: 10px;
     margin-right: 10px;
+}
+
+#buttonHint:hover {
+    background: #FF8C00;
+    transition: all .4s ease;
 }
 
 /*Styling the button that makes the player continue in the game*/

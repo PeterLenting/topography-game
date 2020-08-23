@@ -82,11 +82,10 @@ var headerScreenSize = window.matchMedia("(max-width: 700px)");
 
 function functionStartGame(){
     displayImage();
-    $("#buttonStart, #buttonHowToPlayTheGame").addClass("hidden");
-    $("#buttonHint, #buttonSubmit, #textField, #scoreboardSp, #count, #round").removeClass("hidden");
+    $("#buttonStart, #buttonHowToPlayTheGame, #headerQuestion").addClass("hidden");
+    $("#buttonHint, #buttonSubmit, #textField, #round-and-score").removeClass("hidden");
     if (headerScreenSize.matches) { 
-    $("header").addClass("hidden");
-    } else {
+        $("header").addClass("hidden");
     }
 }
 
@@ -94,7 +93,21 @@ function functionStartGame(){
 - The Start-Button triggers functionStartGame
 */
 $("#buttonStart").click(function() {
-    functionStartGame();        
+    functionStartGame();    
+    var timeLeft = 25;
+        var elem = document.getElementById('countdown_id');
+        
+        var timerId = setInterval(countdown, 1000);
+        
+        function countdown() {
+        if (timeLeft == -1) {
+            clearTimeout(timerId);
+            doSomething();
+        } else {
+            elem.innerHTML = timeLeft;
+            timeLeft--;
+        }
+        }
 });
 
 /*
@@ -106,6 +119,7 @@ $(function() {
         trigger: "manual", speed: 600
     });
 });
+
  
 /*
 - functionGiveHint() flips the main image.
@@ -332,3 +346,7 @@ function goBackUp() {
 $("#buttonGoBackUp").click(function() {
     goBackUp();
 });
+
+/*
+Count-time Counter.
+*/

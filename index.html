@@ -16,6 +16,7 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.1/css/all.css" type="text/css">
     <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Permanent+Marker&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css" type="text/css">
 
     <!-- Favicon File -->
@@ -38,7 +39,28 @@
                 <div class="col-xl-8">
                     <div class="main-col">
                         <h2 id="headerQuestion">Who is this Cyclist?</h2>
+<!-- Shows the round the user is in and the current score of the player. If the game is finished, yourScore shows the endscore -->
+                        <div class="row hidden" id="round-and-score">
+                            <div class="col-4">
+                                <span id="count">ROUND<br> 
+                                    <input type="text" id="round" value="1" readonly>
+                                </span>
+                                <span class="hidden" id="yourScore">Your Score: 
+                                </span>
+                            </div>
+                            <div class="col-4">
+                                <span id="timeSp" class="text-center">TIME<br>
+                                    <span id="countdown_id" readonly></span>
+                                </span>
+                            </div>
+                            <div class="col-4">
+                                <span id="scoreboardSp">SCORE<br> 
+                                    <input type="text" id="scoreboard" class="scoreboardClass" value="0" readonly>
+                                </span>
+                            </div>
+                        </div>
 <!-- The flip-card div makes the flipping card possible -->
+
                         <div class="flip-card">
                             <div class="flip-card-inner">
                                 <div class="front test">
@@ -86,21 +108,6 @@
                             <div class="col-12">
                                 <button type="submit" id="buttonTryAgain" class="button_1 hidden">Try Again</button>
                                 <button type="submit" id="buttonGiveUp" class="button_1 hidden">Give Up</button>
-                            </div>
-                        </div>
-<!-- Shows the round the user is in and the current score of the player. If the game is finished, yourScore shows the endscore -->
-                        <div class="row">
-                            <div class="col-6">
-                                <span class="hidden" id="count">ROUND:<br> 
-                                <input type="text" id="round" value="1" readonly>
-                                </span>
-                                <span id="yourScore" class="hidden">Your Score: 
-                                </span>
-                            </div>
-                            <div class="col-6">
-                                <span class="hidden" id="scoreboardSp">SCORE:<br> 
-                                <input type="text" id="scoreboard" class="scoreboardClass" value="0" readonly>
-                                </span>
                             </div>
                         </div>
 <!-- Contains the comment on the endscore of the player -->
