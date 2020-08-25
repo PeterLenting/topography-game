@@ -1,3 +1,7 @@
+.testerdeTest {
+  color: blue;
+}
+
 html {
     height: 100%;
 }
@@ -149,7 +153,7 @@ It looks a bit like an actuel scoreboard, which is applicable since it is a game
 }*/
 
 #countdown_id {
-    color: #FD5F00;
+    color: #00ff00;
     text-align: center;
     width: 120px;
     font-weight: bold;
@@ -161,6 +165,14 @@ It looks a bit like an actuel scoreboard, which is applicable since it is a game
     background: black;
     display: block;
     margin: 0 auto;
+}
+
+.orange {
+  color: #FD5F00!important; 
+}
+
+.red {
+  color: red!important;  
 }
 
 /*Styling the way the final score is shown on the endscreen. 

@@ -71,10 +71,31 @@ function displayImage() {
 */
 $("#buttonNext").click(function() {
     myRoundCounter();
-    myRound();    
+    myRound();   
+    $("#newImage, #newImageBack").removeClass("stopTimerId")    /*removes the class that stops the timerId from counting down*/
+    var timeLeft = 25;
+    var elem = document.getElementById('countdown_id');
+    var timerId = setInterval(countdown, 1000); /*Counts down every second*/
+
+    function countdown() {
+        if (timeLeft == 15) {
+            $("#countdown_id").addClass("orange");   
+        } if (timeLeft == 5) {
+            $("#countdown_id").addClass("red");   
+        } if (timeLeft == -1) {
+            clearTimeout(timerId);
+            timesUp();  /*Turns card to right answer and show message of timelimit*/
+        } else {
+            elem.innerHTML = timeLeft;
+            timeLeft--;
+        } if ($("#newImage").hasClass("stopTimerId")){  /*checks whether the stopTimerId-class is there to stop the timerId*/
+            clearInterval(timerId);
+        }
+    }
 });
 
-/*-
+/*
+clearInterval(timerId);
 - functionStartGame() starts the game and shows the first random image from the images-array
 - Header is hidden on devices smaller than 700px.
 */
@@ -89,25 +110,41 @@ function functionStartGame(){
     }
 }
 
+
+function timesUp() {
+    rightAnswer();
+    $("#newImage, #newImageBack").removeClass('blur');
+    $("#comment").removeClass("hidden").text("Sorry, you're out of time. No score...");
+    $("#buttonTryAgain, #buttonGiveUp").addClass("hidden");
+    $("#buttonNext").removeClass("hidden");
+    $("#buttonHint, #buttonSubmit, #textField").addClass("hidden");
+};
+
+
 /*
 - The Start-Button triggers functionStartGame
 */
 $("#buttonStart").click(function() {
     functionStartGame();    
-    var timeLeft = 25;
-        var elem = document.getElementById('countdown_id');
-        
-        var timerId = setInterval(countdown, 1000);
-        
-        function countdown() {
-        if (timeLeft == -1) {
+    var timeLeft = 24;
+    var elem = document.getElementById('countdown_id');
+    var timerId = setInterval(countdown, 1000);
+    
+    function countdown() {
+        if (timeLeft == 15) {
+            $("#countdown_id").addClass("orange");   
+        } if (timeLeft == 5) {
+            $("#countdown_id").addClass("red");   
+        } if (timeLeft == -1) {
             clearTimeout(timerId);
-            doSomething();
+            timesUp();
         } else {
             elem.innerHTML = timeLeft;
             timeLeft--;
+        } if ($("#newImage").hasClass("stopTimerId")){
+            clearInterval(timerId);
         }
-        }
+    }
 });
 
 /*
@@ -155,7 +192,7 @@ function rightAnswer() {
     var nSrc = $("#newImage, #newImageBack").attr('src').replace("-empty", "").replace("-flag", "");  
         $(".flip-card-inner").flip('toggle');
         setTimeout(function () {
-            $("#newImage, #newImageBack").attr('src', nSrc);  
+            $("#newImage, #newImageBack").attr('src', nSrc).addClass("stopTimerId");  
         }, 200);
     } 
     
@@ -296,6 +333,7 @@ $("#buttonGiveUp").click(function() {
     $("#buttonTryAgain, #buttonGiveUp").addClass("hidden");
     $("#buttonNext").removeClass("hidden");
 });
+
 
 /*
 - commentOnScore() takes care of the comments on the score the user reached at the end of the game. The number of points scored, decide which message.
