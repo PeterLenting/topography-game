@@ -21,7 +21,7 @@ function myRoundCounter() {
     $("#buttonNext").addClass("hidden");
     if (roundnrVal > numberOfRounds) {
         commentOnScore();
-        $("#comment, #count, #headerQuestion, .flip-card-inner").addClass("hidden");
+        $("#comment, #count, #timeSp, #headerQuestion, .flip-card-inner").addClass("hidden");
         $("#buttonReset").removeClass("hidden");
         $("#textField").val("");
         $("#scoreboard").addClass("endScoreClass").removeClass("scoreboardClass");
@@ -199,20 +199,22 @@ function rightAnswer() {
 /*
 - myScore takes care of the scoreboard and the comments after each correct answer.
 - "Yes, that's him" is shown after a correct answer.
-- If the user recieved a hint and got a wrong answer, 1 point is added to te scoreboard.
-- If the user either recieved a hint or got a wrong answer, 2 points are added to te scoreboard.
-- If the user recieved no hint and didn't give a wrong answer, 3 points is added to te scoreboard.
+- If the user recieved a hint and got a wrong answer, 5 points is added to te scoreboard.
+- If the user either recieved a hint or got a wrong answer, 10 points are added to te scoreboard.
+- If the user recieved no hint and didn't give a wrong answer, 15 points is added to te scoreboard.
+- With parseInt(time.text()) the seconds left on the timetable are added to the score. 
 */
 var score = $("#scoreboard");
+var time = $("#countdown_id");
 
 function myScore() {
     $("#comment").removeClass("hidden").text("Yes, that's him!");
     if ($("#newImage").hasClass("gotHint") &&  $("#newImage").hasClass("gotWrongAnswer")) {
-        score.val( parseInt(score.val()) + 1 ); 
+        score.val(parseInt(score.val()) + 5 + parseInt(time.text())); 
     } else if ($("#newImage").hasClass("gotHint") || $("#newImage").hasClass("gotWrongAnswer")) {
-        score.val( parseInt(score.val()) + 2 ); 
+        score.val(parseInt(score.val()) + 10 + parseInt(time.text())); 
     } else {
-        score.val( parseInt(score.val()) + 3 );
+        score.val(parseInt(score.val()) + 15 + parseInt(time.text()));
     }
 }
  
@@ -352,6 +354,8 @@ function commentOnScore() {
         $("#scoreComment").text("Wow, that's impressive!");
     } else if (score.val() == 30) { 
         $("#scoreComment").text("You're a true champion!");
+    } else if (score.val() > 30) { 
+        $("#scoreComment").text("Fenomeen!");
     } else {
         $("#scoreComment").text("Something went wrong...");
     }

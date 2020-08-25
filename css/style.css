@@ -121,7 +121,7 @@ It looks a bit like an actuel scoreboard, which is applicable since it is a game
 #scoreboard {
     color: #FD5F00;
     text-align: center;
-    width: 60px;
+    width: 120px;
     font-weight: bold;
     border-radius: 11px;
     box-shadow: 5px 5px 5px grey;
