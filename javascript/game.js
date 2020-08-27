@@ -69,27 +69,31 @@ function displayImage() {
 - The Next-Button triggers myRoundCounter() and myRound(). 
 - myRoundCounter() starts displayImage() as long as 'roundnrVal' is smaller than 'numberOfRounds'
 */
-$("#buttonNext").click(function() {
-    myRoundCounter();
-    myRound();   
-    $("#newImage, #newImageBack").removeClass("stopTimerId")    /*removes the class that stops the timerId from counting down*/
-    var timeLeft = 25;
+$("#buttonNext").click(function() {  
+    /*$("#newImage, #newImageBack").removeClass("stopTimerId")    removes the class that stops the timerId from counting down*/
+    var timeLeft = 24;
     var elem = document.getElementById('countdown_id');
-    var timerId = setInterval(countdown, 1000); /*Counts down every second*/
+    $('#countdown_id').html(25).addClass("green").removeClass("orange red");
+    window.timerId = setInterval(countdown, 1000);
+    myRoundCounter();
+    myRound(); 
 
     function countdown() {
-        if (timeLeft == 15) {
+        /*if ($("#newImage").hasClass("stopTimerId")){  /*checks whether the stopTimerId-class is there to stop the timerId
+            clearInterval(window.timerId);
+        }*/
+        if (timeLeft == 25) {
+            $("#countdown_id").addClass("green").removeClass("orange red");
+        } if (timeLeft == 15) {
             $("#countdown_id").addClass("orange");   
         } if (timeLeft == 5) {
             $("#countdown_id").addClass("red");   
         } if (timeLeft == -1) {
-            clearTimeout(timerId);
+            clearTimeout(window.timerId);
             timesUp();  /*Turns card to right answer and show message of timelimit*/
         } else {
             elem.innerHTML = timeLeft;
             timeLeft--;
-        } if ($("#newImage").hasClass("stopTimerId")){  /*checks whether the stopTimerId-class is there to stop the timerId*/
-            clearInterval(timerId);
         }
     }
 });
@@ -128,7 +132,7 @@ $("#buttonStart").click(function() {
     functionStartGame();    
     var timeLeft = 24;
     var elem = document.getElementById('countdown_id');
-    var timerId = setInterval(countdown, 1000);
+    window.timerId = setInterval(countdown, 1000);
     
     function countdown() {
         if (timeLeft == 15) {
@@ -136,13 +140,13 @@ $("#buttonStart").click(function() {
         } if (timeLeft == 5) {
             $("#countdown_id").addClass("red");   
         } if (timeLeft == -1) {
-            clearTimeout(timerId);
+            clearTimeout(window.timerId);
             timesUp();
         } else {
             elem.innerHTML = timeLeft;
             timeLeft--;
-        } if ($("#newImage").hasClass("stopTimerId")){
-            clearInterval(timerId);
+        /*} if ($("#newImage").hasClass("stopTimerId")){
+            clearInterval(window.timerId);*/
         }
     }
 });
@@ -188,11 +192,12 @@ $("#buttonHint").click(function() {
 - The flag-image is replaced by the image with the name of the cyclist and the flag of his nation after flip().
 */
 function rightAnswer() {
-    
+    clearInterval(window.timerId);
+    /*$("#newImage, #newImageBack").addClass("stopTimerId");  */
     var nSrc = $("#newImage, #newImageBack").attr('src').replace("-empty", "").replace("-flag", "");  
         $(".flip-card-inner").flip('toggle');
         setTimeout(function () {
-            $("#newImage, #newImageBack").attr('src', nSrc).addClass("stopTimerId");  
+            $("#newImage, #newImageBack").attr('src', nSrc);  
         }, 200);
     } 
     
