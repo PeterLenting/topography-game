@@ -307,6 +307,25 @@ The orange color fits well in and makes the buttons stand out from the other but
 /*FOOTER*/
 
 /*Styling the footer, again using the darkblue and yellow to make everything fit in.*/
+.footer-logo {
+  font-style: italic;
+  color:  #fcf5b3;
+}
+
+#flip-it-logo {
+  font-style: normal;  
+  padding-left: 3px;
+}
+
+.footer-logo-by {
+  font-size: 1.1rem;
+}
+
+#footer-logo-link {
+  padding: 0;  
+  color: #ADEFD1;
+}
+
 #social {
     background: #101820;
     text-align: center;

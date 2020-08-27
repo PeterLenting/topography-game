@@ -347,20 +347,20 @@ $("#buttonGiveUp").click(function() {
 */
 function commentOnScore() {   
     $("#scoreComment").removeClass("hidden"); 
-    if (score.val() < 10) {
-        $("#scoreComment").text("Maybe you should try again?");
-    } else if (score.val() < 15) { 
+    if (score.val() < 100) {
+        $("#scoreComment").text("Uhm, maybe you should try again?");
+    } else if (score.val() < 100) { 
         $("#scoreComment").text("Not too bad!");
-    } else if (score.val() < 20) { 
+    } else if (score.val() < 150) { 
         $("#scoreComment").text("You're getting there!");
-    } else if (score.val() < 25) { 
+    } else if (score.val() < 200) { 
         $("#scoreComment").text("Nice job!");
-    } else if (score.val() < 29) { 
+    } else if (score.val() < 300) { 
         $("#scoreComment").text("Wow, that's impressive!");
-    } else if (score.val() == 30) { 
-        $("#scoreComment").text("You're a true champion!");
-    } else if (score.val() > 30) { 
-        $("#scoreComment").text("Fenomeen!");
+    } else if (score.val() < 375) { 
+        $("#scoreComment").text("Getting close to yellow yourself!");
+    } else if (score.val() >= 375) { 
+        $("#scoreComment").text("You're a true worldchampion!");
     } else {
         $("#scoreComment").text("Something went wrong...");
     }
