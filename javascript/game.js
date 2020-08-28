@@ -232,6 +232,9 @@ function myScore() {
 */
 function runGame() {
     $("#buttonNext").removeClass("hidden");
+    if (roundnrVal == 11) {
+        $("#buttonNext").html("Get to the finish");
+    }
     $("#buttonHint, #buttonSubmit, #textField").addClass("hidden");
     var answer = $("#textField").val(); 
     var nSrc = $("#newImage, #newImageBack").attr('src').replace("-empty", "").replace("-flag", "");
