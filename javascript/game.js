@@ -26,7 +26,7 @@ function myRoundCounter() {
         $("#textField").val("");
         $("#scoreboard").addClass("endScoreClass").removeClass("scoreboardClass");
         $("#yourScore").removeClass("hidden");
-        $("#scoreboardSp").css("color", "#FEE801");
+        $('#score-div').contents().appendTo('#time-div')
         } else {
         $("#comment").addClass("hidden");
         $("#buttonHint, #buttonSubmit").removeClass("hidden");
@@ -117,11 +117,16 @@ function functionStartGame(){
 
 function timesUp() {
     rightAnswer();
-    $("#newImage, #newImageBack").removeClass('blur');
-    $("#comment").removeClass("hidden").text("Sorry, you're out of time. No score...");
-    $("#buttonTryAgain, #buttonGiveUp").addClass("hidden");
-    $("#buttonNext").removeClass("hidden");
-    $("#buttonHint, #buttonSubmit, #textField").addClass("hidden");
+    if (roundnrVal < 12) {
+        $("#newImage, #newImageBack").removeClass('blur');
+        $("#comment").removeClass("hidden").text("Sorry, you're out of time. No score...");
+        $("#buttonTryAgain, #buttonGiveUp").addClass("hidden");
+        $("#buttonNext").removeClass("hidden");
+        $("#buttonHint, #buttonSubmit, #textField").addClass("hidden");
+    }
+    if (roundnrVal == 11) {
+        $("#buttonNext").html("Get to the finish");
+    }
 };
 
 

@@ -41,19 +41,19 @@
                         <h2 id="headerQuestion">Who is this Cyclist?</h2>
 <!-- Shows the round the user is in and the current score of the player. If the game is finished, yourScore shows the endscore -->
                         <div class="row hidden" id="round-and-score">
-                            <div class="col-4">
+                            <div class="col-4" id="round-div">
                                 <span id="count">ROUND<br> 
                                     <input type="text" id="round" value="1" readonly>
                                 </span>
-                                <span class="hidden" id="yourScore">Your Score: 
-                                </span>
+                                <!--<span class="hidden" id="yourScore">Your Score: 
+                                </span>-->
                             </div>
-                            <div class="col-4">
+                            <div class="col-4" id="time-div">
                                 <span id="timeSp" class="text-center">TIME<br>
                                     <span id="countdown_id" readonly>25</span>
                                 </span>
                             </div>
-                            <div class="col-4">
+                            <div class="col-4" id="score-div">
                                 <span id="scoreboardSp">SCORE<br> 
                                     <input type="text" id="scoreboard" class="scoreboardClass" value="0" readonly>
                                 </span>

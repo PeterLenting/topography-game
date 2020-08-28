@@ -297,6 +297,11 @@ The orange color fits well in and makes the buttons stand out from the other but
 #buttonReset {
     margin-top: 20px;
     width: 300px;
+    background: #006B38;
+}
+
+#buttonReset:hover {
+    background: #2BAE66;
 }
 
 /*Used to hide the buttuns that are not needed at that point*/
