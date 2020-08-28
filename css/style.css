@@ -36,6 +36,14 @@ h2 {
     text-align: center;
 }
 
+.gameplay {
+    margin-bottom: 10px;
+}
+
+#round-and-score {
+    margin-top: 5px;
+}
+
 .main-col {
     background: linear-gradient(#FEE715, #fcf5b3);
     color: #101820;
@@ -58,6 +66,7 @@ h2 {
 /*Put some margin underneath the image*/
 .flip-card {
     margin-bottom: 10px;
+    margin-top: 15px;
     }
 
 /*Sets the standard width of the image shown*/
@@ -83,7 +92,7 @@ section#main .container-fluid img{
 
 /*Styling the comment on the answer of the player*/
 #comment {
-    font-size: 1.5rem;
+    font-size: 1.2rem;
     text-shadow: 1px 1px 6px #fff;
 }
 
@@ -116,25 +125,25 @@ It looks a bit like an actuel scoreboard, which is applicable since it is a game
 #scoreboard {
     color: #FEE715;
     text-align: center;
-    width: 120px;
+    width: 80px;
     font-weight: bold;
     border-radius: 11px;
     box-shadow: 5px 5px 5px grey;
     border-color: #101820;
     font-family: 'Orbitron', sans-serif;
-    font-size: 2.5rem;
+    font-size: 1.5rem;
     background: #101820;
 }
 
 #scoreboardSp {
     /*float: left;*/
     font-weight: bold;
-    font-size: 1.5rem;
+    font-size: 1rem;
 }
 
 #timeSp {
     font-weight: bold;
-    font-size: 1.5rem; 
+    font-size: 1rem; 
 }
 
 /*.scoreboardClass {
@@ -150,13 +159,13 @@ It looks a bit like an actuel scoreboard, which is applicable since it is a game
 #countdown_id {
     color: #006B38;
     text-align: center;
-    width: 120px;
+    width: 90px;
     font-weight: bold;
     border-radius: 11px;
     box-shadow: 5px 5px 5px grey;
     border-color: #101820;
     font-family: 'Orbitron', sans-serif;
-    font-size: 3.5rem;
+    font-size: 2.5rem;
     background: #101820;
     display: block;
     margin: 0 auto;
@@ -208,22 +217,22 @@ It looks a bit playfull, as it should in a game.*/
 /*ROUNDCOUNTER*/
 /*Styling the counter of the rounds during the game. 
 It looks a bit like an actuel scoreboard, which is applicable since it is a game with sports as a subject.*/
-#count {
+#countSp {
     /*float: right;*/
     font-weight: bold;
-    font-size: 1.5rem;
+    font-size: 1rem;
 }
 
 #round {
     color: #FEE715;
     text-align: center;
-    width: 60px;
+    width: 40px;
     font-weight: bold;
     border-radius: 11px;
     box-shadow: 5px 5px 5px grey;
     border-color: #101820;
     font-family: 'Orbitron', sans-serif;
-    font-size: 2.5rem;
+    font-size: 1.5rem;
     background: #101820;
 }
 
@@ -315,6 +324,7 @@ The orange color fits well in and makes the buttons stand out from the other but
 .footer-logo {
   font-style: italic;
   color:  #fcf5b3;
+  padding-bottom: 5px;
 }
 
 #flip-it-logo {
@@ -375,13 +385,18 @@ because the explanation is next to the gamescreen on bigger screens.*/
 @media(min-width: 992px){ 
 #buttonHowToPlayTheGame {
     display: none;
-}}
+    }
+}
 
 /*Prevents the button that links to the top of the game from showing on bigger screens, 
 because the explanation is next to the gamescreen on bigger screens.*/
 @media(min-width: 992px){ 
     #buttonGoBackUp {
         display: none;
+    }
+/*Making the comment just a little bigger on bigger screens*/
+    #comment {
+    font-size: 1.5rem;
     }
 }
 
@@ -392,10 +407,41 @@ section#main .container-fluid img {
     }
 }    
 
+@media(min-width: 768px){ 
+#countSp {
+    font-size: 1.5rem;
+    }
+#timeSp {
+    font-size: 1.5rem;
+    }
+#scoreboardSp {
+    font-size: 1.5rem;
+    }
+#scoreboard {
+    font-size: 2.5rem;
+    width: 120px;
+    }
+#countdown_id {
+    font-size: 3.5rem;
+    width: 120px;
+    }
+#round {
+    font-size: 2.5rem;
+    width: 60px;
+    }
+.marginEndscore {
+    margin-top: 50px;
+}
+} 
+
 /*Shows a even bigger image on even bigger screens, which fits the screen better.*/
 @media(min-width: 1200px){ 
 section#main .container-fluid img {
     width: 330px;
+    }
+/*Prevents the main from being shorter than the aside by removing the margin-bottom.*/
+.gameplay {
+    margin-bottom: 0;
     }
 }  
 
@@ -427,7 +473,6 @@ section#main .container-fluid img {
 @media(min-width: 992px){
 .flip-card {
     margin-bottom: 25px;
-    margin-top: 15px;
     }
 }
 

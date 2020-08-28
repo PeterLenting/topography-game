@@ -21,7 +21,7 @@ function myRoundCounter() {
     $("#buttonNext").addClass("hidden");
     if (roundnrVal > numberOfRounds) {
         commentOnScore();
-        $("#comment, #count, #timeSp, #headerQuestion, .flip-card-inner").addClass("hidden");
+        $("#comment, #countSp, #timeSp, #headerQuestion, .flip-card-inner").addClass("hidden");
         $("#buttonReset").removeClass("hidden");
         $("#textField").val("");
         $("#scoreboard").addClass("endScoreClass").removeClass("scoreboardClass");
@@ -219,6 +219,7 @@ var time = $("#countdown_id");
 
 function myScore() {
     $("#comment").removeClass("hidden").text("Yes, that's him!");
+    $("#round-and-score").addClass("marginEndscore");
     if ($("#newImage").hasClass("gotHint") &&  $("#newImage").hasClass("gotWrongAnswer")) {
         score.val(parseInt(score.val()) + 5 + parseInt(time.text())); 
     } else if ($("#newImage").hasClass("gotHint") || $("#newImage").hasClass("gotWrongAnswer")) {
@@ -356,7 +357,7 @@ $("#buttonGiveUp").click(function() {
 function commentOnScore() {   
     $("#scoreComment").removeClass("hidden"); 
     if (score.val() < 100) {
-        $("#scoreComment").text("Uhm, maybe you should try again?");
+        $("#scoreComment").text("Uhm, maybe you could try again?");
     } else if (score.val() < 100) { 
         $("#scoreComment").text("Not too bad!");
     } else if (score.val() < 150) { 
