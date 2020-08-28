@@ -237,7 +237,7 @@ function myScore() {
 - Trying again costs one point. Giving a wrong answer again will make the right answer appear. No point are given.
 */
 function runGame() {
-    $("html").scrollTop(0);
+    $(window).scrollTop(0);
     $("#buttonNext").removeClass("hidden");
     if (roundnrVal == 11) {
         $("#buttonNext").html("Get to the finish");
