@@ -1,3 +1,20 @@
+window.onload = function() {
+  console.log($("#highScore_id").val())
+  document.getElementById("highScore_id").value = localStorage.getItem("highScore");
+  if ($("#highScore_id").val() != 0) {
+      $("#highScoreDiv").removeClass("hidden");
+  }
+};
+
+function resetHighScore() {
+    localStorage.clear();
+    document.getElementById("highScore_id").value = 0;
+};
+
+$("#buttonResetHighScore").click(function() { 
+    resetHighScore()
+});
+
 /*
 - Counting the rounds. 
 - Every time the user clicks #buttonNext myRound() is executed and '1' is added to #round. 
@@ -19,14 +36,30 @@ var roundnrVal = 2;
 
 function myRoundCounter() { 
     $("#buttonNext").addClass("hidden");
-    if (roundnrVal > numberOfRounds) {
+    if (roundnrVal > 3) {
         commentOnScore();
         $("#comment, #countSp, #timeSp, #headerQuestion, .flip-card-inner").addClass("hidden");
+        $("#highScoreDiv").removeClass("hidden");
         $("#buttonReset").removeClass("hidden");
         $("#textField").val("");
         $("#scoreboard").addClass("endScoreClass").removeClass("scoreboardClass");
         $("#yourScore").removeClass("hidden");
         $('#score-div').contents().appendTo('#time-div')
+        var score = $("#scoreboard").val();
+        var score_int = parseInt(score);
+        var highScore = $("#highScore_id").val();
+        var highScore_int = parseInt(highScore);
+        console.log("1 " + highScore)
+        console.log(score_int);
+        console.log("2 " + highScore_int)
+        console.log("3 " + highScore)
+            if ((score_int > highScore_int) || ($("#highScore_id").val() == 0)) {
+                localStorage.setItem("highScore", score_int);
+                str_highScore = localStorage.getItem("highScore");
+                highScore = parseInt(str_highScore);
+                document.getElementById("highScore_id").value = localStorage.getItem("highScore");
+                console.log(highScore)
+            }
         } else {
         $("#comment").addClass("hidden");
         $("#buttonHint, #buttonSubmit").removeClass("hidden");
@@ -70,7 +103,6 @@ function displayImage() {
 - myRoundCounter() starts displayImage() as long as 'roundnrVal' is smaller than 'numberOfRounds'
 */
 $("#buttonNext").click(function() {  
-    /*$("#newImage, #newImageBack").removeClass("stopTimerId")    removes the class that stops the timerId from counting down*/
     var timeLeft = 24;
     var elem = document.getElementById('countdown_id');
     $('#countdown_id').html(25).addClass("green").removeClass("orange red");
@@ -79,9 +111,6 @@ $("#buttonNext").click(function() {
     myRound(); 
 
     function countdown() {
-        /*if ($("#newImage").hasClass("stopTimerId")){  /*checks whether the stopTimerId-class is there to stop the timerId
-            clearInterval(window.timerId);
-        }*/
         if (timeLeft == 25) {
             $("#countdown_id").addClass("green").removeClass("orange red");
         } if (timeLeft == 15) {
@@ -107,11 +136,31 @@ var headerScreenSize = window.matchMedia("(max-width: 700px)");
 
 function functionStartGame(){
     displayImage();
+    if ($("#highScore_id").val() == 0) {
+      $("#highScoreDiv").addClass("hidden");
+    }
+    console.log(localStorage);
     $("#buttonStart, #buttonHowToPlayTheGame, #headerQuestion").addClass("hidden");
     $("#buttonHint, #buttonSubmit, #textField, #round-and-score").removeClass("hidden");
     if (headerScreenSize.matches) { 
         $("header").addClass("hidden");
     }
+    /*var score = $("#scoreboard");
+    var scoreCurrent = parseInt(score.val());
+    console.log(scoreCurrent)
+    if (scoreCurrent == 0) {
+        localStorage.setItem("highscore", scoreCurrent);
+        str_highScore = localStorage.getItem("highscore");
+        highScore = parseInt(str_highScore);
+        console.log(highScore)
+        var s = document.getElementById("highScore_id");
+            s.value = highScore;
+            console.log(s.value);
+            console.log(highScore)
+    } else {
+        highScore = localStorage.getItem("highScore");
+        activeHighScore = highScore;
+    }*/
 }
 
 
