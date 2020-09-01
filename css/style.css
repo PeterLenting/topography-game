@@ -237,6 +237,19 @@ It looks a bit like an actuel scoreboard, which is applicable since it is a game
     background: #101820;
 }
 
+#highScore_id {
+    color: #FEE715;
+    text-align: center;
+    width: 80px;
+    font-weight: bold;
+    border-radius: 11px;
+    box-shadow: 5px 5px 5px grey;
+    border-color: #101820;
+    font-family: 'Orbitron', sans-serif;
+    font-size: 2.5rem;
+    background: Orange;
+}
+
 /*BUTTONS*/
 
 button:focus {
@@ -266,6 +279,14 @@ input:focus {
 .button_1:hover {
     background:#616247;
     transition: all .4s ease;
+}
+
+#buttonResetHighScore {
+  font-size: 1rem; 
+  height: 30px;
+  padding-left: 10px;
+  padding-right: 10px; 
+  border-radius: 6%;
 }
 
 /*Styling the button that makes it possible to ask for a hint. 

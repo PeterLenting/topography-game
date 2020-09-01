@@ -3,6 +3,7 @@ window.onload = function() {
   document.getElementById("highScore_id").value = localStorage.getItem("highScore");
   if ($("#highScore_id").val() != 0) {
       $("#highScoreDiv").removeClass("hidden");
+      $("#buttonResetHighScore").removeClass("hidden");
   }
 };
 
@@ -36,10 +37,11 @@ var roundnrVal = 2;
 
 function myRoundCounter() { 
     $("#buttonNext").addClass("hidden");
-    if (roundnrVal > 3) {
+    if (roundnrVal > numberOfRounds) {
         commentOnScore();
         $("#comment, #countSp, #timeSp, #headerQuestion, .flip-card-inner").addClass("hidden");
         $("#highScoreDiv").removeClass("hidden");
+        $("#buttonResetHighScore").addClass("hidden");
         $("#buttonReset").removeClass("hidden");
         $("#textField").val("");
         $("#scoreboard").addClass("endScoreClass").removeClass("scoreboardClass");
@@ -136,9 +138,7 @@ var headerScreenSize = window.matchMedia("(max-width: 700px)");
 
 function functionStartGame(){
     displayImage();
-    if ($("#highScore_id").val() == 0) {
-      $("#highScoreDiv").addClass("hidden");
-    }
+    $("#highScoreDiv").addClass("hidden");
     console.log(localStorage);
     $("#buttonStart, #buttonHowToPlayTheGame, #headerQuestion").addClass("hidden");
     $("#buttonHint, #buttonSubmit, #textField, #round-and-score").removeClass("hidden");
