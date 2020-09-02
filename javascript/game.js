@@ -79,13 +79,15 @@ var images = ['images/cyclist-1-empty.png', 'images/cyclist-2-empty.png', 'image
               'images/cyclist-4-empty.png', 'images/cyclist-5-empty.png', 'images/cyclist-6-empty.png', 
               'images/cyclist-7-empty.png', 'images/cyclist-8-empty.png', 'images/cyclist-9-empty.png', 
               'images/cyclist-10-empty.png', 'images/cyclist-11-empty.png', 'images/cyclist-12-empty.png', 
-              'images/cyclist-13-empty.png', 'images/cyclist-14-empty.png', 'images/cyclist-15-empty.png'];
+              'images/cyclist-13-empty.png', 'images/cyclist-14-empty.png', 'images/cyclist-15-empty.png',
+              'images/cyclist-16-empty.png', 'images/cyclist-17-empty.png', 'images/cyclist-18-empty.png',
+              'images/cyclist-19-empty.png', 'images/cyclist-20-empty.png'];
 
 var usedImages = [];
 var usedImagesCount = 0;
 
 function displayImage() {
-    var num = Math.floor(Math.random() *15);
+    var num = Math.floor(Math.random() *20);
     if (!usedImages[num]) {
         document.getElementById("newImage").src = images[num];
         document.getElementById("newImageBack").src= images[num];
@@ -337,6 +339,21 @@ function runGame() {
         rightAnswer();
         myScore();
     } else if ($("#newImage").attr('src').indexOf("-15-") > -1 && answer.toUpperCase() == "MARCO PANTANI") {
+        rightAnswer();
+        myScore();
+    } else if ($("#newImage").attr('src').indexOf("-16-") > -1 && answer.toUpperCase() == "GREG LEMOND") {
+        rightAnswer();
+        myScore();
+    } else if ($("#newImage").attr('src').indexOf("-17-") > -1 && answer.toUpperCase() == "LAURENT FIGNON") {
+        rightAnswer();
+        myScore();
+    } else if ($("#newImage").attr('src').indexOf("-18-") > -1 && answer.toUpperCase() == "JAN JANSSEN") {
+        rightAnswer();
+        myScore();
+    } else if ($("#newImage").attr('src').indexOf("-19-") > -1 && answer.toUpperCase() == "ROGER DE VLAEMINCK") {
+        rightAnswer();
+        myScore();
+    } else if ($("#newImage").attr('src').indexOf("-20-") > -1 && answer.toUpperCase() == "FEDERICO BAHAMONTES") {
         rightAnswer();
         myScore();
     } else {
