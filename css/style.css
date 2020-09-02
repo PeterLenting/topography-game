@@ -105,13 +105,13 @@ p {
 /*SIDEBAR*/
 /*The sidebar has the same yellow colour als the main-col and the same darkblue text. 
 This ensures the feeling of everything fitting together.*/
-aside{
+aside {
     background: linear-gradient(#FEE715, #fcf5b3);
     color: #101820FF;
     border: 3px solid #101820;
     border-radius: 25px;
     margin-bottom: 10px;
-    height: 100%;
+    height: 85%;
     }
 
 /*Aligns the text in the unorderd list in the aside to the left to make it look clean.*/
@@ -184,6 +184,15 @@ It looks a bit like an actuel scoreboard, which is applicable since it is a game
   color: red!important;  
 }
 
+#highScoreDiv {
+    margin-bottom: 10px;
+    border: 3px solid #101820;
+    border-radius: 25px;
+    padding-bottom: 10px;
+    /*box-shadow: 3px 3px black;*/
+    background-color: #FF652F;
+}
+
 /*Styling the way the final score is shown on the endscreen. 
 It looks a bit like an actuel scoreboard, which is applicable since it is a game with sports as a subject.*/
 #yourScore {
@@ -195,7 +204,7 @@ It looks a bit like an actuel scoreboard, which is applicable since it is a game
 }
 
 .endScoreClass {
-    color: #FD5F00;
+    color:  #FD5F00;
     text-align: center;
     width: 125px;
     height: 125px; 
@@ -240,14 +249,13 @@ It looks a bit like an actuel scoreboard, which is applicable since it is a game
 #highScore_id {
     color: #FEE715;
     text-align: center;
-    width: 80px;
+    width: 110px;
     font-weight: bold;
     border-radius: 11px;
-    box-shadow: 5px 5px 5px grey;
     border-color: #101820;
     font-family: 'Orbitron', sans-serif;
     font-size: 2.5rem;
-    background: Orange;
+    background: #101820;
 }
 
 /*BUTTONS*/
