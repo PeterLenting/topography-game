@@ -131,7 +131,7 @@
                 </div>
 <!-- The sidebar contains an explanation of the game -->
                 <div class="col-12 col-xl-4">
-                    <div class="hidden" id="highScoreDiv">
+                    <div id="highScoreDiv" style="display: none">
                         <h3 id="highScoreSp">Your Highscore</h3>
                         <input type="number" id="highScore_id" value="0" readonly>
                         <button type="submit" id="buttonResetHighScore" class="button_1"><i class="fas fa-undo"></i> Reset </button>
@@ -143,15 +143,15 @@
                         <ul>
                             <li>Every card shows a professional (ex-)cyclist with a recognisable haircut and the shirt in which he was most successful.</li>
                             <li>The lower part of the card contains the score of the rider on six important qualities on a scale from 0-100. Next to his head are the big prices he won.</li>
-                            <li>The pink jersey for the Giro, the yellow one for the Tour, the red one for La Vuelta and the Roman pillar for the Monuments.</li>
+                            <li>The pink jersey represents a Giro-win, the yellow one a Tour-win, the red one a Vuelta-win and the Roman pillar a win in a Monument.</li>
                         </ul>
                         <h3>How to Play?</h3>
                         <ul>
-                            <li>Check the jersey, the qualities, the races won and the hair of the rider</li>
+                            <li>Check the jersey, qualities, races won and haircut of the rider</li>
                             <li>Do you know who it is?</li>
-                            <li>Type his name (first- and lastname) in the textfield and hit submit</li>
+                            <li>Enter his name (first- and lastname) and hit submit</li>
                             <li>If you're right, you get 15 points</li>
-                            <li>Not sure who he is? Ask for a hint and the flag of his nation is shown</li>
+                            <li>Not sure? Ask for a hint and the flag of his nation is shown</li>
                             <li>A hint will cost you 5 point, just like a wrong answer does</li>
                             <li>After two wrong answers, the right answer will be shown. So use the hint wisely</li>
                             <li>Each game contains 10 riders</li>
@@ -165,6 +165,19 @@
         </div>
     </section>
 
+    <!-- HighScore Modal -->
+    <div id="high-score-modal" class="modal">
+        <!-- Modal content -->
+        <div id="modal-content" class="text-center">
+            <span class="close">&times;</span>
+            <p><span id="high-score-model-text">Yes!</span> You got yourself a</p>
+            <p id="high-score-model-text">NEW HIGH SCORE!</p>
+            <i class="fas fa-trophy"></i><br>
+            <input type="number" id="high-score-model-score" value="0" readonly="">
+        </div>
+    </div>
+
+    <!-- Footer -->
     <footer id="social">
         <div class="row sociallinks">
             <div class="col-12 col-md-6 footer-logo">
@@ -188,7 +201,7 @@
             </div>
         </div>
     </footer>
-<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-3.5.1.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 <script src="https://cdn.rawgit.com/nnattawat/flip/master/dist/jquery.flip.min.js"></script>

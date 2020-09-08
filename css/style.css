@@ -1,6 +1,9 @@
 html {
     height: 100%;
-    /**/
+}
+
+.asideFullHeight {
+    height: 100%;
 }
 
 body{
@@ -112,6 +115,7 @@ aside {
     border-radius: 25px;
     margin-bottom: 10px;
     height: 85%;
+    transition: all 1.0s ease;
     }
 
 /*Aligns the text in the unorderd list in the aside to the left to make it look clean.*/
@@ -189,7 +193,6 @@ It looks a bit like an actuel scoreboard, which is applicable since it is a game
     border: 3px solid #101820;
     border-radius: 25px;
     padding-bottom: 10px;
-    /*box-shadow: 3px 3px black;*/
     background-color: #FF652F;
 }
 
@@ -345,10 +348,77 @@ The orange color fits well in and makes the buttons stand out from the other but
 
 /*Used to hide the buttuns that are not needed at that point*/
 .hidden {
-    display: none!important;
+    display: none;
 } 
 
-/*FOOTER*/
+
+/* MODAL */
+
+/* The Modal (background) */
+#high-score-modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  padding-top: 125px; /* Location of the box */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgba(0,0,0,0.8); /* Black w/ opacity */
+}
+
+#modal-content {
+  background: linear-gradient(#FF652F, #f3a98f);
+  margin: auto;
+  padding: 20px;
+  border: 5px solid #FEE715;
+  width: 80%;
+  border-radius: 25px;
+  box-shadow: 5px 5px 5px #18191b;
+}
+
+#high-score-model-text {
+  font-size: 2rem;
+  font-weight: bold;
+}
+
+.fa-trophy {
+    color: #FEE715;
+    font-size: 10rem;
+}
+
+#high-score-model-score {
+    color: #FEE715;
+    text-align: center;
+    width: 110px;
+    font-weight: bold;
+    border-radius: 11px;
+    border-color: #101820;
+    font-family: 'Orbitron', sans-serif;
+    font-size: 2.5rem;
+    background: #101820;
+    margin-top: 10px;
+}
+
+/* The Close-button (x) in the modal */
+.close {
+  color: #101820;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+  opacity: 0.6;
+}
+
+.close:hover,
+.close:focus {
+  color: #616247;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+
+/* FOOTER */
 
 /*Styling the footer, again using the darkblue and yellow to make everything fit in.*/
 .footer-logo {
@@ -504,6 +574,14 @@ section#main .container-fluid img {
 .flip-card {
     margin-bottom: 25px;
     }
+#modal-content {
+    width: 40%;
+}
+#high-score-model-text {
+  font-size: 3rem;
+}
+.fa-trophy {
+    font-size: 12rem;
 }
 
 @media(min-width: 992px){
@@ -520,4 +598,11 @@ body {
     margin-left: 200px;
     margin-right: 200px;
     }
+ }
+
+@media(min-width: 1800px){
+aside {
+    height: 83%;
+    }
 }  
+
