@@ -369,6 +369,7 @@ The orange color fits well in and makes the buttons stand out from the other but
 }
 
 #modal-content {
+  position: relative;
   background: linear-gradient(#FF652F, #f3a98f);
   margin: auto;
   padding: 20px;
@@ -376,6 +377,21 @@ The orange color fits well in and makes the buttons stand out from the other but
   width: 80%;
   border-radius: 25px;
   box-shadow: 5px 5px 5px #18191b;
+    -webkit-animation-name: animatetop;
+  -webkit-animation-duration: 0.4s;
+  animation-name: animatetop;
+  animation-duration: 0.4s
+}
+
+/* Add Animation */
+@-webkit-keyframes animatetop {
+  from {top:-300px; opacity:0} 
+  to {top:0; opacity:1}
+}
+
+@keyframes animatetop {
+  from {top:-300px; opacity:0}
+  to {top:0; opacity:1}
 }
 
 #high-score-model-text {

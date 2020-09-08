@@ -8,7 +8,7 @@ This application is a simple, interactive and fun game to test someone's knowled
 This specific version of the game uses images from Pro Cycling Trumps (PCT). PCT is a British concept which basically contains of simple but fitting drawings of pro cyclists on playing cards. Naturally other images can be used as well. 
 The design of the game is also very suited for learning a language; the player than has to type in the name of the object the image shows in the language he or she is learning.
 
-- [View the game here](https://peterlenting.github.io/second-milestone-project/index.html)
+- [View the game here](https://peterlenting.github.io/pro-cycling-trumps-game/)
 
 - [View the Github Repository here](https://github.com/PeterLenting/second-milestone-project)
 
