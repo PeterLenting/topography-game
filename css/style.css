@@ -2,18 +2,18 @@ html {
     height: 100%;
 }
 
-.asideFullHeight {
-    height: 100%;
+.asideShrink {
+    height: 84%;
 }
 
-body{
+body {
     font-family: Arial, Helvetica, sans-serif;
     line-height: 1.5;
     padding: 0;
     background: #f2f2f2;
 }
 
-header{
+header {
     background: #101820;
     color: #FEE715;
     text-align: center;
@@ -114,8 +114,8 @@ aside {
     border: 3px solid #101820;
     border-radius: 25px;
     margin-bottom: 10px;
-    height: 85%;
-    transition: all 1.0s ease;
+    height: 100%;
+    transition: all 0.5s ease;
     }
 
 /*Aligns the text in the unorderd list in the aside to the left to make it look clean.*/
@@ -592,12 +592,13 @@ section#main .container-fluid img {
     }
 #modal-content {
     width: 40%;
-}
+    }
 #high-score-model-text {
   font-size: 3rem;
-}
+    }
 .fa-trophy {
     font-size: 12rem;
+    }
 }
 
 @media(min-width: 992px){
@@ -617,8 +618,7 @@ body {
  }
 
 @media(min-width: 1800px){
-aside {
+.asideShrink {
     height: 83%;
     }
-}  
-
+}

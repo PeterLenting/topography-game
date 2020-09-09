@@ -107,7 +107,7 @@ By adding a timelimit, the game might get a bit more exciting. This could be don
 
 3.	Different subjects
 In the current game the images are of the biggest icons of pro cyclings history. In this line there could also be a version with current cyclists, male and female. Or of former Tour de France or Tour of Flanders winners. The possibilities are endless.
-As said the images could be of any subject. From learning a language, to famous movi-posters, to ex-presidents, to car-models. Anything is possible.
+As said the images could be of any subject. From learning a language, to famous movie-posters, to ex-presidents, to car-models. Anything is possible.
 
 4.	Share and invite buttons
 By making it possible for players to share their score with their friends through social media and invite them to play the game, the involvement and the fun will grow even more.

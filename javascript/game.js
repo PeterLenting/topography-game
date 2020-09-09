@@ -3,10 +3,10 @@ window.onload = function() {
   document.getElementById("highScore_id").value = localStorage.getItem("highScore");
   if ($("#highScore_id").val() != 0) {
       $("#highScoreDiv").show();
-      $("aside").removeClass("asideFullHeight");
+      $("aside").addClass("asideShrink");
       $("#buttonResetHighScore").removeClass("hidden");
   } else {
-      $("aside").addClass("asideFullHeight");
+      $("aside").removeClass("asideShrink");
       // $("#highScoreDiv").hide();
   }
 };
@@ -24,7 +24,7 @@ function resetHighScore() {
     localStorage.clear();
     document.getElementById("highScore_id").value = 0;
     setTimeout(function () {   
-            $("aside").addClass("asideFullHeight");
+            $("aside").removeClass("asideShrink");
         }, 250);
     $("#highScoreDiv").slideUp(800);
     // $("#sidebar").slideUp();
@@ -54,7 +54,7 @@ function myRoundCounter() {
         setHighScore()
         $("#comment, #countSp, #timeSp, #headerQuestion, .flip-card-inner").addClass("hidden");
         $("#highScoreDiv").show("slow");
-        $("aside").removeClass("asideFullHeight");
+        $("aside").addClass("asideShrink");
         $("#buttonResetHighScore").addClass("hidden");
         $("#buttonReset").removeClass("hidden");
         $("#textField").val("");
@@ -159,7 +159,7 @@ function displayImage() {
 function startCountdown() {
     var timeLeft = 29;
     var elem = document.getElementById('countdown_id');
-    $('#countdown_id').html(25).addClass("green").removeClass("orange red");
+    $('#countdown_id').html(30).addClass("green").removeClass("orange red");
     window.timerId = setInterval(countdown, 1000); 
     function countdown() {
          if (timeLeft == 15) {
