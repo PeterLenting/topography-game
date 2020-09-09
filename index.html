@@ -45,8 +45,6 @@
                                 <span id="countSp">ROUND<br> 
                                     <input type="text" id="round" value="1" readonly>
                                 </span>
-                                <!--<span class="hidden" id="yourScore">Your Score: 
-                                </span>-->
                             </div>
                             <div class="col-4" id="time-div">
                                 <span id="timeSp" class="text-center">TIME<br>
@@ -60,7 +58,6 @@
                             </div>
                         </div>
 <!-- The flip-card div makes the flipping card possible -->
-
                         <div class="flip-card">
                             <div class="flip-card-inner">
                                 <div class="front">
@@ -73,11 +70,6 @@
                         </div>
 <!-- The two buttons on the mobile startscreen. One with a link to the rules of the game and one to start the game  -->
                         <div class="row justify-content-center" id="startScreen">
-                            <!--<div class="col-12 col-xl-4 hidden" id="highScoreDiv">
-                                <h3 id="highScoreSp">Your Highscore</h3>
-                                <input type="number" id="highScore_id" value="0" readonly>
-                                <button type="submit" id="buttonResetHighScore" class="button_1"><i class="fas fa-undo"></i> Reset </button>
-                            </div>-->
                             <div class="col-12">
                                 <button type="submit" id="buttonHowToPlayTheGame" class="button_1">How to Play <i class="far fa-question-circle"></i></button>
                                 <button type="submit" id="buttonStart" class="button_1"><i class="far fa-play-circle"></i> Let's Play!</button>
@@ -129,15 +121,13 @@
                         </div>
                     </div>
                 </div>
-<!-- The sidebar contains an explanation of the game -->
-                <div class="col-12 col-xl-4">
+<!-- HighScoreAndSidebar contains the highscore-module and sidebar wich contains an explanation of the game -->
+                <div class="col-12 col-xl-4" id="highScoreAndSidebar">
                     <div id="highScoreDiv" style="display: none">
                         <h3 id="highScoreSp">Your Highscore</h3>
                         <input type="number" id="highScore_id" value="0" readonly>
                         <button type="submit" id="buttonResetHighScore" class="button_1"><i class="fas fa-undo"></i> Reset </button>
                     </div>
-                <!--</div>
-                <div class="col-xl-4">-->
                     <aside id="sidebar">
                         <h3>About the Game</h3>
                         <ul>
@@ -165,9 +155,9 @@
         </div>
     </section>
 
-    <!-- HighScore Modal -->
+<!-- HighScore Modal -->
     <div id="high-score-modal" class="modal">
-        <!-- Modal content -->
+<!-- Modal content -->
         <div id="modal-content" class="text-center">
             <span class="close">&times;</span>
             <p><span id="high-score-model-text">Yes!</span> You got yourself a</p>
@@ -177,7 +167,7 @@
         </div>
     </div>
 
-    <!-- Footer -->
+<!-- Footer -->
     <footer id="social">
         <div class="row sociallinks">
             <div class="col-12 col-md-6 footer-logo">
