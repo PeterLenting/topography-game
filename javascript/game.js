@@ -157,20 +157,18 @@ function displayImage() {
 // If timeLeft is down to -1, the timer is stopped and timesUp() runs.
 
 function startCountdown() {
-    var timeLeft = 24;
+    var timeLeft = 29;
     var elem = document.getElementById('countdown_id');
     $('#countdown_id').html(25).addClass("green").removeClass("orange red");
     window.timerId = setInterval(countdown, 1000); 
     function countdown() {
-        //if (timeLeft == 25) {
-            //$("#countdown_id").addClass("green").removeClass("orange red");
          if (timeLeft == 15) {
             $("#countdown_id").addClass("orange");   
         } if (timeLeft == 5) {
             $("#countdown_id").addClass("red");   
         } if (timeLeft == -1) {
             clearTimeout(window.timerId);
-            timesUp();  /*Turns card to right answer and show message of timelimit*/
+            timesUp(); 
         } else {
             elem.innerHTML = timeLeft;
             timeLeft--;
@@ -259,6 +257,7 @@ $(function() {
 // - setTimeout() is set to 200ms to make sure the new image isn't visible before flip() is done far enough.  
 
 function giveHint() {
+    scrollToTop();
     var addHintToImg = $("#newImage, #newImageBack").attr('src').replace("-empty.png", "-flag.png");   
     $("#buttonHint").addClass("hidden");  
     $("#newImage").addClass("gotHint");          
@@ -349,11 +348,11 @@ function wrongAnswer() {
     }
 }
 
-// - scrollToTopAfterAnswer() takes care of an issue on mobile.
+// - scrollToTop() takes care of an issue on mobile.
 // - Now after an answer is given, the user is automatically scrolled up to the top of the window.
 // - This way the image is in the view.
 
-function scrollToTopAfterAnswer() {
+function scrollToTop() {
     var headerScreenSize = window.matchMedia("(max-width: 700px)");
     if (headerScreenSize.matches) { 
         $(window).scrollTop(0);
@@ -362,7 +361,7 @@ function scrollToTopAfterAnswer() {
 
 
 function checkAnswer() {
-    scrollToTopAfterAnswer();
+    scrollToTop();
     changeButtonNext();
     $("#buttonNext").removeClass("hidden");
     $("#buttonHint, #buttonSubmit, #textField").addClass("hidden");
@@ -503,21 +502,21 @@ $("#buttonGiveUp").click(function() {
 });
 
 
-// Get the modal
+// - Get the modal
 var modal = document.getElementById("high-score-modal");
 
-// Get the button that opens the modal
+// - Get the button that opens the modal
 var btn = document.getElementById("myBtn");
 
-// Get the <span> element that closes the modal
+// - Get the <span> element that closes the modal
 var span = document.getElementsByClassName("close")[0];
 
-// When the user clicks on <span> (x), close the modal
+// - When the user clicks on <span> (x), close the modal
 span.onclick = function() {
   modal.style.display = "none";
 }
 
-// When the user clicks anywhere outside of the modal, close it
+// - When the user clicks anywhere outside of the modal, close it
 window.onclick = function(event) {
   if (event.target == modal) {
     modal.style.display = "none";
