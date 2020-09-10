@@ -129,6 +129,7 @@ function addClassAllTime() {
     $("#choiseOfGame").addClass("hidden");
     document.getElementById("newImage").src = "images/start-questionmarkAllTime.png";
     document.getElementById("newImageBack").src = "images/start-questionmarkAllTime.png";
+    $("#headerQuestion").text("Who is this Cyclist?");
 }; 
 
 $("#button2020").click(function() { 
@@ -142,6 +143,7 @@ function addClass2020() {
     $("#choiseOfGame").addClass("hidden");
     document.getElementById("newImage").src = "images/start-questionmark2020.png";
     document.getElementById("newImageBack").src = "images/start-questionmark2020.png";
+    $("#headerQuestion").text("Who is this Cyclist?");
 }; 
 
 // - displayImage() runs through images-array and selects a random image out of images[]. 
