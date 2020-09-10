@@ -58,21 +58,35 @@
                             </div>
                         </div>
 <!-- The flip-card div makes the flipping card possible -->
-                        <div class="flip-card">
+                        <div class="flip-card hidden">
                             <div class="flip-card-inner">
                                 <div class="front">
-                                    <img src="images/start-vraagteken2.png" id="newImage" alt="Who is this cyclist?">
+                                    <img src="images/start-questionmarkAllTime.png" id="newImage" alt="Who is this cyclist?">
                                 </div>
                                 <div class="back">
-                                    <img src="images/start-vraagteken2.png" id="newImageBack" alt="Who is this cyclist?">
+                                    <img src="images/start-questionmarkAllTime.png" id="newImageBack" alt="Who is this cyclist?">
                                 </div>
                             </div>
                         </div>
 <!-- The two buttons on the mobile startscreen. One with a link to the rules of the game and one to start the game  -->
+                        <div class="row" id="choiseOfGame">
+                            <div class="col-6">
+                                <div>
+                                    <img src="images/start-questionmarkAllTime.png" id="imageAllTime" alt="Who is this cyclist?">
+                                </div>
+                                <button type="submit" id="buttonAllTime" class="button_1">All time</button>
+                            </div>
+                            <div class="col-6">
+                                <div>
+                                    <img src="images/start-questionmark2020.png" id="image2020" alt="Who is this cyclist?">
+                                </div>
+                                <button type="submit" id="button2020" class="button_1">2020</button>
+                            </div>
+                        </div>
                         <div class="row justify-content-center" id="startScreen">
                             <div class="col-12">
                                 <button type="submit" id="buttonHowToPlayTheGame" class="button_1">How to Play <i class="far fa-question-circle"></i></button>
-                                <button type="submit" id="buttonStart" class="button_1"><i class="far fa-play-circle"></i> Let's Play!</button>
+                                <button type="submit" id="buttonStart" class="button_1 hidden"><i class="far fa-play-circle"></i> Let's Play!</button>
                             </div>
                         </div>
 <!-- Shows the comment on the users answer -->

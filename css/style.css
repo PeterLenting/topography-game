@@ -1,3 +1,15 @@
+#imageAllTime, #image2020 {
+    height: 500px;
+}
+
+#buttonAllTime, #button2020 {
+    background: #006B38;
+}
+
+#choiseOfGame {
+    margin-top: 36px;
+}
+
 html {
     height: 100%;
 }

@@ -118,35 +118,79 @@ function commentOnScore() {
     }
 }
 
+$("#buttonAllTime").click(function() { 
+    addClassAllTime()
+});
+
+function addClassAllTime() {
+    $("#newImage").addClass("allTime"); 
+    $(".flip-card").removeClass("hidden");
+    $("#buttonStart").removeClass("hidden");
+    $("#choiseOfGame").addClass("hidden");
+    document.getElementById("newImage").src = "images/start-questionmarkAllTime.png";
+    document.getElementById("newImageBack").src = "images/start-questionmarkAllTime.png";
+}; 
+
+$("#button2020").click(function() { 
+    addClass2020()
+});
+
+function addClass2020() {
+    $("#newImage").addClass("2020"); 
+    $(".flip-card").removeClass("hidden");
+    $("#buttonStart").removeClass("hidden");
+    $("#choiseOfGame").addClass("hidden");
+    document.getElementById("newImage").src = "images/start-questionmark2020.png";
+    document.getElementById("newImageBack").src = "images/start-questionmark2020.png";
+}; 
 
 // - displayImage() runs through images-array and selects a random image out of images[]. 
 // - Already used images are not used again, but stored in UserImages[], so no user gets the same image twice in the same game.
 // - If a image stored in UserImages[] is selected, displayImage() is run again untill a new image is selected.
 // - If usedImages[] contains 10 images, the game is done and the array is made empty.
 
-var images = ['images/cyclist-1-empty.png', 'images/cyclist-2-empty.png', 'images/cyclist-3-empty.png', 
-              'images/cyclist-4-empty.png', 'images/cyclist-5-empty.png', 'images/cyclist-6-empty.png', 
-              'images/cyclist-7-empty.png', 'images/cyclist-8-empty.png', 'images/cyclist-9-empty.png', 
-              'images/cyclist-10-empty.png', 'images/cyclist-11-empty.png', 'images/cyclist-12-empty.png', 
-              'images/cyclist-13-empty.png', 'images/cyclist-14-empty.png', 'images/cyclist-15-empty.png',
-              'images/cyclist-16-empty.png', 'images/cyclist-17-empty.png', 'images/cyclist-18-empty.png',
-              'images/cyclist-19-empty.png', 'images/cyclist-20-empty.png'];
-
+var imagesAllTime = ['images/alltime/cyclist-alltime-1-empty.png', 'images/alltime/cyclist-alltime-2-empty.png', 'images/alltime/cyclist-alltime-3-empty.png', 
+                     'images/alltime/cyclist-alltime-4-empty.png', 'images/alltime/cyclist-alltime-5-empty.png', 'images/alltime/cyclist-alltime-6-empty.png', 
+                     'images/alltime/cyclist-alltime-7-empty.png', 'images/alltime/cyclist-alltime-8-empty.png', 'images/alltime/cyclist-alltime-9-empty.png', 
+                     'images/alltime/cyclist-alltime-10-empty.png', 'images/alltime/cyclist-alltime-11-empty.png', 'images/alltime/cyclist-alltime-12-empty.png', 
+                     'images/alltime/cyclist-alltime-13-empty.png', 'images/alltime/cyclist-alltime-14-empty.png', 'images/alltime/cyclist-alltime-15-empty.png',
+                     'images/alltime/cyclist-alltime-16-empty.png', 'images/alltime/cyclist-alltime-17-empty.png', 'images/alltime/cyclist-alltime-18-empty.png',
+                     'images/alltime/cyclist-alltime-19-empty.png', 'images/alltime/cyclist-alltime-20-empty.png'];
+var images2020 = ['images/2020/cyclist-2020-1-empty.png', 'images/2020/cyclist-2020-2-empty.png', 'images/2020/cyclist-2020-3-empty.png',
+                  'images/2020/cyclist-2020-4-empty.png', 'images/2020/cyclist-2020-5-empty.png', 'images/2020/cyclist-2020-6-empty.png',
+                  'images/2020/cyclist-2020-7-empty.png', 'images/2020/cyclist-2020-8-empty.png', 'images/2020/cyclist-2020-9-empty.png',
+                  'images/2020/cyclist-2020-10-empty.png', 'images/2020/cyclist-2020-11-empty.png', 'images/2020/cyclist-2020-12-empty.png',
+                  'images/2020/cyclist-2020-13-empty.png', 'images/2020/cyclist-2020-14-empty.png', 'images/2020/cyclist-2020-15-empty.png',
+                  'images/2020/cyclist-2020-16-empty.png', 'images/2020/cyclist-2020-17-empty.png', 'images/2020/cyclist-2020-18-empty.png',
+                  'images/2020/cyclist-2020-19-empty.png', 'images/2020/cyclist-2020-20-empty.png'];
 var usedImages = [];
 var usedImagesCount = 0;
 
 function displayImage() {
     var num = Math.floor(Math.random() *20);
+    console.log("TEST1")
     if (!usedImages[num]) {
-        document.getElementById("newImage").src = images[num];
-        document.getElementById("newImageBack").src = images[num];
+        console.log("TEST2")
+        if ($("#newImage").hasClass("allTime")) {
+            console.log("TEST3")
+            document.getElementById("newImage").src = imagesAllTime[num];
+            document.getElementById("newImageBack").src = imagesAllTime[num];
+        }
+        else if($("#newImage").hasClass("2020")) {
+            console.log("TEST4")
+            document.getElementById("newImage").src = images2020[num];
+            document.getElementById("newImageBack").src = images2020[num];
+        }
+        console.log("TEST5")
         usedImages[num] = true;
         usedImagesCount++;
         if (usedImagesCount === 10) {
             usedImagesCount = 0;
             usedImages = [];
+            console.log("TEST6")
         }
     } else {
+        console.log("TEST7")
         displayImage();
     }
 } 
@@ -224,6 +268,8 @@ function startGame(){
     $("#buttonStart, #buttonHowToPlayTheGame, #headerQuestion").addClass("hidden");
     $("#buttonHint, #buttonSubmit, #textField, #round-and-score").removeClass("hidden");
     $("#buttonResetHighScore").addClass("hidden");
+    $("#buttonAllTime").addClass("hidden");
+    $("#button2020").addClass("hidden");
 }
 
 function hideHeader() {
@@ -367,30 +413,67 @@ function checkAnswer() {
     $("#buttonHint, #buttonSubmit, #textField").addClass("hidden");
     let answer = $("#textField").val().toUpperCase(); 
     let imageSource = $("#newImage").attr('src');
-    let jacquesAnquetil = (imageSource.indexOf("-1-") > -1 && answer == "JACQUES ANQUETIL");
-    let lanceArmstrong = (imageSource.indexOf("-2-") > -1 && answer == "LANCE ARMSTRONG");
-    let ginoBartali = (imageSource.indexOf("-3-") > -1 && answer == "GINO BARTALI");
-    let faustoCoppi = (imageSource.indexOf("-4-") > -1 && answer == "FAUSTO COPPI");
-    let miguelIndurain = (imageSource.indexOf("-5-") > -1 && answer == "MIGUEL INDURAIN");
-    let bernardHinault = (imageSource.indexOf("-6-") > -1 && answer == "BERNARD HINAULT");
-    let louisonBobet = (imageSource.indexOf("-7-") > -1 && answer == "LOUISON BOBET");
-    let joopZoetemelk = (imageSource.indexOf("-8-") > -1 && answer == "JOOP ZOETEMELK");
-    let eddyMerckx = (imageSource.indexOf("-9-") > -1 && answer == "EDDY MERCKX");
-    let seanKelly = (imageSource.indexOf("-10-") > -1 && answer == "SEAN KELLY");
-    let alfredoBinda = (imageSource.indexOf("-11-") > -1 && answer == "ALFREDO BINDA");
-    let rikVanSteenbergen = (imageSource.indexOf("-12-") > -1 && answer == "RIK VAN STEENBERGEN");
-    let oscarFreire = (imageSource.indexOf("-13-") > -1 && answer == "OSCAR FREIRE");
-    let laurentJalabert = (imageSource.indexOf("-14-") > -1 && answer == "LAURENT JALABERT");
-    let marcoPantani = (imageSource.indexOf("-15-") > -1 && answer == "MARCO PANTANI");
-    let gregLemond = (imageSource.indexOf("-16-") > -1 && answer == "GREG LEMOND");
-    let laurentFignon = (imageSource.indexOf("-17-") > -1 && answer == "LAURENT FIGNON");
-    let janJanssen = (imageSource.indexOf("-18-") > -1 && answer == "JAN JANSSEN");
-    let rogerDeVlaeminck = (imageSource.indexOf("-19-") > -1 && answer == "ROGER DE VLAEMINCK");
-    let federicoBahamontes = (imageSource.indexOf("-20-") > -1 && answer == "FEDERICO BAHAMONTES");
-    if  (jacquesAnquetil) {
+    
+    let jacquesAnquetil = (imageSource.indexOf("alltime-1-") > -1 && answer == "JACQUES ANQUETIL");
+    let lanceArmstrong = (imageSource.indexOf("alltime-2-") > -1 && answer == "LANCE ARMSTRONG");
+    let ginoBartali = (imageSource.indexOf("alltime-3-") > -1 && answer == "GINO BARTALI");
+    let faustoCoppi = (imageSource.indexOf("alltime-4-") > -1 && answer == "FAUSTO COPPI");
+    let miguelIndurain = (imageSource.indexOf("alltime-5-") > -1 && answer == "MIGUEL INDURAIN");
+    
+    let bernardHinault = (imageSource.indexOf("alltime-6-") > -1 && answer == "BERNARD HINAULT");
+    let louisonBobet = (imageSource.indexOf("alltime-7-") > -1 && answer == "LOUISON BOBET");
+    let joopZoetemelk = (imageSource.indexOf("alltime-8-") > -1 && answer == "JOOP ZOETEMELK");
+    let eddyMerckx = (imageSource.indexOf("alltime-9-") > -1 && answer == "EDDY MERCKX");
+    let seanKelly = (imageSource.indexOf("alltime-10-") > -1 && answer == "SEAN KELLY");
+    
+    let alfredoBinda = (imageSource.indexOf("alltime-11-") > -1 && answer == "ALFREDO BINDA");
+    let rikVanSteenbergen = (imageSource.indexOf("alltime-12-") > -1 && answer == "RIK VAN STEENBERGEN");
+    let oscarFreire = (imageSource.indexOf("alltime-13-") > -1 && answer == "OSCAR FREIRE");
+    let laurentJalabert = (imageSource.indexOf("alltime-14-") > -1 && answer == "LAURENT JALABERT");
+    let marcoPantani = (imageSource.indexOf("alltime-15-") > -1 && answer == "MARCO PANTANI");
+    
+    let gregLemond = (imageSource.indexOf("alltime-16-") > -1 && answer == "GREG LEMOND");
+    let laurentFignon = (imageSource.indexOf("alltime-17-") > -1 && answer == "LAURENT FIGNON");
+    let janJanssen = (imageSource.indexOf("alltime-18-") > -1 && answer == "JAN JANSSEN");
+    let rogerDeVlaeminck = (imageSource.indexOf("alltime-19-") > -1 && answer == "ROGER DE VLAEMINCK");
+    let federicoBahamontes = (imageSource.indexOf("alltime-20-") > -1 && answer == "FEDERICO BAHAMONTES");
+
+    let julianAlaphilippe = (imageSource.indexOf("2020-1-") > -1 && answer == "JULIAN ALAPHILIPPE");
+    let eganBernal = (imageSource.indexOf("2020-2-") > -1 && answer == "EGAN BERNAL");
+    let arnaudDemare = (imageSource.indexOf("2020-3-") > -1 && answer == "ARNAUD DEMARE");
+    let madsPedersen = (imageSource.indexOf("2020-4-") > -1 && answer == "MADS PEDERSEN");
+    let jakobFuglsang = (imageSource.indexOf("2020-5-") > -1 && answer == "JAKOB FUGLSANG");  
+    
+    let stevenKruijswijk = (imageSource.indexOf("2020-6-") > -1 && answer == "STEVEN KRUIJSWIJK");
+    let vincenzoNibali = (imageSource.indexOf("2020-7-") > -1 && answer == "VINCENZO NIBALI");
+    let primozRoglic = (imageSource.indexOf("2020-8-") > -1 && answer == "PRIMOZ ROGLIC");
+    let mathieuVanDerPoel = (imageSource.indexOf("2020-9-") > -1 && answer == "MATHIEU VAN DER POEL");
+    let gregVanAvermaet = (imageSource.indexOf("2020-10-") > -1 && answer == "GREG VAN AVERMAET");  
+
+    let peterSagan = (imageSource.indexOf("2020-11-") > -1 && answer == "PETER SAGAN");
+    let tadejPogacar = (imageSource.indexOf("2020-12-") > -1 && answer == "TADEJ POGACAR");
+    let woutVanAert = (imageSource.indexOf("2020-13-") > -1 && answer == "WOUT VAN AERT");
+    let samBennett = (imageSource.indexOf("2020-14-") > -1 && answer == "SAM BENNETT");
+    let tomDumoulin = (imageSource.indexOf("2020-15-") > -1 && answer == "TOM DUMOULIN"); 
+
+    let calebEwan = (imageSource.indexOf("2020-11-") > -1 && answer == "CALEB EWAN");
+    let remcoEvenepoel = (imageSource.indexOf("2020-12-") > -1 && answer == "REMCO EVENEPOEL");
+    let alexanderKristoff = (imageSource.indexOf("2020-13-") > -1 && answer == "ALEXANDER KRISTOFF");
+    let baukeMollema = (imageSource.indexOf("2020-14-") > -1 && answer == "BAUKE MOLLEMA");
+    let mikelLanda = (imageSource.indexOf("2020-15-") > -1 && answer == "MIKEL LANDA"); 
+
+    if  (/*$("#textField").hasClass("allTime") &&*/ jacquesAnquetil || lanceArmstrong || ginoBartali || faustoCoppi || miguelIndurain || bernardHinault ||
+        louisonBobet || joopZoetemelk || eddyMerckx || seanKelly || alfredoBinda || rikVanSteenbergen || oscarFreire || laurentJalabert || marcoPantani ||
+        gregLemond || laurentFignon || janJanssen || rogerDeVlaeminck || federicoBahamontes) {
         showAnswer();    
         myScore();
-    } else if (lanceArmstrong) {
+        }
+    else if (/*$("#textField").hasClass("2020") &&*/ julianAlaphilippe || eganBernal || arnaudDemare || madsPedersen || jakobFuglsang || stevenKruijswijk || vincenzoNibali || primozRoglic ||
+        mathieuVanDerPoel || gregVanAvermaet || peterSagan || tadejPogacar || woutVanAert || samBennett || tomDumoulin || calebEwan || remcoEvenepoel ||
+        alexanderKristoff || baukeMollema || mikelLanda) {
+        showAnswer();    
+        myScore();    
+    /*} else if (lanceArmstrong) {
         showAnswer();
         myScore();
     } else if  (ginoBartali) { 
@@ -446,7 +529,7 @@ function checkAnswer() {
         myScore();
     } else if (federicoBahamontes) {
         showAnswer();
-        myScore();
+        myScore(); */
     } else {
         wrongAnswer();
     }
