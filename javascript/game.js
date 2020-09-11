@@ -4,10 +4,8 @@ window.onload = function() {
     document.getElementById("highScoreInput2020").value = highScoreInput2020
     var highScoreInputAllTime = localStorage.getItem("highScoreAllTime");
     document.getElementById("highScoreInputAllTime").value = highScoreInputAllTime
-    console.log(highScoreInputAllTime);
-    console.log(highScoreInput2020);
   if (highScoreInput2020 || highScoreInputAllTime ) {
-      $("#highScoreDiv").show();
+      $("#highScoreDiv").removeClass("hidden");
       $("aside").addClass("asideShrink");
       if (highScoreInput2020) {
           $(".highScore2020").removeClass("hidden");
@@ -16,9 +14,8 @@ window.onload = function() {
           $(".highScoreAllTime").removeClass("hidden");
       }
   } else {
-      console.log("TEST2")
       $("aside").removeClass("asideShrink");
-      $("#highScoreDiv").hide();
+      $("#highScoreDiv").addClass("hidden");
   }
 };
 
@@ -111,7 +108,7 @@ function setHighScore() {
         var yourScoreAllTime = parseInt($("#scoreboard").val());
         var highScoreAllTime = parseInt($("#highScoreInputAllTime").val());
         if ((yourScoreAllTime > highScoreAllTime) || ($("#highScoreInputAllTime").val() == 0)) {
-            $(".highScoreAllTime").show();
+            $(".highScoreAllTime").removeClass("hidden");
             localStorage.setItem("highScoreAllTime", yourScoreAllTime);
             $("#highScoreInputAllTime").val(localStorage.getItem("highScoreAllTime"));
             $("#high-score-model-score").val(localStorage.getItem("highScoreAllTime"));
@@ -126,7 +123,7 @@ function setHighScore() {
         var yourScore2020 = parseInt($("#scoreboard").val());
         var highScore2020 = parseInt($("#highScoreInput2020").val());
         if ((yourScore2020 > highScore2020) || ($("#highScoreInput2020").val() == 0)) {
-            $(".highScore2020").show();
+            $(".highScore2020").removeClass("hidden");
             localStorage.setItem("highScore2020", yourScore2020);
             $("#highScoreInput2020").val(localStorage.getItem("highScore2020"));
             $("#high-score-model-score").val(localStorage.getItem("highScore2020"));
@@ -611,6 +608,9 @@ $("#buttonHowToPlayTheGame").click(function() {
 
 function goBackUp() {
     window.location.href = '#headerQuestion'; 
+    if ($("#headerQuestion").hasClass("hidden")) {
+        window.location.href = '#round-and-score';
+    }
   }
 
 $("#buttonGoBackUp").click(function() {
