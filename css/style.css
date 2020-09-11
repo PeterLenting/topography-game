@@ -15,7 +15,7 @@ html {
 }
 
 .asideShrink {
-    height: 84%;
+    height: 79%;
 }
 
 body {
@@ -208,6 +208,10 @@ It looks a bit like an actuel scoreboard, which is applicable since it is a game
     background-color: #FF652F;
 }
 
+.highScoreTitle {
+    color: #FEE715;
+}
+
 /*Styling the way the final score is shown on the endscreen. 
 It looks a bit like an actuel scoreboard, which is applicable since it is a game with sports as a subject.*/
 #yourScore {
@@ -261,7 +265,7 @@ It looks a bit like an actuel scoreboard, which is applicable since it is a game
     background: #101820;
 }
 
-#highScore_id {
+#highScoreInputAllTime, #highScoreInput2020 {
     color: #FEE715;
     text-align: center;
     width: 110px;
@@ -304,7 +308,7 @@ input:focus {
     transition: all .4s ease;
 }
 
-#buttonResetHighScore {
+#buttonResetHighScoreAllTime, #buttonResetHighScore2020 {
   font-size: 1rem; 
   height: 30px;
   padding-left: 10px;
@@ -631,6 +635,6 @@ body {
 
 @media(min-width: 1800px){
 .asideShrink {
-    height: 83%;
+    height: 79%;
     }
 }

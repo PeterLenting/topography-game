@@ -1,13 +1,16 @@
-
 window.onload = function() {
-  document.getElementById("highScore_id").value = localStorage.getItem("highScore");
-  if ($("#highScore_id").val() != 0) {
+    var highScoreInput2020 =   document.getElementById("highScoreInput2020").value 
+    highScoreInput2020 = localStorage.getItem("highScore2020");
+    var highScoreInputAllTime =   document.getElementById("highScoreInputAllTime").value 
+    highScoreInputAllTime = localStorage.getItem("highScoreAllTime");
+  if (highScoreInput2020 ||highScoreInputAllTime ) {
       $("#highScoreDiv").show();
       $("aside").addClass("asideShrink");
       $("#buttonResetHighScore").removeClass("hidden");
   } else {
+      console.log("TEST2")
       $("aside").removeClass("asideShrink");
-      // $("#highScoreDiv").hide();
+      $("#highScoreDiv").hide();
   }
 };
 
@@ -16,18 +19,38 @@ window.onload = function() {
 // - After clearing localStorage the value of highScore is set to 0.
 // - resetHighScore()is triggered by clicking #buttonResetHighScore (button-text: 'Reset').
 
-$("#buttonResetHighScore").click(function() { 
-    resetHighScore()
+$("#buttonResetHighScoreAllTime").click(function() { 
+    resetHighScoreAllTime()
 });
 
-function resetHighScore() {
-    localStorage.clear();
-    document.getElementById("highScore_id").value = 0;
-    setTimeout(function () {   
-            $("aside").removeClass("asideShrink");
-        }, 250);
-    $("#highScoreDiv").slideUp(800);
-    // $("#sidebar").slideUp();
+$("#buttonResetHighScore2020").click(function() { 
+    resetHighScore2020()
+});
+
+function resetHighScoreAllTime() {
+    localStorage.removeItem("highScoreAllTime")
+    document.getElementById("highScoreInputAllTime").value = 0;
+    $(".highScoreAllTime").addClass("hidden");
+    if ($(".highScore2020").hasClass("hidden")) {
+        setTimeout(function () {   
+                $("#highScoreDiv").addClass("hidden");
+                $("aside").removeClass("asideShrink");
+            }, 250);
+        $("#highScoreDiv").slideUp(800);
+    }
+};
+
+function resetHighScore2020() {
+    localStorage.removeItem("highScore2020")
+    document.getElementById("highScoreInput2020").value = 0;
+    $(".highScore2020").addClass("hidden");
+    if ($(".highScoreAllTime").hasClass("hidden")) {
+        setTimeout(function () {   
+                $("#highScoreDiv").addClass("hidden");
+                $("aside").removeClass("asideShrink");
+            }, 250);
+        $("#highScoreDiv").slideUp(800);
+    }
 };
 
 
@@ -77,18 +100,36 @@ function myRoundCounter() {
 
 
 function setHighScore() {
-    var yourScore = parseInt($("#scoreboard").val());
-    var highScore = parseInt($("#highScore_id").val());
-    if ((yourScore > highScore) || ($("#highScore_id").val() == 0)) {
-        localStorage.setItem("highScore", yourScore);
-        $("#highScore_id").val(localStorage.getItem("highScore"));
-        $("#high-score-model-score").val(localStorage.getItem("highScore"));
-        modal.style.display = "block"
-    } else if (yourScore === highScore) {
+    if ($("#newImage").hasClass("allTime")) {
+        var yourScoreAllTime = parseInt($("#scoreboard").val());
+        var highScoreAllTime = parseInt($("#highScoreInputAllTime").val());
+        if ((yourScoreAllTime > highScoreAllTime) || ($("#highScoreInputAllTime").val() == 0)) {
+            $(".highScoreAllTime").show();
+            localStorage.setItem("highScoreAllTime", yourScoreAllTime);
+            $("#highScoreInputAllTime").val(localStorage.getItem("highScoreAllTime"));
+            $("#high-score-model-score").val(localStorage.getItem("highScoreAllTime"));
+            modal.style.display = "block" 
+        } else if (yourScoreAllTime === highScoreAllTime) {
         $("#scoreComment").removeClass("hidden"); 
         $("#scoreComment").text("You matched your own record! But is it really the best you can do?");
-    } else {
-        commentOnScore();
+        } else {
+            commentOnScore();
+        }
+    } else if ($("#newImage").hasClass("2020")) {
+        var yourScore2020 = parseInt($("#scoreboard").val());
+        var highScore2020 = parseInt($("#highScoreInput2020").val());
+        if ((yourScore2020 > highScore2020) || ($("#highScoreInput2020").val() == 0)) {
+            $(".highScore2020").show();
+            localStorage.setItem("highScore2020", yourScore2020);
+            $("#highScoreInput2020").val(localStorage.getItem("highScore2020"));
+            $("#high-score-model-score").val(localStorage.getItem("highScore2020"));
+            modal.style.display = "block" 
+        } else if (yourScore2020 === highScore2020) {
+        $("#scoreComment").removeClass("hidden"); 
+        $("#scoreComment").text("You matched your own record! But is it really the best you can do?");
+        } else {
+            commentOnScore();
+        }
     }
 };
 
@@ -96,12 +137,12 @@ function setHighScore() {
 // - commentOnScore() takes care of the comments on the score the user reached at the end of the game. The number of points scored, decide which message.
 
 function commentOnScore() {   
-    yourScore = parseInt($("#scoreboard").val());
-    highScore = parseInt($("#highScore_id").val());
+    /*yourScore = parseInt($("#scoreboard").val());
+    highScore = parseInt($("#highScoreInput").val());
     $("#scoreComment").removeClass("hidden"); 
     if (highScore - yourScore < 25) {
         $("#scoreComment").text("So close! Give it another go!");
-    } else if (score.val() < 100) { 
+    } else*/ if (score.val() < 100) { 
         $("#scoreComment").text("Not too bad!");
     } else if (score.val() < 150) { 
         $("#scoreComment").text("You're getting there!");
@@ -170,29 +211,22 @@ var usedImagesCount = 0;
 
 function displayImage() {
     var num = Math.floor(Math.random() *20);
-    console.log("TEST1")
     if (!usedImages[num]) {
-        console.log("TEST2")
         if ($("#newImage").hasClass("allTime")) {
-            console.log("TEST3")
             document.getElementById("newImage").src = imagesAllTime[num];
             document.getElementById("newImageBack").src = imagesAllTime[num];
         }
         else if($("#newImage").hasClass("2020")) {
-            console.log("TEST4")
             document.getElementById("newImage").src = images2020[num];
             document.getElementById("newImageBack").src = images2020[num];
         }
-        console.log("TEST5")
         usedImages[num] = true;
         usedImagesCount++;
         if (usedImagesCount === 10) {
             usedImagesCount = 0;
             usedImages = [];
-            console.log("TEST6")
         }
     } else {
-        console.log("TEST7")
         displayImage();
     }
 } 
@@ -458,80 +492,23 @@ function checkAnswer() {
     let samBennett = (imageSource.indexOf("2020-14-") > -1 && answer == "SAM BENNETT");
     let tomDumoulin = (imageSource.indexOf("2020-15-") > -1 && answer == "TOM DUMOULIN"); 
 
-    let calebEwan = (imageSource.indexOf("2020-11-") > -1 && answer == "CALEB EWAN");
-    let remcoEvenepoel = (imageSource.indexOf("2020-12-") > -1 && answer == "REMCO EVENEPOEL");
-    let alexanderKristoff = (imageSource.indexOf("2020-13-") > -1 && answer == "ALEXANDER KRISTOFF");
-    let baukeMollema = (imageSource.indexOf("2020-14-") > -1 && answer == "BAUKE MOLLEMA");
-    let mikelLanda = (imageSource.indexOf("2020-15-") > -1 && answer == "MIKEL LANDA"); 
+    let calebEwan = (imageSource.indexOf("2020-16-") > -1 && answer == "CALEB EWAN");
+    let remcoEvenepoel = (imageSource.indexOf("2020-17-") > -1 && answer == "REMCO EVENEPOEL");
+    let alexanderKristoff = (imageSource.indexOf("2020-18-") > -1 && answer == "ALEXANDER KRISTOFF");
+    let baukeMollema = (imageSource.indexOf("2020-19-") > -1 && answer == "BAUKE MOLLEMA");
+    let mikelLanda = (imageSource.indexOf("2020-20-") > -1 && answer == "MIKEL LANDA"); 
 
-    if  (/*$("#textField").hasClass("allTime") &&*/ jacquesAnquetil || lanceArmstrong || ginoBartali || faustoCoppi || miguelIndurain || bernardHinault ||
+    if  ($("#newImage").hasClass("allTime") && jacquesAnquetil || lanceArmstrong || ginoBartali || faustoCoppi || miguelIndurain || bernardHinault ||
         louisonBobet || joopZoetemelk || eddyMerckx || seanKelly || alfredoBinda || rikVanSteenbergen || oscarFreire || laurentJalabert || marcoPantani ||
         gregLemond || laurentFignon || janJanssen || rogerDeVlaeminck || federicoBahamontes) {
         showAnswer();    
         myScore();
         }
-    else if (/*$("#textField").hasClass("2020") &&*/ julianAlaphilippe || eganBernal || arnaudDemare || madsPedersen || jakobFuglsang || stevenKruijswijk || vincenzoNibali || primozRoglic ||
+    else if ($("#newImage").hasClass("2020") && julianAlaphilippe || eganBernal || arnaudDemare || madsPedersen || jakobFuglsang || stevenKruijswijk || vincenzoNibali || primozRoglic ||
         mathieuVanDerPoel || gregVanAvermaet || peterSagan || tadejPogacar || woutVanAert || samBennett || tomDumoulin || calebEwan || remcoEvenepoel ||
         alexanderKristoff || baukeMollema || mikelLanda) {
         showAnswer();    
-        myScore();    
-    /*} else if (lanceArmstrong) {
-        showAnswer();
-        myScore();
-    } else if  (ginoBartali) { 
-        showAnswer();
-        myScore();
-    } else if (faustoCoppi) {
-        showAnswer();
-        myScore();
-    } else if (miguelIndurain) {
-        showAnswer();
-        myScore();
-    } else if (bernardHinault) {
-        showAnswer();
-        myScore();
-    } else if (louisonBobet) {
-        showAnswer();
-        myScore();
-    } else if (joopZoetemelk) {
-        showAnswer();
-        myScore();
-    } else if (eddyMerckx) {
-        showAnswer();
-        myScore();
-    } else if (seanKelly) {
-        showAnswer();
-        myScore();
-    } else if (alfredoBinda) {
-        showAnswer();
-        myScore();
-    } else if (rikVanSteenbergen) {
-        showAnswer();
-        myScore();
-    } else if (oscarFreire) {
-        showAnswer();
-        myScore();
-    } else if (laurentJalabert) {
-        showAnswer();
-        myScore();
-    } else if (marcoPantani) {
-        showAnswer();
-        myScore();
-    } else if (gregLemond) {
-        showAnswer();
-        myScore();
-    } else if (laurentFignon) {
-        showAnswer();
-        myScore();
-    } else if (janJanssen) {
-        showAnswer();
-        myScore();
-    } else if (rogerDeVlaeminck) {
-        showAnswer();
-        myScore();
-    } else if (federicoBahamontes) {
-        showAnswer();
-        myScore(); */
+        myScore(); 
     } else {
         wrongAnswer();
     }
