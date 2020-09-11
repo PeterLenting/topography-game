@@ -1,12 +1,20 @@
+
 window.onload = function() {
-    var highScoreInput2020 =   document.getElementById("highScoreInput2020").value 
-    highScoreInput2020 = localStorage.getItem("highScore2020");
-    var highScoreInputAllTime =   document.getElementById("highScoreInputAllTime").value 
-    highScoreInputAllTime = localStorage.getItem("highScoreAllTime");
-  if (highScoreInput2020 ||highScoreInputAllTime ) {
+    var highScoreInput2020 = localStorage.getItem("highScore2020");
+    document.getElementById("highScoreInput2020").value = highScoreInput2020
+    var highScoreInputAllTime = localStorage.getItem("highScoreAllTime");
+    document.getElementById("highScoreInputAllTime").value = highScoreInputAllTime
+    console.log(highScoreInputAllTime);
+    console.log(highScoreInput2020);
+  if (highScoreInput2020 || highScoreInputAllTime ) {
       $("#highScoreDiv").show();
       $("aside").addClass("asideShrink");
-      $("#buttonResetHighScore").removeClass("hidden");
+      if (highScoreInput2020) {
+          $(".highScore2020").removeClass("hidden");
+      }
+      if (highScoreInputAllTime) {
+          $(".highScoreAllTime").removeClass("hidden");
+      }
   } else {
       console.log("TEST2")
       $("aside").removeClass("asideShrink");
@@ -78,7 +86,6 @@ function myRoundCounter() {
         $("#comment, #countSp, #timeSp, #headerQuestion, .flip-card-inner").addClass("hidden");
         $("#highScoreDiv").show("slow");
         $("aside").addClass("asideShrink");
-        $("#buttonResetHighScore").addClass("hidden");
         $("#buttonReset").removeClass("hidden");
         $("#textField").val("");
         $("#scoreboard").addClass("endScoreClass").removeClass("scoreboardClass");
@@ -159,7 +166,7 @@ function commentOnScore() {
     }
 }
 
-$("#buttonAllTime").click(function() { 
+$(".buttonAllTime").click(function() { 
     addClassAllTime()
 });
 
@@ -173,7 +180,7 @@ function addClassAllTime() {
     $("#headerQuestion").text("Who is this Cyclist?");
 }; 
 
-$("#button2020").click(function() { 
+$(".button2020").click(function() { 
     addClass2020()
 });
 
@@ -303,7 +310,6 @@ function startGame(){
     hideHeader();
     $("#buttonStart, #buttonHowToPlayTheGame, #headerQuestion").addClass("hidden");
     $("#buttonHint, #buttonSubmit, #textField, #round-and-score").removeClass("hidden");
-    $("#buttonResetHighScore").addClass("hidden");
     $("#buttonAllTime").addClass("hidden");
     $("#button2020").addClass("hidden");
 }
