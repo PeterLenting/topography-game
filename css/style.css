@@ -35,7 +35,7 @@ html {
 }
 
 .asideShrink {
-    height: 79%;
+    height: 80%;
 }
 
 body {
@@ -660,8 +660,21 @@ body {
     }
  }
 
-@media(min-width: 1800px){
+@media(min-width: 1500px){
 .asideShrink {
-    height: 79%;
+    height: 81%;
     }
 }
+
+@media(min-width: 1800px){
+.asideShrink {
+    height: 78%;
+    }
+}
+
+@media(min-width: 2000px){
+.asideShrink {
+    height: 80%;
+    }
+}
+
