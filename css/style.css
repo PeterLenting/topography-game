@@ -20,6 +20,7 @@
 
 #buttonAllTime, #button2020 {
     background: #006B38;
+    margin-top: 15px;
 }
 
 #choiseOfGame {
@@ -225,10 +226,11 @@ It looks a bit like an actuel scoreboard, which is applicable since it is a game
     border-radius: 25px;
     padding-bottom: 10px;
     background-color: #FF652F;
+    font-family: 'Orbitron', sans-serif;
 }
 
 .highScoreTitle {
-    color: #FEE715;
+    font-size: 1rem;
 }
 
 /*Styling the way the final score is shown on the endscreen. 
@@ -285,15 +287,15 @@ It looks a bit like an actuel scoreboard, which is applicable since it is a game
 }
 
 #highScoreInputAllTime, #highScoreInput2020 {
-    color: #FEE715;
+    color: #FD5F00;
     text-align: center;
     width: 110px;
     font-weight: bold;
     border-radius: 11px;
     border-color: #101820;
-    font-family: 'Orbitron', sans-serif;
+    /*font-family: 'Orbitron', sans-serif;*/
     font-size: 2.5rem;
-    background: #101820;
+    background: #FEE715;
 }
 
 /*BUTTONS*/
@@ -333,6 +335,7 @@ input:focus {
   padding-left: 10px;
   padding-right: 10px; 
   border-radius: 6%;
+  color: #FD5F00;
 }
 
 /*Styling the button that makes it possible to ask for a hint. 

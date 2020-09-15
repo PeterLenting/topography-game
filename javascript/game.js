@@ -1,3 +1,52 @@
+function animateValue(obj, start, end, duration) {
+  easing: 'swing'
+  let startTimestamp = null;
+  duration = 1500;
+  const step = (timestamp) => {
+    if (!startTimestamp) startTimestamp = timestamp;
+    const progress = Math.min((timestamp - startTimestamp) / duration, 1);
+    obj.value = Math.floor(progress * (end - start) + start);
+    if (progress < 1) {
+      window.requestAnimationFrame(step);
+    }
+  };
+  window.requestAnimationFrame(step);
+}
+
+// - myScore() takes care of the scoreboard and the comments after each correct answer.
+// - "Yes, that's him" is shown after a correct answer.
+// - If the user recieved a hint and got a wrong answer, 5 points are added to te scoreboard.
+// - If the user either recieved a hint or got a wrong answer, 10 points are added to te scoreboard.
+// - If the user recieved no hint and didn't give a wrong answer, 15 points is added to te scoreboard.
+// - With parseInt(time.text()) the seconds left on countdown() are added to the score. 
+
+var score = $("#scoreboard");
+var time = $("#countdown_id");
+
+function myScore() {
+    const obj = document.getElementById('scoreboard');
+    $("#comment").removeClass("hidden").text("Yes, that's him!");
+    $("#round-and-score").addClass("marginEndscore");
+    let scoreMinusTwo = $("#newImage").hasClass("gotHint") && $("#newImage").hasClass("gotWrongAnswer");
+    let scoreMinusOne = $("#newImage").hasClass("gotHint") || $("#newImage").hasClass("gotWrongAnswer");
+    if (scoreMinusTwo) {
+        var scoreBeforeFunction = parseInt(score.val());
+        score.val(parseInt(score.val()) + 5 + parseInt(time.text()));
+        var scoreAfterFunction = parseInt(score.val());
+        animateValue(obj, scoreBeforeFunction, scoreAfterFunction, 1500); 
+    } else if (scoreMinusOne) {
+        var scoreBeforeFunction = parseInt(score.val());
+        score.val(parseInt(score.val()) + 10 + parseInt(time.text()));
+        var scoreAfterFunction = parseInt(score.val());
+        animateValue(obj, scoreBeforeFunction, scoreAfterFunction, 1500); 
+    } else {
+        var scoreBeforeFunction = parseInt(score.val());
+        score.val(parseInt(score.val()) + 15 + parseInt(time.text()));
+        var scoreAfterFunction = parseInt(score.val());
+        animateValue(obj, scoreBeforeFunction, scoreAfterFunction, 1500);
+    }
+}
+
 
 window.onload = function() {
     var highScoreInput2020 = localStorage.getItem("highScore2020");
@@ -372,43 +421,8 @@ function showAnswer() {
     var addAnswerToImage = $("#newImage, #newImageBack").attr('src').replace("-empty", "").replace("-flag", "");
 } 
     
-// - myScore() takes care of the scoreboard and the comments after each correct answer.
-// - "Yes, that's him" is shown after a correct answer.
-// - If the user recieved a hint and got a wrong answer, 5 points are added to te scoreboard.
-// - If the user either recieved a hint or got a wrong answer, 10 points are added to te scoreboard.
-// - If the user recieved no hint and didn't give a wrong answer, 15 points is added to te scoreboard.
-// - With parseInt(time.text()) the seconds left on countdown() are added to the score. 
 
-var score = $("#scoreboard");
-var time = $("#countdown_id");
 
-function myScore() {
-    $("#comment").removeClass("hidden").text("Yes, that's him!");
-    $("#round-and-score").addClass("marginEndscore");
-    if ($("#newImage").hasClass("gotHint") &&  $("#newImage").hasClass("gotWrongAnswer")) {
-        score.val(parseInt(score.val()) + 5 + parseInt(time.text())); 
-    } else if ($("#newImage").hasClass("gotHint") || $("#newImage").hasClass("gotWrongAnswer")) {
-        score.val(parseInt(score.val()) + 10 + parseInt(time.text())); 
-    } else {
-        score.val(parseInt(score.val()) + 15 + parseInt(time.text()));
-    }
-}
- 
-// - checkAnswer() checks the given answer against the right answer.
-// - All answer are turned to uppercase, to make sure the use of upper- or lowercase doesn't have any influence.
-// - If the answer is correct showAnswer() and myScore() are executed.
-// - If the answer is wrong, wrongAnswer() is executed.
-// - Giving a wrong answer again will make the right answer appear. No point are given.
-/*
-function showAnswer() {
-    let flipToAnswer = $("#newImage, #newImageBack").attr('src').replace("-empty", "").replace("-flag", "");
-    clearInterval(window.timerId); 
-    $(".flip-card-inner").flip('toggle');
-    setTimeout(function () {
-        $("#newImage, #newImageBack").attr('src', flipToAnswer);  
-    }, 200);
-} 
-*/
 
 // - wrongAnswer() is triggered after a wrong answer is given.
 // - The image is blurred.
@@ -433,6 +447,7 @@ function wrongAnswer() {
     }
 }
 
+
 // - scrollToTop() takes care of an issue on mobile.
 // - Now after an answer is given, the user is automatically scrolled up to the top of the window.
 // - This way the image is in the view.
@@ -444,6 +459,12 @@ function scrollToTop() {
     }
 };
 
+
+// - checkAnswer() checks the given answer against the right answer.
+// - All answer are turned to uppercase, to make sure the use of upper- or lowercase doesn't have any influence.
+// - If the answer is correct showAnswer() and myScore() are executed.
+// - If the answer is wrong, wrongAnswer() is executed.
+// - Giving a wrong answer again will make the right answer appear. No point are given.
 
 function checkAnswer() {
     scrollToTop();
