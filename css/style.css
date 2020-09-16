@@ -1,3 +1,16 @@
+#buttonMute {
+ color: #FD5F00;
+ background-color: #101820;
+ font-size: 2rem;
+}
+
+.circle-btn {
+  height: 60px;
+  width: 60px;
+  border-radius: 50%;
+  border: none;
+}
+
 .carousel-caption {
     color: #101820;
 }

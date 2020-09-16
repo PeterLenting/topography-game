@@ -1,10 +1,10 @@
-let soundOfFlip = new Audio("sounds/flip-sound.wav");
+/*let soundOfFlip = new Audio("sounds/flip-sound.wav");
 let soundOfRightAnswer = new Audio("sounds/rightAnswer.wav");
 let soundOfWrongAnswer = new Audio("sounds/wrongAnswer.wav");
 let soundOfNewRound = new Audio("sounds/newRound.wav");
 let soundTryAgain = new Audio("sounds/tryAgain.wav");
 let soundOfhighScore = new Audio("sounds/highScore.wav");
-
+*/
 let silence = false;
 
 function muteAudio() {
@@ -23,7 +23,7 @@ function muteAudio() {
         }
         silence = true;
     }
-    //$('#muteButton i').toggleClass('fa-volume-off');
+    $('#buttonMute i').toggleClass('fa-volume-off');
 }
 
 $("#buttonMute").click(function() { 

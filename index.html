@@ -13,7 +13,8 @@
 
     <!-- Style Sheets -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.1/css/all.css" type="text/css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.14.0/css/all.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.14.0/css/v4-shims.css">
     <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Permanent+Marker&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@800&display=swap" rel="stylesheet">
@@ -31,7 +32,6 @@
     <header>
         <div class="container-fluid">
             <h1>Pro Cycling Trumps Game</h1>
-            <button id="buttonMute">MUTE</button>
         </div>
     </header>
     <section id="main">
@@ -40,6 +40,7 @@
                 <div class="col-xl-8 gameplay">
                     <div class="main-col">
                         <h2 id="headerQuestion">Which game are you gonna play?</h2>
+                        <button type="button" class="circle-btn" id="buttonMute"><i class="fas fa-volume-mute fa-volume-off"></i></button>
 <!-- Shows the round the user is in and the current score of the player. If the game is finished, yourScore shows the endscore -->
                         <div class="row hidden" id="round-and-score">
                             <div class="col-4" id="round-div">
