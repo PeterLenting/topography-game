@@ -376,6 +376,7 @@ $("#buttonStart").click(function() {
 
 // - Flip() is used to make the main image flip.
 // - Flip() takes 600ms. 
+var soundOfFlip = new Audio("sounds/flip-sound.wav");
 
 $(function() {
     $(".flip-card-inner").flip({ 
@@ -392,6 +393,7 @@ $(function() {
 
 function giveHint() {
     scrollToTop();
+    soundOfFlip.play();
     var addHintToImg = $("#newImage, #newImageBack").attr('src').replace("-empty.png", "-flag.png");   
     $("#buttonHint").addClass("hidden");  
     $("#newImage").addClass("gotHint");          
