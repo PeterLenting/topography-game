@@ -1,5 +1,39 @@
+let soundOfFlip = new Audio("sounds/flip-sound.wav");
+let soundOfRightAnswer = new Audio("sounds/rightAnswer.wav");
+let soundOfWrongAnswer = new Audio("sounds/wrongAnswer.wav");
+let soundOfNewRound = new Audio("sounds/newRound.wav");
+let soundTryAgain = new Audio("sounds/tryAgain.wav");
+let soundOfhighScore = new Audio("sounds/highScore.wav");
+
+let silence = false;
+
+function muteAudio() {
+
+    let allaudio = $('audio');
+
+    if (silence) {
+        for (let j = 0; j < allaudio.length; j++) {
+            allaudio[j].muted = false;
+        }
+        silence = false;
+    }
+    else {
+        for (let j = 0; j < allaudio.length; j++) {
+            allaudio[j].muted = true;
+        }
+        silence = true;
+    }
+    //$('#muteButton i').toggleClass('fa-volume-off');
+}
+
+$("#buttonMute").click(function() { 
+  muteAudio();
+});
+// - animateValue() takes an old value and a new value
+// - then the difference is animated.
+// - Used in myScore() 
+
 function animateValue(obj, start, end, duration) {
-  easing: 'swing'
   let startTimestamp = null;
   duration = 1500;
   const step = (timestamp) => {
@@ -12,6 +46,7 @@ function animateValue(obj, start, end, duration) {
   };
   window.requestAnimationFrame(step);
 }
+
 
 // - myScore() takes care of the scoreboard and the comments after each correct answer.
 // - "Yes, that's him" is shown after a correct answer.
@@ -138,6 +173,7 @@ function myRoundCounter() {
         $("#yourScore").removeClass("hidden");
         $('#score-div').contents().appendTo('#time-div')
     } else {
+        $('#soundOfNewRound')[0].play();
         $("#comment").addClass("hidden");
         $("#buttonHint, #buttonSubmit").removeClass("hidden");
         $("#textField").removeClass("hidden").val("");
@@ -161,6 +197,7 @@ function setHighScore() {
             localStorage.setItem("highScoreAllTime", yourScoreAllTime);
             $("#highScoreInputAllTime").val(localStorage.getItem("highScoreAllTime"));
             $("#high-score-model-score").val(localStorage.getItem("highScoreAllTime"));
+            $('#soundOfhighScore')[0].play();
             modal.style.display = "block" 
         } else if (yourScoreAllTime === highScoreAllTime) {
         $("#scoreComment").removeClass("hidden"); 
@@ -176,6 +213,7 @@ function setHighScore() {
             localStorage.setItem("highScore2020", yourScore2020);
             $("#highScoreInput2020").val(localStorage.getItem("highScore2020"));
             $("#high-score-model-score").val(localStorage.getItem("highScore2020"));
+            $('#soundOfhighScore')[0].play();
             modal.style.display = "block" 
         } else if (yourScore2020 === highScore2020) {
         $("#scoreComment").removeClass("hidden"); 
@@ -376,7 +414,6 @@ $("#buttonStart").click(function() {
 
 // - Flip() is used to make the main image flip.
 // - Flip() takes 600ms. 
-var soundOfFlip = new Audio("sounds/flip-sound.wav");
 
 $(function() {
     $(".flip-card-inner").flip({ 
@@ -393,7 +430,7 @@ $(function() {
 
 function giveHint() {
     scrollToTop();
-    soundOfFlip.play();
+    $('#soundOfFlip')[0].play();
     var addHintToImg = $("#newImage, #newImageBack").attr('src').replace("-empty.png", "-flag.png");   
     $("#buttonHint").addClass("hidden");  
     $("#newImage").addClass("gotHint");          
@@ -432,7 +469,8 @@ function showAnswer() {
 // - If it is the first wrong answer: "Nope, that's mot him is shown"
 
 
-function wrongAnswer() {  
+function wrongAnswer() { 
+    $('#soundOfWrongAnswer')[0].play();
     if ($("#newImage").hasClass("gotWrongAnswer")) {
         showAnswer();
         // var timeoutTest = setTimeout(function() {   
@@ -527,12 +565,14 @@ function checkAnswer() {
     if  ($("#newImage").hasClass("allTime") && jacquesAnquetil || lanceArmstrong || ginoBartali || faustoCoppi || miguelIndurain || bernardHinault ||
         louisonBobet || joopZoetemelk || eddyMerckx || seanKelly || alfredoBinda || rikVanSteenbergen || oscarFreire || laurentJalabert || marcoPantani ||
         gregLemond || laurentFignon || janJanssen || rogerDeVlaeminck || federicoBahamontes) {
+        $('#soundOfRightAnswer')[0].play();
         showAnswer();    
         myScore();
         }
     else if ($("#newImage").hasClass("2020") && julianAlaphilippe || eganBernal || arnaudDemare || madsPedersen || jakobFuglsang || stevenKruijswijk || vincenzoNibali || primozRoglic ||
         mathieuVanDerPoel || gregVanAvermaet || peterSagan || tadejPogacar || woutVanAert || samBennett || tomDumoulin || calebEwan || remcoEvenepoel ||
         alexanderKristoff || baukeMollema || mikelLanda) {
+        $('#soundOfRightAnswer')[0].play();
         showAnswer();    
         myScore(); 
     } else {
@@ -558,6 +598,7 @@ $("#textField").keypress(function(event) {
 // - The 'blur'-class is removed.
 
 function tryAgain() {
+    $('#soundTryAgain')[0].play();
     $("#newImage, #newImageBack").removeClass('blur');
     $("#comment, #buttonTryAgain, #buttonGiveUp").addClass("hidden");
     $("#buttonSubmit, #textField").removeClass("hidden");
@@ -578,6 +619,7 @@ $("#buttonTryAgain").click(function() {
 // - The "Sorry, no score"-message shows.
 
 function giveUp() {
+    $('#soundOfFlip')[0].play();
     showAnswer();
     $("#newImage, #newImageBack").removeClass('blur');
     $("#comment").removeClass("hidden").text("Sorry, no score");
