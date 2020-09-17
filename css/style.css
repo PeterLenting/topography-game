@@ -1,13 +1,28 @@
-#buttonMute {
- color: #FD5F00;
- background-color: #101820;
- font-size: 2rem;
+aside ul li a {
+  text-decoration: none; 
+  color: #101820;
 }
 
-#buttonResetMenu {
+aside ul li a:hover {
+  text-decoration: none; 
+  color: #616247;
+}
+
+#buttonGoBackUp {
+  margin-bottom: 10px;
+}
+
+#buttonMute, #buttonResetMenu {
  color: #FD5F00;
  background-color: #101820;
  font-size: 2rem;
+ margin-left: 10px;
+ margin-right: 10px;
+}
+
+#buttonResetMenu:hover, #buttonMute:hover {
+  background:#616247;
+  transition: all .4s ease;
 }
 
 .circle-btn {
@@ -165,8 +180,9 @@ aside {
     border: 3px solid #101820;
     border-radius: 25px;
     margin-bottom: 10px;
-    height: 88%;
+    height: 89%;
     transition: all 0.5s ease;
+    padding-right: 15px;
     }
 
 /*Aligns the text in the unorderd list in the aside to the left to make it look clean.*/
@@ -513,13 +529,24 @@ The orange color fits well in and makes the buttons stand out from the other but
   padding-bottom: 5px;
 }
 
-#flip-it-logo {
+#footer-img-pct {
+  border-radius: 25px;
+  width: 30%;
+}
+
+#flip-it-logo, #pct-logo {
   font-style: normal;  
   padding-left: 3px;
 }
 
 .footer-logo-by {
   font-size: 1.1rem;
+  margin-left: 5px;
+}
+
+#pct-logo a {
+  padding-left: 0;
+  padding-right: 0;  
 }
 
 #footer-logo-link {
