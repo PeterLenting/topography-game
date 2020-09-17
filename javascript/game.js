@@ -1,10 +1,4 @@
-/*let soundOfFlip = new Audio("sounds/flip-sound.wav");
-let soundOfRightAnswer = new Audio("sounds/rightAnswer.wav");
-let soundOfWrongAnswer = new Audio("sounds/wrongAnswer.wav");
-let soundOfNewRound = new Audio("sounds/newRound.wav");
-let soundTryAgain = new Audio("sounds/tryAgain.wav");
-let soundOfhighScore = new Audio("sounds/highScore.wav");
-*/
+
 let silence = false;
 
 function muteAudio() {
@@ -25,6 +19,7 @@ function muteAudio() {
     }
     $('#buttonMute i').toggleClass('fa-volume-off');
 }
+
 
 $("#buttonMute").click(function() { 
   muteAudio();
@@ -654,12 +649,17 @@ window.onclick = function(event) {
 }
 
 
-// - Reset the game after finishing it by clicking the Play Again-button. 
+// - Reset the game after finishing it by clicking the Play Again-button
 
-    $("#buttonReset").click(function() {
-        window.location.reload();
-    });
+$("#buttonReset").click(function() {
+    window.location.reload();
+});
 
+// - Reset the game by clicking button in the sidemenu 
+
+$("#buttonResetMenu").click(function() {
+    window.location.reload();
+});
 
 // -For Mobile only: Jump down the page for an explanation of the rules and back up again to start the game.
 

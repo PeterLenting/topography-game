@@ -4,6 +4,12 @@
  font-size: 2rem;
 }
 
+#buttonResetMenu {
+ color: #FD5F00;
+ background-color: #101820;
+ font-size: 2rem;
+}
+
 .circle-btn {
   height: 60px;
   width: 60px;
@@ -159,7 +165,7 @@ aside {
     border: 3px solid #101820;
     border-radius: 25px;
     margin-bottom: 10px;
-    height: 100%;
+    height: 88%;
     transition: all 0.5s ease;
     }
 
@@ -232,6 +238,19 @@ It looks a bit like an actuel scoreboard, which is applicable since it is a game
 .red {
   color: red!important;  
 }
+
+#dashboardDiv {
+    margin-bottom: 10px;
+    border: 3px solid #101820;
+    border-radius: 25px;
+    padding-bottom: 10px;
+    background: linear-gradient(#FEE715, #fcf5b3);
+}
+
+#dashboardDiv button {
+    margin-top: 10px;
+}
+
 
 #highScoreDiv {
     margin-bottom: 10px;
