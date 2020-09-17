@@ -666,7 +666,7 @@ section#main .container-fluid img {
 }
 
 /*Shows bigger buttons on bigger screens, which fits the screen better.*/
-@media(min-width: 1200px){
+@media(min-width: 992px){
 .button_1 {
     font-size: 1.2rem;
     height: 40px;
