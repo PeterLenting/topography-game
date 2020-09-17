@@ -531,7 +531,7 @@ The orange color fits well in and makes the buttons stand out from the other but
 
 #footer-img-pct {
   border-radius: 25px;
-  width: 30%;
+  width: 50%;
 }
 
 #flip-it-logo, #pct-logo {
@@ -618,7 +618,32 @@ because the explanation is next to the gamescreen on bigger screens.*/
 section#main .container-fluid img {
     width: 300px;
     }
-}    
+}   
+
+@media(min-width: 736px){ 
+  aside{
+  height: 85%;
+  } 
+} 
+
+@media(min-width: 1200px){ 
+  aside{
+  height: 89%;
+  } 
+} 
+
+@media(min-width: 1800px){ 
+  aside{
+  height: 88%;
+  } 
+} 
+
+@media(min-width: 2000px){ 
+  aside{
+  height: 87%;
+  } 
+} 
+
 
 @media(min-width: 768px){ 
 #countSp {
@@ -678,6 +703,9 @@ section#main .container-fluid img {
     margin-right: 0;
     width: 100%;    
     }
+#footer-img-pct {
+  width: 27%;
+}
 }
 
 /*Makes the text in the header (Pro Cycling Trumps Game) bigger on bigger screens, which fits the screen better.*/
