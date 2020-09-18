@@ -1,75 +1,5 @@
-aside ul li a {
-  text-decoration: none; 
-  color: #101820;
-}
-
-aside ul li a:hover {
-  text-decoration: none; 
-  color: #616247;
-}
-
-#buttonGoBackUp {
-  margin-bottom: 10px;
-}
-
-#buttonMute, #buttonResetMenu {
- color: #FD5F00;
- background-color: #101820;
- font-size: 2rem;
- margin-left: 10px;
- margin-right: 10px;
-}
-
-#buttonResetMenu:hover, #buttonMute:hover {
-  background:#616247;
-  transition: all .4s ease;
-}
-
-.circle-btn {
-  height: 60px;
-  width: 60px;
-  border-radius: 50%;
-  border: none;
-}
-
-.carousel-caption {
-    color: #101820;
-}
-
-.carousel-indicators li {
-    background-color: #101820;
-}
-
-.carousel-control-next-icon {
-    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='%23000' viewBox='0 0 8 8'%3e%3cpath d='M2.75 0l-1.5 1.5 2.5 2.5-2.5 2.5 1.5 1.5 4-4-4-4z'/%3e%3c/svg%3e")
-}
-
-.carousel-control-prev-icon {
-    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='%23000' viewBox='0 0 8 8'%3e%3cpath d='M5.25 0l-4 4 4 4 1.5-1.5-2.5-2.5 2.5-2.5-1.5-1.5z'/%3e%3c/svg%3e")
-}
-
-#imageAllTime, #image2020 {
-    height: 500px;
-}
-
-#buttonAllTime, #button2020 {
-    background: #006B38;
-    margin-top: 15px;
-}
-
-#choiseOfGame {
-    margin-top: 36px;
-    margin-left: auto;
-    margin-right: auto;
-    width: 20em
-}
-
 html {
     height: 100%;
-}
-
-.asideShrink {
-    height: 80%;
 }
 
 body {
@@ -122,6 +52,38 @@ h2 {
     margin-bottom: 10px;
     padding-bottom: 5px;
     height: 100%;
+}
+/* Carousel*/
+.carousel-caption {
+    color: #101820;
+}
+
+.carousel-indicators li {
+    background-color: #101820;
+}
+
+.carousel-control-next-icon {
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='%23000' viewBox='0 0 8 8'%3e%3cpath d='M2.75 0l-1.5 1.5 2.5 2.5-2.5 2.5 1.5 1.5 4-4-4-4z'/%3e%3c/svg%3e")
+}
+
+.carousel-control-prev-icon {
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='%23000' viewBox='0 0 8 8'%3e%3cpath d='M5.25 0l-4 4 4 4 1.5-1.5-2.5-2.5 2.5-2.5-1.5-1.5z'/%3e%3c/svg%3e")
+}
+
+#imageAllTime, #image2020 {
+    height: 500px;
+}
+
+#buttonAllTime, #button2020 {
+    background: #006B38;
+    margin-top: 15px;
+}
+
+#choiseOfGame {
+    margin-top: 36px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 20em
 }
 
 #newImage, #newImageBack {
@@ -183,12 +145,52 @@ aside {
     height: 89%;
     transition: all 0.5s ease;
     padding-right: 15px;
+    padding-top: 5px;
     }
+
+aside ul li a {
+  text-decoration: none; 
+  color: #101820;
+}
+
+aside ul li a:hover {
+  text-decoration: none; 
+  color: #616247;
+}
 
 /*Aligns the text in the unorderd list in the aside to the left to make it look clean.*/
 aside ul {
     text-align: left;
 }
+
+.asideShrink {
+    height: 73%;
+}
+
+#buttonGoBackUp {
+  margin-bottom: 10px;
+}
+
+#buttonMute, #buttonResetMenu {
+ color: #FD5F00;
+ background-color: #101820;
+ font-size: 2rem;
+ margin-left: 10px;
+ margin-right: 10px;
+}
+
+#buttonResetMenu:hover, #buttonMute:hover {
+  background:#616247;
+  transition: all .4s ease;
+}
+
+.circle-btn {
+  height: 60px;
+  width: 60px;
+  border-radius: 50%;
+  border: none;
+}
+
 
 /*SCORBOARD*/
 
@@ -686,8 +688,11 @@ section#main .container-fluid img {
 /*Shows a bigger 'Who is this Cyclist?' on bigger screens, which fits the screen better.*/
 @media(min-width: 1200px){
 #headerQuestion {
-    font-size: 2.5rem;
-    }
+  font-size: 2.5rem;
+  }
+.main-col {
+  padding-top: 20px;
+  }
 }
 
 /*Shows bigger buttons on bigger screens, which fits the screen better.*/
@@ -747,21 +752,38 @@ body {
     }
  }
 
-@media(min-width: 1500px){
+ @media(min-width: 1200px){
 .asideShrink {
-    height: 81%;
+    height: 73%;
+    }
+}
+
+@media(min-width: 1400px){
+.asideShrink {
+    height: 70%;
+    }
+}
+
+@media(min-width: 1600px){
+.asideShrink {
+    height: 73%;
     }
 }
 
 @media(min-width: 1800px){
 .asideShrink {
-    height: 78%;
+    height: 71%;
     }
 }
 
 @media(min-width: 2000px){
 .asideShrink {
-    height: 80%;
+    height: 68%;
     }
 }
 
+@media(min-width: 2200px){
+.asideShrink {
+    height: 67%;
+    }
+}
