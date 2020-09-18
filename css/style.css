@@ -471,6 +471,10 @@ The orange color fits well in and makes the buttons stand out from the other but
   animation-duration: 0.4s
 }
 
+#highscoreTrophy {
+   width: 66%; 
+}
+
 /* Add Animation */
 @-webkit-keyframes animatetop {
   from {top:-300px; opacity:0} 
@@ -485,11 +489,6 @@ The orange color fits well in and makes the buttons stand out from the other but
 #high-score-model-text {
   font-size: 2rem;
   font-weight: bold;
-}
-
-.fa-trophy {
-    color: #FEE715;
-    font-size: 10rem;
 }
 
 #high-score-model-score {
@@ -730,9 +729,6 @@ section#main .container-fluid img {
     }
 #high-score-model-text {
   font-size: 3rem;
-    }
-.fa-trophy {
-    font-size: 12rem;
     }
 }
 
