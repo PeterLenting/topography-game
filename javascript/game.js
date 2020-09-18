@@ -1,3 +1,31 @@
+// - When the page is loaded localStorage is checked
+//- If there is highscore to be found it is set in the right place
+// - Aside is adjusted if #highScoreDiv is shown
+
+window.onload = function() {
+    var highScoreInput2020 = localStorage.getItem("highScore2020");
+    document.getElementById("highScoreInput2020").value = highScoreInput2020
+    var highScoreInputAllTime = localStorage.getItem("highScoreAllTime");
+    document.getElementById("highScoreInputAllTime").value = highScoreInputAllTime
+  if (highScoreInput2020 || highScoreInputAllTime ) {
+      $("#highScoreDiv").removeClass("hidden");
+      $("aside").addClass("asideShrink");
+      if (highScoreInput2020) {
+          $(".highScore2020").removeClass("hidden");
+      }
+      if (highScoreInputAllTime) {
+          $(".highScoreAllTime").removeClass("hidden");
+      }
+  } else {
+      $("aside").removeClass("asideShrink");
+      $("#highScoreDiv").addClass("hidden");
+  }
+};
+
+
+// - muteAudio() turns the soundeffect on and off
+// - button-class is changed on every click (toggle)
+// - muteAudio() is activated by clicking #buttonMute
 
 let silence = false;
 
@@ -24,6 +52,8 @@ function muteAudio() {
 $("#buttonMute").click(function() { 
   muteAudio();
 });
+
+
 // - animateValue() takes an old value and a new value
 // - then the difference is animated.
 // - Used in myScore() 
@@ -76,27 +106,6 @@ function myScore() {
         animateValue(obj, scoreBeforeFunction, scoreAfterFunction, 1500);
     }
 }
-
-
-window.onload = function() {
-    var highScoreInput2020 = localStorage.getItem("highScore2020");
-    document.getElementById("highScoreInput2020").value = highScoreInput2020
-    var highScoreInputAllTime = localStorage.getItem("highScoreAllTime");
-    document.getElementById("highScoreInputAllTime").value = highScoreInputAllTime
-  if (highScoreInput2020 || highScoreInputAllTime ) {
-      $("#highScoreDiv").removeClass("hidden");
-      $("aside").addClass("asideShrink");
-      if (highScoreInput2020) {
-          $(".highScore2020").removeClass("hidden");
-      }
-      if (highScoreInputAllTime) {
-          $(".highScoreAllTime").removeClass("hidden");
-      }
-  } else {
-      $("aside").removeClass("asideShrink");
-      $("#highScoreDiv").addClass("hidden");
-  }
-};
 
 
 // - resetHighScore() clears the localStorage so the highscore is no longer stored. 
@@ -181,8 +190,6 @@ function myRoundCounter() {
 // - setHighScore() checks whether 'yourScore' is greater than 'highScore'. If that is the case, 'yourScore' is set as the new 'highScore'.
 // - Pop-up model is shown with high-score message.
 
-
-
 function setHighScore() {
     if ($("#newImage").hasClass("allTime")) {
         var yourScoreAllTime = parseInt($("#scoreboard").val());
@@ -229,7 +236,7 @@ function commentOnScore() {
     if (highScore - yourScore < 25) {
         $("#scoreComment").text("So close! Give it another go!");
     } else*/ if (score.val() < 100) { 
-        $("#scoreComment").text("Not too bad!");
+        $("#scoreComment").text("Just keep trying...");
     } else if (score.val() < 150) { 
         $("#scoreComment").text("You're getting there!");
     } else if (score.val() < 200) { 
