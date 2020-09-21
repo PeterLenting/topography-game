@@ -10,8 +10,8 @@ body {
 }
 
 header {
-    background: #101820;
-    color: #FEE715;
+    background: linear-gradient(#195190, #499bea);
+    color: #F2F2F2;
     text-align: center;
     min-height: 60px;
     text-transform: uppercase;
@@ -19,7 +19,7 @@ header {
     padding-bottom: 1px;
     border-radius: 25px;
     margin: 15px;
-    border: 3px solid #FEE715;
+    border: 3px solid #101820;
 }
 
 h1 {
@@ -45,8 +45,8 @@ h2 {
 }
 
 .main-col {
-    background: linear-gradient(#FEE715, #fcf5b3);
-    color: #101820;
+    background: linear-gradient(#195190, #499bea);
+    color: #F2F2F2;
     border: 3px solid #101820;
     border-radius: 25px;
     margin-bottom: 10px;
@@ -75,7 +75,7 @@ h2 {
 }
 
 #buttonAllTime, #button2020 {
-    background: #006B38;
+    background: #2BaE66;
     margin-top: 15px;
 }
 
@@ -137,8 +137,8 @@ p {
 /*The sidebar has the same yellow colour als the main-col and the same darkblue text. 
 This ensures the feeling of everything fitting together.*/
 aside {
-    background: linear-gradient(#FEE715, #fcf5b3);
-    color: #101820FF;
+    background: linear-gradient(#195190, #499bea);
+    color: #F2F2F2;
     border: 3px solid #101820;
     border-radius: 25px;
     margin-bottom: 10px;
@@ -150,7 +150,7 @@ aside {
 
 aside ul li a {
   text-decoration: none; 
-  color: #101820;
+  color: #F2F2F2;
 }
 
 aside ul li a:hover {
@@ -172,8 +172,8 @@ aside ul {
 }
 
 #buttonMute, #buttonResetMenu {
- color: #FD5F00;
- background-color: #101820;
+ color: #2BaE66;
+ background-color: #F2F2F2;
  font-size: 2rem;
  margin-left: 10px;
  margin-right: 10px;
@@ -262,7 +262,7 @@ It looks a bit like an actuel scoreboard, which is applicable since it is a game
     border: 3px solid #101820;
     border-radius: 25px;
     padding-bottom: 10px;
-    background: linear-gradient(#FEE715, #fcf5b3);
+    background: linear-gradient(#195190, #499bea);
 }
 
 #dashboardDiv button {
@@ -368,7 +368,7 @@ input:focus {
     margin-top: 5px;
     margin-bottom: 5px;
     background: #101820;
-    color: #FEE715;
+    color: #F2F2F2;
     border-radius: 25px;
     font-weight: bold;
     /*box-shadow: 3px 3px black;*/
@@ -526,16 +526,11 @@ The orange color fits well in and makes the buttons stand out from the other but
 /*Styling the footer, again using the darkblue and yellow to make everything fit in.*/
 .footer-logo {
   font-style: italic;
-  color:  #fcf5b3;
+  color: #499bea;
   padding-bottom: 5px;
 }
 
-#footer-img-pct {
-  border-radius: 25px;
-  width: 50%;
-}
-
-#flip-it-logo, #pct-logo {
+#flip-it-logo {
   font-style: normal;  
   padding-left: 3px;
 }
@@ -552,24 +547,24 @@ The orange color fits well in and makes the buttons stand out from the other but
 
 #footer-logo-link {
   padding: 0;  
-  color: #ADEFD1;
+  color: #499bea;
 }
 
 #social {
-    background: #101820;
+    background: #F2F2F2;
     text-align: center;
     padding-top: 10px;
     padding-bottom: 10px;
     border-radius: 25px;
     margin-top: 10px;
-    clear:both;
+    clear: both;
     margin: 15px;
-    border: 3px solid  #fcf5b3;
+    border: 3px solid #101820;
 }
 
 /*Styling the links and symbols in the footer*/
 .sociallinks a {
-    color: #fcf5b3;
+    color: #499bea;
     padding-left: 25px;
     padding-right: 25px;  
 }
