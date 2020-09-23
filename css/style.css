@@ -336,7 +336,7 @@ It looks a bit like an actuel scoreboard, which is applicable since it is a game
     background: #101820;
 }
 
-#highScoreInputAllTime, #highScoreInput2020 {
+#highScoreInput {
     color: #FD5F00;
     text-align: center;
     width: 110px;
@@ -379,7 +379,7 @@ input:focus {
     transition: all .4s ease;
 }
 
-#buttonResetHighScoreAllTime, #buttonResetHighScore2020 {
+#buttonResetHighScore {
   font-size: 1rem; 
   height: 30px;
   padding-left: 10px;
@@ -624,7 +624,7 @@ section#main .container-fluid img {
 
 @media(min-width: 1200px){ 
   aside{
-  height: 89%;
+  height: 86%;
   } 
 } 
 
@@ -751,30 +751,18 @@ body {
 
 @media(min-width: 1400px){
 .asideShrink {
-    height: 70%;
+    height: 66.5%;
     }
 }
 
 @media(min-width: 1600px){
 .asideShrink {
-    height: 73%;
+    height: 67%;
     }
 }
 
 @media(min-width: 1800px){
 .asideShrink {
-    height: 71%;
-    }
-}
-
-@media(min-width: 2000px){
-.asideShrink {
-    height: 68%;
-    }
-}
-
-@media(min-width: 2200px){
-.asideShrink {
-    height: 67%;
+    height: 66.5%;
     }
 }

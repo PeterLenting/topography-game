@@ -3,22 +3,14 @@
 // - Aside is adjusted if #highScoreDiv is shown
 
 window.onload = function() {
-    var highScoreInput2020 = localStorage.getItem("highScore2020");
-    document.getElementById("highScoreInput2020").value = highScoreInput2020
-    var highScoreInputAllTime = localStorage.getItem("highScoreAllTime");
-    document.getElementById("highScoreInputAllTime").value = highScoreInputAllTime
-  if (highScoreInput2020 || highScoreInputAllTime ) {
-      $("#highScoreDiv").removeClass("hidden");
+  document.getElementById("highScore_id").value = localStorage.getItem("highScore");
+  if ($("#highScore_id").val() != 0) {
+      $("#highScoreDiv").show();
       $("aside").addClass("asideShrink");
-      if (highScoreInput2020) {
-          $(".highScore2020").removeClass("hidden");
-      }
-      if (highScoreInputAllTime) {
-          $(".highScoreAllTime").removeClass("hidden");
-      }
+      $("#buttonResetHighScore").removeClass("hidden");
   } else {
       $("aside").removeClass("asideShrink");
-      $("#highScoreDiv").addClass("hidden");
+      // $("#highScoreDiv").hide();
   }
 };
 
@@ -38,8 +30,7 @@ function muteAudio() {
             allaudio[j].muted = false;
         }
         silence = false;
-    }
-    else {
+    } else {
         for (let j = 0; j < allaudio.length; j++) {
             allaudio[j].muted = true;
         }
@@ -74,18 +65,18 @@ function animateValue(obj, start, end, duration) {
 
 
 // - myScore() takes care of the scoreboard and the comments after each correct answer.
-// - "Yes, that's him" is shown after a correct answer.
+// - "Yes, that's it" is shown after a correct answer.
 // - If the user recieved a hint and got a wrong answer, 5 points are added to te scoreboard.
 // - If the user either recieved a hint or got a wrong answer, 10 points are added to te scoreboard.
 // - If the user recieved no hint and didn't give a wrong answer, 15 points is added to te scoreboard.
 // - With parseInt(time.text()) the seconds left on countdown() are added to the score. 
 
-var score = $("#scoreboard");
-var time = $("#countdown_id");
+let score = $("#scoreboard");
+let time = $("#countdown_id");
 
 function myScore() {
     const obj = document.getElementById('scoreboard');
-    $("#comment").removeClass("hidden").text("Yes, that's him!");
+    $("#comment").removeClass("hidden").text("Yes, that's it!");
     $("#round-and-score").addClass("marginEndscore");
     let scoreMinusTwo = $("#newImage").hasClass("gotHint") && $("#newImage").hasClass("gotWrongAnswer");
     let scoreMinusOne = $("#newImage").hasClass("gotHint") || $("#newImage").hasClass("gotWrongAnswer");
@@ -112,28 +103,26 @@ function myScore() {
 // - After clearing localStorage the value of highScore is set to 0.
 // - resetHighScore()is triggered by clicking #buttonResetHighScore (button-text: 'Reset').
 
-$("#buttonResetHighScoreAllTime").click(function() { 
-    resetHighScoreAllTime()
+$("#buttonResetHighScore").click(function() { 
+    resetHighScore();
 });
 
-$("#buttonResetHighScore2020").click(function() { 
+/*$("#buttonResetHighScore2020").click(function() { 
     resetHighScore2020()
-});
+});*/
 
-function resetHighScoreAllTime() {
-    localStorage.removeItem("highScoreAllTime")
-    document.getElementById("highScoreInputAllTime").value = 0;
-    $(".highScoreAllTime").addClass("hidden");
-    if ($(".highScore2020").hasClass("hidden")) {
-        setTimeout(function () {   
-                $("#highScoreDiv").addClass("hidden");
-                $("aside").removeClass("asideShrink");
-            }, 250);
-        $("#highScoreDiv").slideUp(800);
-    }
+function resetHighScore() {
+    localStorage.removeItem("highScore")
+    document.getElementById("highScore_id").value = 0;
+    $(".highScore").addClass("hidden");
+    setTimeout(function() {   
+        $("#highScoreDiv").addClass("hidden");
+        $("aside").removeClass("asideShrink");
+    }, 250);
+    $("#highScoreDiv").slideUp(800);
 };
 
-function resetHighScore2020() {
+/*function resetHighScore2020() {
     localStorage.removeItem("highScore2020")
     document.getElementById("highScoreInput2020").value = 0;
     $(".highScore2020").addClass("hidden");
@@ -144,7 +133,7 @@ function resetHighScore2020() {
             }, 250);
         $("#highScoreDiv").slideUp(800);
     }
-};
+};*/
 
 
 // - Counting the rounds the player goes through. Value starts with 1 and ends with 10, which is the value of finalRound. 
@@ -190,39 +179,21 @@ function myRoundCounter() {
 // - setHighScore() checks whether 'yourScore' is greater than 'highScore'. If that is the case, 'yourScore' is set as the new 'highScore'.
 // - Pop-up model is shown with high-score message.
 
+
 function setHighScore() {
-    if ($("#newImage").hasClass("allTime")) {
-        var yourScoreAllTime = parseInt($("#scoreboard").val());
-        var highScoreAllTime = parseInt($("#highScoreInputAllTime").val());
-        if ((yourScoreAllTime > highScoreAllTime) || ($("#highScoreInputAllTime").val() == 0)) {
-            $(".highScoreAllTime").removeClass("hidden");
-            localStorage.setItem("highScoreAllTime", yourScoreAllTime);
-            $("#highScoreInputAllTime").val(localStorage.getItem("highScoreAllTime"));
-            $("#high-score-model-score").val(localStorage.getItem("highScoreAllTime"));
-            $('#soundOfhighScore')[0].play();
-            modal.style.display = "block" 
-        } else if (yourScoreAllTime === highScoreAllTime) {
+    var yourScore = parseInt($("#scoreboard").val());
+    var highScore = parseInt($("#highScore_id").val());
+    if ((yourScore > highScore) || ($("#highScore_id").val() == 0)) {
+        localStorage.setItem("highScore", yourScore);
+        $("#highScore_id").val(localStorage.getItem("highScore"));
+        $("#high-score-model-score").val(localStorage.getItem("highScore"));
+        modal.style.display = "block"
+        $('#soundOfHighScore')[0].play();
+    } else if (yourScore === highScore) {
         $("#scoreComment").removeClass("hidden"); 
         $("#scoreComment").text("You matched your own record! But is it really the best you can do?");
-        } else {
-            commentOnScore();
-        }
-    } else if ($("#newImage").hasClass("2020")) {
-        var yourScore2020 = parseInt($("#scoreboard").val());
-        var highScore2020 = parseInt($("#highScoreInput2020").val());
-        if ((yourScore2020 > highScore2020) || ($("#highScoreInput2020").val() == 0)) {
-            $(".highScore2020").removeClass("hidden");
-            localStorage.setItem("highScore2020", yourScore2020);
-            $("#highScoreInput2020").val(localStorage.getItem("highScore2020"));
-            $("#high-score-model-score").val(localStorage.getItem("highScore2020"));
-            $('#soundOfhighScore')[0].play();
-            modal.style.display = "block" 
-        } else if (yourScore2020 === highScore2020) {
-        $("#scoreComment").removeClass("hidden"); 
-        $("#scoreComment").text("You matched your own record! But is it really the best you can do?");
-        } else {
-            commentOnScore();
-        }
+    } else {
+        commentOnScore();
     }
 };
 
@@ -230,12 +201,7 @@ function setHighScore() {
 // - commentOnScore() takes care of the comments on the score the user reached at the end of the game. The number of points scored, decide which message.
 
 function commentOnScore() {   
-    /*yourScore = parseInt($("#scoreboard").val());
-    highScore = parseInt($("#highScoreInput").val());
-    $("#scoreComment").removeClass("hidden"); 
-    if (highScore - yourScore < 25) {
-        $("#scoreComment").text("So close! Give it another go!");
-    } else*/ if (score.val() < 100) { 
+    if (score.val() < 100) { 
         $("#scoreComment").text("Just keep trying...");
     } else if (score.val() < 150) { 
         $("#scoreComment").text("You're getting there!");
@@ -244,9 +210,9 @@ function commentOnScore() {
     } else if (score.val() < 300) { 
         $("#scoreComment").text("Wow, that's impressive!");
     } else if (score.val() < 375) { 
-        $("#scoreComment").text("Getting close to yellow yourself!");
+        $("#scoreComment").text("You lengend!");
     } else if (score.val() >= 375) { 
-        $("#scoreComment").text("You're a true worldchampion!");
+        $("#scoreComment").text("Close to perfection, very impressive");
     } else {
         $("#scoreComment").text("Something went wrong...");
     }
@@ -301,16 +267,10 @@ var usedImages = [];
 var usedImagesCount = 0;
 
 function displayImage() {
-    var num = Math.floor(Math.random() *20);
+    var num = Math.floor(Math.random() *15);
     if (!usedImages[num]) {
-        if ($("#newImage").hasClass("allTime")) {
             document.getElementById("newImage").src = imagesEurope[num];
             document.getElementById("newImageBack").src = imagesEurope[num];
-        }
-        else if($("#newImage").hasClass("2020")) {
-            document.getElementById("newImage").src = images2020[num];
-            document.getElementById("newImageBack").src = images2020[num];
-        }
         usedImages[num] = true;
         usedImagesCount++;
         if (usedImagesCount === 10) {
@@ -478,7 +438,7 @@ function wrongAnswer() {
         $("#newImage").addClass("blur");
         $("#newImage").addClass("gotWrongAnswer"); 
         $("#newImageBack").addClass("blur");
-        $("#comment").removeClass("hidden").text("Nope, that's not him");
+        $("#comment").removeClass("hidden").text("Nope, that's not it");
         $("#buttonTryAgain, #buttonGiveUp").removeClass("hidden");
         $("#buttonNext").addClass("hidden");  
     }
@@ -529,8 +489,8 @@ function checkAnswer() {
     let kiev = (imageSource.indexOf("europe-14-") > -1 && answer == "KIEV");
     let sofia = (imageSource.indexOf("europe-15-") > -1 && answer == "SOFIA");
 
-    if  ($("#newImage").hasClass("allTime") && paris || madrid || amsterdam || london || berlin ||
-        rome || oslo || lisbon || brussels || bern || vienna || prague || warsaw || kiev || sofia) {
+    if  (paris || madrid || amsterdam || london || berlin || rome || oslo || lisbon ||
+        brussels || bern || vienna || prague || warsaw || kiev || sofia) {
         $('#soundOfRightAnswer')[0].play();
         showAnswer();    
         myScore();

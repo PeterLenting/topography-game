@@ -25,9 +25,7 @@
 
     <!-- Page Title -->
     <title>Flip-it Topography - Learn topography in a fun and stimulating way</title>
-
 </head>
-
 <body>
     <header>
         <div class="container-fluid">
@@ -59,7 +57,7 @@
                             </div>
                         </div>
 <!-- The flip-card div makes the flipping card possible -->
-                        <div class="flip-card hidden">
+                        <div class="flip-card">
                             <div class="flip-card-inner">
                                 <div class="front">
                                     <img src="images/start-questionmarkAllTime.png" id="newImage" alt="Who is this cyclist?">
@@ -68,60 +66,12 @@
                                     <img src="images/start-questionmarkAllTime.png" id="newImageBack" alt="Who is this cyclist?">
                                 </div>
                             </div>
-                        </div>
-<!-- #choiceOfGame shows the images of the games the user can select to play and their buttons  -->
-                        <div class="row" id="choiseOfGame">
-                            <div class="col-6 d-none d-lg-block">
-                                <div>
-                                    <img src="images/europe/europe-01-empty.png" id="imageAllTime" alt="Who is this cyclist?">
-                                </div>
-                                <button type="submit" id="buttonAllTime" class="buttonAllTime button_1" title="Play Legends Game">Legends</button>
-                            </div>
-                            <div class="col-6 d-none d-lg-block">
-                                <div>
-                                    <img src="images/europe/europe-01-hint.png" id="image2020" alt="Who is this cyclist?">
-                                </div>
-                                <button type="submit" id="button2020" class="button2020 button_1" title="Play 2020 Game">2020</button>
-                            </div>
-                            <div id="carouselExampleIndicators" class="carousel slide d-lg-none" data-ride="carousel">
-                                <ol class="carousel-indicators">
-                                    <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
-                                    <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
-                                    <!--<li data-target="#carouselExampleIndicators" data-slide-to="2"></li>-->
-                                </ol>
-                                <div class="carousel-inner">
-                                    <div class="carousel-item active">
-                                        <img class="w-100 buttonAllTime" src="images/start-questionmarkAllTime.png" alt="First slide">
-                                        <div class="carousel-caption">
-                                            <h5>Alltime-version</h5>
-                                        </div>
-                                    </div>
-                                    <div class="carousel-item">
-                                        <img class="w-100 button2020" src="images/start-questionmark2020.png" alt="Second slide">
-                                        <div class="carousel-caption">
-                                            <h5>2020-version</h5>
-                                        </div>
-                                    </div>
-                                    <!--<div class="carousel-item">
-                                        <img class="d-block w-100" src="..." alt="Third slide">
-                                    </div>-->
-                                </div>
-                                <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
-                                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                                    <span class="sr-only">Previous</span>
-                                </a>
-                                <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
-                                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                                    <span class="sr-only">Next</span>
-                                </a>
-                            </div>
-                        </div>
-                        
+                        </div>                   
 <!-- The two buttons on the mobile startscreen. One with a link to the rules of the game and one to start the game  -->
                         <div class="row justify-content-center" id="startScreen">
                             <div class="col-12">
                                 <button type="submit" id="buttonHowToPlayTheGame" class="button_1">How to Play <i class="far fa-question-circle"></i></button>
-                                <button type="submit" id="buttonStart" class="button_1 hidden"><i class="far fa-play-circle"></i> Let's Play!</button>
+                                <button type="submit" id="buttonStart" class="button_1"><i class="far fa-play-circle"></i> Let's Play!</button>
                             </div>
                         </div>
 <!-- Shows the comment on the users answer -->
@@ -176,35 +126,24 @@
                         <button type="button" class="circle-btn" id="buttonMute"><i class="fas fa-volume-mute" title="Turn Sound on/off"></i></button>
                         <button type="button" class="circle-btn" id="buttonResetMenu"><i class="fas fa-undo-alt" title="Restart Game"></i></button>
                     </div>
-                    <div id="highScoreDiv" class="hidden">
-                        <h3 id="highScoreSp">Your Highscores</h3>
-                        <div class="row">
-                            <div class="col-6 highScoreAllTime hidden">
-                                <p class="highScoreTitle">Legends</p>
-                                <input type="number" id="highScoreInputAllTime" value="0" readonly><br>
-                                <button type="submit" id="buttonResetHighScoreAllTime" class="button_1" title="Reset Alltime Highscore"><i class="fas fa-undo"></i> Reset </button>
-                            </div>
-                            <div class="col-6 highScore2020 hidden">
-                                <p class="highScoreTitle">2020</p>
-                                <input type="number" id="highScoreInput2020" value="0" readonly><br>
-                                <button type="submit" id="buttonResetHighScore2020" class="button_1" title="Reset 2020 Highscore"><i class="fas fa-undo"></i> Reset </button>
-                            </div>
-                        </div>
+                    <div id="highScoreDiv" style="display: none">
+                        <h3 id="highScoreSp">Your Highscore</h3>
+                        <input type="number" id="highScore_id" value="0" readonly>
+                        <button type="submit" id="buttonResetHighScore" class="button_1"><i class="fas fa-undo"></i> Reset </button>
                     </div>
                     <aside id="sidebar">
                         <h3>About the Game</h3>
                         <ul>
-                            <li>Every <a href="http://procyclingtrumps.com/" target="_blank"><b>Pro Cycling Trumps</b></a> card shows a professional (ex-)cyclist with a recognisable haircut and the shirt in which he was most successful.</li>
-                            <li>The lower part of the card contains the score of the rider on six important qualities on a scale from 0-100. Next to his head are the big prices he won.</li>
-                            <li>The pink jersey represents a Giro-win, the yellow one a Tour-win, the red one a Vuelta-win and the Roman pillar a win in a Monument.</li>
+                            <li>Every card has a red dot on the location of a European capital.</li>
+                            <li>The white lines are borders of the European countries.</li>
                         </ul>
                         <h3>How to Play?</h3>
                         <ul>
-                            <li>Check the jersey, qualities, races won and haircut of the rider</li>
-                            <li>Do you know who it is?</li>
-                            <li>Enter his name (first- and lastname) and hit submit</li>
+                            <li>Check the map and the location of the red dot</li>
+                            <li>Do you know what city it is?</li>
+                            <li>Enter it's name and hit submit</li>
                             <li>If you're right, you get 15 points</li>
-                            <li>Not sure? Ask for a hint and the flag of his nation is shown</li>
+                            <li>Not sure? Ask for a hint and the flag of the nation of the capital is shown</li>
                             <li>A hint will cost you 5 point, just like a wrong answer does</li>
                             <li>After two wrong answers, the right answer will be shown. So use the hint wisely</li>
                             <li>Each game contains 10 riders</li>
@@ -263,7 +202,7 @@
 <audio id="soundOfWrongAnswer" src="sounds/wrongAnswer.wav"></audio>
 <audio id="soundOfNewRound" src="sounds/newRound.wav"></audio>
 <audio id="soundTryAgain" src="sounds/tryAgain.wav"></audio>
-<audio id="soundOfhighScore" src="sounds/highScore.wav"></audio>
+<audio id="soundOfHighScore" src="sounds/highScore.wav"></audio>
 
 <script src="https://code.jquery.com/jquery-3.5.1.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
