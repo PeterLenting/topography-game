@@ -202,7 +202,7 @@ It looks a bit like an actuel scoreboard, which is applicable since it is a game
     width: 80px;
     font-weight: bold;
     border-radius: 11px;
-    box-shadow: 5px 5px 5px grey;
+    box-shadow: 5px 5px 5px rgba(0,0,0,.5);
     border-color: #101820;
     font-family: 'Orbitron', sans-serif;
     font-size: 1.5rem;
@@ -236,7 +236,7 @@ It looks a bit like an actuel scoreboard, which is applicable since it is a game
     width: 90px;
     font-weight: bold;
     border-radius: 11px;
-    box-shadow: 5px 5px 5px grey;
+    box-shadow: 5px 5px 5px rgba(0,0,0,.5);
     border-color: #101820;
     font-family: 'Orbitron', sans-serif;
     font-size: 2.5rem;
@@ -329,7 +329,7 @@ It looks a bit like an actuel scoreboard, which is applicable since it is a game
     width: 40px;
     font-weight: bold;
     border-radius: 11px;
-    box-shadow: 5px 5px 5px grey;
+    box-shadow: 5px 5px 5px rgba(0,0,0,.5);
     border-color: #101820;
     font-family: 'Orbitron', sans-serif;
     font-size: 1.5rem;
