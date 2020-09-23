@@ -10,8 +10,8 @@ body {
 }
 
 header {
-    background: linear-gradient(#195190, #499bea);
-    color: #F2F2F2;
+    background: #101820;
+    color: #499bea;
     text-align: center;
     min-height: 60px;
     text-transform: uppercase;
@@ -19,7 +19,7 @@ header {
     padding-bottom: 1px;
     border-radius: 25px;
     margin: 15px;
-    border: 3px solid #101820;
+    border: 3px solid #499bea;
 }
 
 h1 {
@@ -336,7 +336,7 @@ It looks a bit like an actuel scoreboard, which is applicable since it is a game
     background: #101820;
 }
 
-#highScoreInput {
+#highScore_id {
     color: #FD5F00;
     text-align: center;
     width: 110px;
@@ -551,7 +551,7 @@ The orange color fits well in and makes the buttons stand out from the other but
 }
 
 #social {
-    background: #F2F2F2;
+    background: #101820 ;
     text-align: center;
     padding-top: 10px;
     padding-bottom: 10px;
@@ -559,7 +559,7 @@ The orange color fits well in and makes the buttons stand out from the other but
     margin-top: 10px;
     clear: both;
     margin: 15px;
-    border: 3px solid #101820;
+    border: 3px solid #499bea;
 }
 
 /*Styling the links and symbols in the footer*/
