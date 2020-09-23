@@ -275,7 +275,7 @@ It looks a bit like an actuel scoreboard, which is applicable since it is a game
     border: 3px solid #101820;
     border-radius: 25px;
     padding-bottom: 10px;
-    background-color: #FF652F;
+    background-color: #FD5F00;
     font-family: 'Orbitron', sans-serif;
 }
 
@@ -337,15 +337,18 @@ It looks a bit like an actuel scoreboard, which is applicable since it is a game
 }
 
 #highScore_id {
-    color: #FD5F00;
+    color: #FF652F;
     text-align: center;
     width: 110px;
     font-weight: bold;
     border-radius: 11px;
     border-color: #101820;
-    /*font-family: 'Orbitron', sans-serif;*/
     font-size: 2.5rem;
-    background: #FEE715;
+    background: #F2F2F2;
+}
+
+#highScoreHeader {
+  color: #F2F2F2;  
 }
 
 /*BUTTONS*/
@@ -371,7 +374,6 @@ input:focus {
     color: #F2F2F2;
     border-radius: 25px;
     font-weight: bold;
-    /*box-shadow: 3px 3px black;*/
 }
 
 .button_1:hover {
@@ -385,7 +387,8 @@ input:focus {
   padding-left: 10px;
   padding-right: 10px; 
   border-radius: 6%;
-  color: #FD5F00;
+  color: #F2F2F2;
+  background: #195190;
 }
 
 /*Styling the button that makes it possible to ask for a hint. 
@@ -745,7 +748,7 @@ body {
 
  @media(min-width: 1200px){
 .asideShrink {
-    height: 73%;
+    height: 68.5%;
     }
 }
 
