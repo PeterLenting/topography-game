@@ -627,19 +627,25 @@ section#main .container-fluid img {
 
 @media(min-width: 1200px){ 
   aside{
-  height: 86%;
+  height: 86.5%;
+  } 
+} 
+
+@media(min-width: 1400px){ 
+  aside{
+  height: 87%;
   } 
 } 
 
 @media(min-width: 1800px){ 
   aside{
-  height: 88%;
+  height: 86.5%;
   } 
 } 
 
 @media(min-width: 2000px){ 
   aside{
-  height: 87%;
+  height: 86%;
   } 
 } 
 
@@ -748,24 +754,30 @@ body {
 
  @media(min-width: 1200px){
 .asideShrink {
-    height: 68.5%;
+    height: 69.5%;
     }
 }
 
 @media(min-width: 1400px){
 .asideShrink {
-    height: 66.5%;
+    height: 68.5%;
     }
 }
 
 @media(min-width: 1600px){
 .asideShrink {
-    height: 67%;
+    height: 70%;
     }
 }
 
 @media(min-width: 1800px){
 .asideShrink {
-    height: 66.5%;
+    height: 69.5%;
+    }
+}
+
+@media(min-width: 2000px){
+.asideShrink {
+    height: 68%;
     }
 }
